@@ -1121,13 +1121,108 @@
       margin-bottom: 0.25rem;
     }
 
+    /* Smart Sticky Nav: Hide on scroll down, show on scroll up */
+    nav#stickyNav {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+      will-change: transform, opacity;
+    }
+    nav#stickyNav.nav-hidden {
+      transform: translateY(-130%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    nav#stickyNav.nav-visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* 4x4 Matrix Scroll Wrapper */
+    .matrix-4x4-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.5rem;
+    }
+
+    /* SFMA Inline SVG Vector Diagram Box */
+    .sfma-diagram-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 0.75rem 0.5rem;
+      margin: 0.85rem auto 0.5rem auto;
+      max-width: 220px;
+      width: 100%;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .sfma-svg {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      max-height: 120px;
+      display: block;
+      color: var(--ink);
+    }
+    .sfma-diagram-caption {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink-2);
+      margin-top: 0.45rem;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Mobile Responsive Optimizations */
     @media (max-width: 768px) {
+      nav#stickyNav {
+        top: 0.5rem !important;
+        margin-bottom: 1.25rem !important;
+        padding: 0.5rem 0.6rem !important;
+        border-radius: 0.75rem !important;
+      }
+      .nav-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        gap: 0.4rem !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        padding-bottom: 2px !important;
+      }
+      .nav-container::-webkit-scrollbar {
+        display: none !important;
+      }
+      nav#stickyNav a {
+        flex: 0 0 auto !important;
+        padding: 0.45rem 0.75rem !important;
+        font-size: 0.78rem !important;
+        border-radius: 0.5rem !important;
+      }
       .matrix-4x4-grid {
-        grid-template-columns: 85px repeat(4, 1fr);
-        font-size: 0.72rem;
+        min-width: 540px !important;
+        grid-template-columns: 85px repeat(4, 1fr) !important;
+        font-size: 0.75rem !important;
       }
       .flow-decision {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+      }
+      header#page-top h1 {
+        font-size: 1.65rem !important;
+        line-height: 1.25 !important;
+      }
+      .score-matrix th, .score-matrix td {
+        padding: 0.65rem 0.4rem !important;
+        font-size: 0.8rem !important;
+      }
+      .btn-score {
+        padding: 0.35rem 0.55rem !important;
+        font-size: 0.75rem !important;
       }
     }
     </style>
@@ -1165,22 +1260,22 @@
             </p>
         </header>
 
-        <!-- 반응형 스티키 내비게이션 바 (15대 섹션 1:1 완벽 매칭) -->
-        <nav class="sticky top-4 z-40 mb-8 backdrop-blur-md">
+        <!-- 반응형 스마트 스티키 내비게이션 바 (15대 섹션 1:1 매칭) -->
+        <nav id="stickyNav" class="sticky top-4 z-40 mb-8 backdrop-blur-md nav-visible">
             <div class="nav-container">
                 <a href="#overview" class="active">SFMA 철학·신경근 이론</a>
                 <a href="#terminology">기능제한 분류 (TED·JMD·SMCD)</a>
                 <a href="#top-tier">7대 상위 검사 프로토콜</a>
-                <a href="#interactive-tool" class="ai-support-link"><i class="fas fa-calculator mr-1"></i>실시간 점수판 & 진단</a>
-                <a href="#bo-cervical">경추 하위검사 알고리즘</a>
-                <a href="#bo-ue">상지 하위검사 알고리즘</a>
+                <a href="#interactive-tool"><i class="fas fa-clipboard-check mr-1"></i>상위검사 채점판</a>
+                <a href="#bo-cervical">경추 하위검사 (Breakout)</a>
+                <a href="#bo-ue">상지 하위검사 (Breakout)</a>
                 <a href="#bo-msf">복수-분절 굴곡 (MSF)</a>
                 <a href="#bo-mse">복수-분절 신전 (MSE)</a>
                 <a href="#bo-msr">복수-분절 회전 (MSR)</a>
                 <a href="#bo-sls">한발 서기 (SLS)</a>
                 <a href="#bo-ods">오버헤드 스쿼트 (ODS)</a>
                 <a href="#bo-rolling">롤링 패턴 (Rolling)</a>
-                <a href="#treatment">4x4 교정운동 치료 매트릭스</a>
+                <a href="#treatment">4x4 치료 매트릭스</a>
                 <a href="#comp-table">정밀 감별표 & 치트시트</a>
                 <a href="#references">학술 참고문헌</a>
             </div>
@@ -1223,9 +1318,9 @@
                 </div>
             </div>
 
-            <h3 class="subsection-title"><i class="fas fa-traffic-light"></i>신호등 시스템 (Traffic Light System)의 엄밀한 운영 규칙</h3>
+            <h3 class="subsection-title"><i class="fas fa-traffic-light"></i>신호등 시스템 (Traffic Light System) 운영 원칙</h3>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
-                SFMA는 평가자와 치료자 간의 일관된 임상 의사결정을 보장하기 위해 상위검사와 하위검사에 걸쳐 4가지 색상 코드를 엄격히 적용합니다.
+                SFMA는 평가자와 치료자 간의 일관된 임상 의사결정을 위해 상위검사와 하위검사에 걸쳐 4가지 색상 코드를 적용합니다.
             </p>
 
             <div class="traffic-light-grid">
@@ -1265,7 +1360,7 @@
                         <i class="fas fa-project-diagram"></i>지역 상호보완 (Regional Interdependence)
                     </h4>
                     <p class="text-sm leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
-                        [사실] 롭 우회이너(Rob Wainner 2007)와 블라디미르 얀다(Vladimir Janda)의 연구에 따르면, 인체 운동 시스템은 하나의 통합된 유기체로 작동합니다. 통증 부위와 해부학적으로 멀리 떨어진 관절의 기능장애가 주 증상을 유발합니다.
+                        [사실] 롭 웨이너(Robert S. Wainner 2007)와 블라디미르 얀다(Vladimir Janda)의 연구에 따르면, 인체 운동 시스템은 하나의 통합된 유기체로 작동합니다. 통증 부위와 해부학적으로 멀리 떨어진 관절의 기능장애가 주 증상을 유발합니다.
                     </p>
                     <div class="p-3 rounded-lg text-xs space-y-1.5" style="background:var(--c-primary-050);color:var(--c-primary-deep);">
                         <p><strong>• 발목 염좌와 둔근 억제:</strong> Bullock-Saxton(1994) 연구에서 발목 염좌 병력이 있는 환자는 통증이 완전히 사라진 후에도 대둔근 동원 시작이 지연(Gluteal lag)되고 동적 균형 능력이 유의하게 저하됨을 증명.</p>
@@ -1291,9 +1386,9 @@
 
             <div class="clinical-pearl">
                 <strong><i class="fas fa-graduation-cap mr-1"></i>임상 실무 지침: 움직임 평가의 5대 철칙</strong><br>
-                1. <strong>워밍업 금지:</strong> 일시적인 혈류 증가나 사전 스트레칭으로 결함을 가리지 않고, 환자가 평소 뇌에 저장해 둔 본래의 변형된 신경근 패턴을 평가해야 합니다.<br>
-                2. <strong>개처럼 보이고 냄새나면 개다:</strong> 애매하게 합격시키지 말고, 완벽하지 않은 동작은 즉시 기능제한(Dysfunction)으로 엄격히 판정합니다.<br>
-                3. <strong>까다로운 채점:</strong> "그 정도면 일상생활에 지장 없다"는 통과 기준이 아닙니다. 사소한 보상작용도 불합격 처리합니다.<br>
+                1. <strong>워밍업 금지:</strong> 일시적인 혈류 증가나 사전 스트레칭으로 결함을 가리지 않고, 평소 저장된 신체 고유의 보상 패턴을 그대로 평가해야 합니다.<br>
+                2. <strong>엄격한 판정:</strong> 애매하게 합격시키지 않고, 기준에 미치지 못하는 동작은 기능이상(Dysfunction)으로 명확히 판정합니다.<br>
+                3. <strong>보상작용 감별:</strong> "일상생활에 지장 없다"는 통과 기준이 아닙니다. 사소한 보상작용도 불합격(Dysfunctional)으로 분류합니다.<br>
                 4. <strong>신발 탈의:</strong> 현대의 쿠션 신발은 발바닥 기계수용기의 고유감각 피드백을 차단하므로 반드시 맨발로 평가합니다.<br>
                 5. <strong>원숭이는 보고 따라한다:</strong> 복잡한 언어 지시는 환자의 인지적 왜곡을 유발합니다. 평가자가 직접 시범을 보이고 환자가 본능적으로 따라 하게 합니다.
             </div>
@@ -1340,7 +1435,7 @@
                         [사실] 관절낭, 관절순, 관절 연골 등 단일 관절 내부의 관절학적(Arthrokinematic) 미끄러짐(Glide) 및 구름(Roll)이 구조적으로 소실된 상태입니다.
                     </p>
                     <div class="p-2.5 rounded text-xs space-y-1" style="background:var(--bg);color:var(--ink-2);">
-                        <p><strong>• 관절낭 유착 및 구축:</strong> 오십견(동결견), 발목 거태관절 후방 관절낭 구축, 고관절 낭 단축.</p>
+                        <p><strong>• 관절낭 유착 및 구축:</strong> 오십견(동결견), 발목 거퇴관절 후방 관절낭 구축, 고관절 낭 단축.</p>
                         <p><strong>• 관절염 및 골성 제한:</strong> 퇴행성 관절염(OA), 대퇴비구 충돌증후군(FAI), 골극 형성.</p>
                         <p><strong>• 위치 오류 및 관절하위 아탈구:</strong> 관절 위치 정렬 오류(Positional fault, Mulligan 개념).</p>
                         <p><strong>• 특징:</strong> 인접 관절의 위치를 변경해도 관절 끝느낌(End-feel)과 각도 제한이 변하지 않음.</p>
@@ -1356,7 +1451,7 @@
                     <h4 class="font-bold text-lg mb-1" style="color:var(--c-primary-deep);">안정성 및 모터 조절</h4>
                     <div class="text-xs font-semibold text-slate-500 mb-3">Stability & Motor Control Dysfunction</div>
                     <p class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
-                        [사실] 수동 관절가동범위(PROM)는 완벽하게 정상이나, 신경계의 협응, 타이밍, 고유감각 결여로 환자 스스로 능동 움직임을 제어하지 못하는 상태입니다.
+                        [사실] 수동 관절가동범위(PROM)는 정상이지만, 신경계의 협응, 타이밍, 고유감각 결여로 환자 스스로 능동 움직임을 제어하지 못하는 상태입니다.
                     </p>
                     <div class="p-2.5 rounded text-xs space-y-1" style="background:var(--bg);color:var(--ink-2);">
                         <p><strong>• 정적 안정성 결함:</strong> 기립 및 단하지 지지 시 척추/골반의 시상면·관상면 정렬 유지 불가.</p>
@@ -1368,9 +1463,9 @@
             </div>
 
             <div class="exam-tip">
-                <strong><i class="fas fa-check-circle mr-1"></i>절대 감별 법칙 (Golden Rule of Differential Diagnosis)</strong><br>
-                • <strong>수동 가동성(PROM) 정상 + 능동 가동성(AROM) 제한</strong> ➔ 100% <strong>SMCD</strong> (운동 조절 결함). 연부조직 스트레칭이나 관절 가동술이 금기이며, 4x4 신경근 재학습 적용.<br>
-                • <strong>수동 가동성(PROM) 제한 + 능동 가동성(AROM) 제한</strong> ➔ <strong>가동성 기능제한 (TED 또는 JMD)</strong>. 인접 다관절 위치 변화에 따라 제한 각도가 바뀌면 TED, 일정하면 JMD.<br>
+                <strong><i class="fas fa-check-circle mr-1"></i>핵심 감별 원칙 (Core Differential Logic)</strong><br>
+                • <strong>수동 가동성(PROM) 정상 + 능동 가동성(AROM) 제한</strong> ➔ <strong>SMCD (안정성 및 운동제어 기능이상)</strong>. 수동 가동성이 확보되어 있으므로 조직 스트레칭보다 4x4 신경근 재교육을 적용합니다.<br>
+                • <strong>수동 가동성(PROM) 제한 + 능동 가동성(AROM) 제한</strong> ➔ <strong>가동성 기능제한 (TED 또는 JMD)</strong>. 인접 관절 위치 변화에 따라 가동범위가 달라지면 TED, 일정하면 JMD.<br>
                 • <strong>체중부하(Loaded) 제한 + 비체중부하(Unloaded) 정상</strong> ➔ <strong>체중부하 신경근 안정성 결함(Loaded SMCD)</strong>.
             </div>
         </section>
@@ -1391,23 +1486,102 @@
                         <i class="fas fa-head-side-cough"></i>1. 경추 움직임 패턴 (Cervical Spine Patterns: 굴곡 · 신전 · 좌/우 회전)
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs" style="color:var(--ink-2);">
-                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
-                            <div class="font-bold text-sm mb-1 text-slate-800">경추 굴곡 (Flexion)</div>
-                            <p class="mb-1.5"><strong>검사 방법:</strong> 입을 가볍게 다문 상태에서 턱을 아래로 숙여 가슴에 닿게 함.</p>
-                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱이 흉골 상병 노치(Sternal notch)에 완전히 접촉 (입 벌어짐 없음, 매끄러운 곡선).</p>
-                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 입 벌림(턱벌림 보상), 흉추 굴곡 과다, 턱 접촉 실패 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        <div class="p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between" style="background:var(--surface);">
+                            <div>
+                                <div class="font-bold text-sm mb-1 text-slate-800">경추 굴곡 (Flexion)</div>
+                                <p class="mb-1.5"><strong>검사 방법:</strong> 입을 가볍게 다문 상태에서 턱을 아래로 숙여 가슴에 닿게 함.</p>
+                                <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱이 흉골 상병 노치(Sternal notch)에 완전히 접촉 (입 벌어짐 없음, 매끄러운 곡선).</p>
+                                <p><span class="text-red-600 font-bold">• 보상작용:</span> 입 벌림(턱벌림 보상), 흉추 굴곡 과다, 턱 접촉 실패 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                            </div>
+                            
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="경추 굴곡: 턱-흉골 접촉">
+            
+    <!-- Body Profile -->
+    <path d="M55,120 L55,80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M75,80 L75,120" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <!-- Sternal Notch -->
+    <circle cx="75" cy="80" r="3.5" fill="#10b981"/>
+    <!-- Cervical C-Curve -->
+    <path d="M55,80 Q56,60 66,50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Head Flexed Down -->
+    <circle cx="68" cy="40" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+    <!-- Chin touching sternal notch line -->
+    <path d="M75,48 L75,76" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <path d="M72,50 L75,76" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="75" cy="77" r="2.5" fill="#ef4444"/>
+    <!-- Angle / Motion Arrow -->
+    <path d="M85,35 Q92,50 82,65" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <polygon points="80,62 82,68 86,64" fill="#3b82f6"/>
+    <text x="80" y="24" fill="currentColor" font-size="9" font-weight="700">턱 ➔ 흉골</text>
+    <text x="80" y="34" fill="#10b981" font-size="8" font-weight="600">완전 접촉</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">경추 굴곡: 턱-흉골 접촉</div>
+    </div>
+    
                         </div>
-                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
-                            <div class="font-bold text-sm mb-1 text-slate-800">경추 신전 (Extension)</div>
-                            <p class="mb-1.5"><strong>검사 방법:</strong> 입을 다물고 고개를 뒤로 젖혀 천장을 바라봄.</p>
-                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 얼굴 평면이 천장/바닥과 <strong>10° 이내</strong> 수평 유지, 균일한 경추 아치.</p>
-                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 후방 기울임, 입 벌림, 흉곽 들림, 얼굴 수평 미달 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        <div class="p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between" style="background:var(--surface);">
+                            <div>
+                                <div class="font-bold text-sm mb-1 text-slate-800">경추 신전 (Extension)</div>
+                                <p class="mb-1.5"><strong>검사 방법:</strong> 입을 다물고 고개를 뒤로 젖혀 천장을 바라봄.</p>
+                                <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 얼굴 평면이 천장/바닥과 <strong>10° 이내</strong> 수평 유지, 균일한 경추 아치.</p>
+                                <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 후방 기울임, 입 벌림, 흉곽 들림, 얼굴 수평 미달 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                            </div>
+                            
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="경추 신전: 얼굴 수평 10°">
+            
+    <!-- Body Profile -->
+    <path d="M65,120 L65,80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Cervical Extension Curve -->
+    <path d="M65,80 Q62,65 52,58" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Head Extended Back -->
+    <circle cx="45" cy="46" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+    <!-- Face Plane Line tilted up -->
+    <line x1="32" y1="36" x2="88" y2="44" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    <!-- Horizontal Reference Line -->
+    <line x1="20" y1="44" x2="140" y2="44" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- Angle Arc ≤ 10° -->
+    <path d="M95,44 A25,25 0 0,0 93,39" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <text x="96" y="35" fill="currentColor" font-size="9" font-weight="700">안면 평면</text>
+    <text x="96" y="47" fill="#10b981" font-size="8" font-weight="700">≤ 10° 수평</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">경추 신전: 얼굴 수평 10°</div>
+    </div>
+    
                         </div>
-                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
-                            <div class="font-bold text-sm mb-1 text-slate-800">경추 좌/우 회전 (Rotation)</div>
-                            <p class="mb-1.5"><strong>검사 방법:</strong> 머리를 중립에서 좌/우로 최대한 회전.</p>
-                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱 끝이 쇄골 중간선(Mid-clavicular line, 약 <strong>80°</strong>)을 통과.</p>
-                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 어깨 으쓱임(승모근 대상작용), 경추 측방 굴곡, 체간 회전 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        <div class="p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between" style="background:var(--surface);">
+                            <div>
+                                <div class="font-bold text-sm mb-1 text-slate-800">경추 좌/우 회전 (Rotation)</div>
+                                <p class="mb-1.5"><strong>검사 방법:</strong> 머리를 중립에서 좌/우로 최대한 회전.</p>
+                                <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱 끝이 쇄골 중간선(Mid-clavicular line, 약 <strong>80°</strong>)을 통과.</p>
+                                <p><span class="text-red-600 font-bold">• 보상작용:</span> 어깨 으쓱임(승모근 대상작용), 경추 측방 굴곡, 체간 회전 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                            </div>
+                            
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="경추 회전: 쇄골중간(80°) 통과">
+            
+    <!-- Shoulders Clavicle Bar -->
+    <line x1="25" y1="85" x2="135" y2="85" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <!-- Mid-Clavicular Lines -->
+    <line x1="45" y1="65" x2="45" y2="105" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="115" y1="65" x2="115" y2="105" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- Head Circle Top View -->
+    <circle cx="80" cy="55" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+    <!-- Nose / Chin Vector pointing rotated right past 115 -->
+    <line x1="80" y1="55" x2="118" y2="70" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="118" cy="70" r="3.5" fill="#10b981"/>
+    <!-- Arc 80° -->
+    <path d="M80,75 A20,20 0 0,0 106,66" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <text x="70" y="24" fill="currentColor" font-size="9" font-weight="700">회전 ≥ 80°</text>
+    <text x="70" y="35" fill="#10b981" font-size="8" font-weight="600">쇄골 중간 통과</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">경추 회전: 쇄골중간(80°) 통과</div>
+    </div>
+    
                         </div>
                     </div>
                 </div>
@@ -1418,17 +1592,61 @@
                         <i class="fas fa-hands"></i>2. 상지 움직임 패턴 (Upper Extremity Patterns: 패턴 1 MRE · 패턴 2 LRE)
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" style="color:var(--ink-2);">
-                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
-                            <div class="font-bold text-sm mb-1 text-slate-800">패턴 1: 내측회전-신전 (MRE: 하방 도달)</div>
-                            <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 아래에서 뒤로 돌려 반대측 견갑골 하각에 도달하게 함 (Medial Rotation Extension).</p>
-                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑골 하각(Inferior angle, T7 수준)</strong>에 완전히 접촉.</p>
-                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 굴곡 및 측방 기울임, 견갑골 전방 경사(Winging/Tipping), 턱 앞으로 빼기 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                        <div class="p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between" style="background:var(--surface);">
+                            <div>
+                                <div class="font-bold text-sm mb-1 text-slate-800">패턴 1: 내측회전-신전 (MRE: 하방 도달)</div>
+                                <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 아래에서 뒤로 돌려 반대측 견갑골 하각에 도달하게 함 (Medial Rotation Extension).</p>
+                                <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑골 하각(Inferior angle, T7 수준)</strong>에 완전히 접촉.</p>
+                                <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 굴곡 및 측방 기울임, 견갑골 전방 경사(Winging/Tipping), 턱 앞으로 빼기 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                            </div>
+                            
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="패턴 1 (MRE): 하각(T7) 접촉">
+            
+    <!-- Torso Back View -->
+    <path d="M50,30 L110,30 L102,115 L58,115 Z" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+    <line x1="80" y1="30" x2="80" y2="115" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.5"/>
+    <!-- Opposite Scapula -->
+    <polygon points="86,48 102,48 94,74" stroke="#3b82f6" stroke-width="1.5" fill="rgba(59,130,246,0.1)"/>
+    <circle cx="94" cy="74" r="4" fill="#10b981"/>
+    <!-- Right Arm Reaching Behind Back (MRE) -->
+    <path d="M110,36 L124,78 L95,74" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="95" cy="74" r="2.5" fill="#ef4444"/>
+    <text x="24" y="68" fill="currentColor" font-size="8" font-weight="700">견갑골 하각</text>
+    <text x="24" y="78" fill="#10b981" font-size="8" font-weight="700">(T7 수준 접촉)</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">패턴 1 (MRE): 하각(T7) 접촉</div>
+    </div>
+    
                         </div>
-                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
-                            <div class="font-bold text-sm mb-1 text-slate-800">패턴 2: 외측회전-외전 (LRE: 상방 도달)</div>
-                            <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 머리 위에서 뒤로 넘겨 반대측 견갑골 극에 도달하게 함 (Lateral Rotation Extension).</p>
-                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑극(Spine of scapula, T3 수준)</strong>에 완전히 접촉.</p>
-                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 흉추 과신전 및 요추 전만 증가, 두부 전방 돌출, 팔꿈치 굴곡 부족 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                        <div class="p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between" style="background:var(--surface);">
+                            <div>
+                                <div class="font-bold text-sm mb-1 text-slate-800">패턴 2: 외측회전-외전 (LRE: 상방 도달)</div>
+                                <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 머리 위에서 뒤로 넘겨 반대측 견갑골 극에 도달하게 함 (Lateral Rotation Extension).</p>
+                                <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑극(Spine of scapula, T3 수준)</strong>에 완전히 접촉.</p>
+                                <p><span class="text-red-600 font-bold">• 보상작용:</span> 흉추 과신전 및 요추 전만 증가, 두부 전방 돌출, 팔꿈치 굴곡 부족 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                            </div>
+                            
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="패턴 2 (LRE): 견갑극(T3) 접촉">
+            
+    <!-- Torso Back View -->
+    <path d="M50,30 L110,30 L102,115 L58,115 Z" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+    <line x1="80" y1="30" x2="80" y2="115" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.5"/>
+    <!-- Opposite Scapular Spine (T3) -->
+    <line x1="84" y1="48" x2="104" y2="48" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="94" cy="48" r="4" fill="#10b981"/>
+    <!-- Arm Reaching Over Shoulder (LRE) -->
+    <path d="M110,36 L118,14 L94,47" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="94" cy="47" r="2.5" fill="#ef4444"/>
+    <text x="24" y="44" fill="currentColor" font-size="8" font-weight="700">반대측 견갑극</text>
+    <text x="24" y="54" fill="#10b981" font-size="8" font-weight="700">(T3 수준 접촉)</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">패턴 2 (LRE): 견갑극(T3) 접촉</div>
+    </div>
+    
                         </div>
                     </div>
                 </div>
@@ -1440,8 +1658,8 @@
                     </h3>
                     <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
                         <p><strong>검사 방법:</strong> 발을 모으고 서서 무릎을 편 채 허리를 굽혀 손가락으로 발끝을 터치 (서서 발끝 닿기).</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-2 items-center">
+                            <div class="md:col-span-5 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-green-600 font-bold">• 4대 필수 통과 기준 (모두 충족해야 FN):</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>손가락 끝이 발끝에 완전 접촉</li>
@@ -1450,14 +1668,47 @@
                                     <li>체중의 <strong>후방 이동(Posterior weight shift)</strong> 관찰</li>
                                 </ul>
                             </div>
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <div class="md:col-span-4 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-red-600 font-bold">• 흔한 보상작용 (하나라도 있으면 불합격):</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>무릎 굴곡 (햄스트링 긴장 회피)</li>
-                                    <li>체중 후방 이동 없음 (앞으로 넘어질 듯한 불안정)</li>
-                                    <li>천골 각도 70° 미달 (골반 회전 잠김)</li>
-                                    <li>요추 편평화(Flat lumbar) ➔ <a href="#bo-msf" class="text-blue-600 underline">MSF 하위검사</a></li>
+                                    <li>체중 후방 이동 없음 (앞으로 쏠림)</li>
+                                    <li>천골 각도 70° 미달 (골반 잠김)</li>
+                                    <li>요추 편평화 ➔ <a href="#bo-msf" class="text-blue-600 underline">MSF 하위검사</a></li>
                                 </ul>
+                            </div>
+                            <div class="md:col-span-3 flex justify-center">
+                                
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="MSF: 천골각 70° & 발끝 터치">
+            
+    <!-- Floor Line -->
+    <line x1="20" y1="120" x2="140" y2="120" stroke="currentColor" stroke-width="2"/>
+    <!-- Legs Straight (Posterior shift) -->
+    <line x1="90" y1="120" x2="90" y2="90" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Pelvis shifted backward -->
+    <line x1="90" y1="90" x2="75" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Posterior Shift Arrow -->
+    <path d="M92,80 L76,80" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+    <polygon points="78,77 72,80 78,83" fill="#3b82f6"/>
+    <!-- Sacral Angle Reference Line (Vertical dashed) -->
+    <line x1="75" y1="65" x2="75" y2="35" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <!-- Sacrum tilt line 70° -->
+    <line x1="75" y1="65" x2="100" y2="52" stroke="#ef4444" stroke-width="1.5"/>
+    <path d="M75,50 A16,16 0 0,1 91,56" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <!-- Spine Smooth C-Curve Down -->
+    <path d="M75,65 Q110,65 106,105" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Arms Reaching to Toes -->
+    <line x1="102" y1="85" x2="108" y2="118" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    <!-- Toe Touch Landmark -->
+    <circle cx="108" cy="118" r="3.5" fill="#10b981"/>
+    <text x="24" y="45" fill="currentColor" font-size="8" font-weight="700">천골각 ≥ 70°</text>
+    <text x="24" y="55" fill="#10b981" font-size="8" font-weight="600">발끝 터치 성공</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">MSF: 천골각 70° & 발끝 터치</div>
+    </div>
+    
                             </div>
                         </div>
                     </div>
@@ -1470,8 +1721,8 @@
                     </h3>
                     <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
                         <p><strong>검사 방법:</strong> 양팔을 머리 위로 곧게 뻗고(어깨 170° 굴곡), 골반과 척추를 뒤로 신전.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-2 items-center">
+                            <div class="md:col-span-5 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-green-600 font-bold">• 4대 필수 통과 기준 (모두 충족해야 FN):</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>골반(ASIS)이 발끝 수직선을 전방으로 통과</li>
@@ -1480,14 +1731,44 @@
                                     <li>척추 신전 각도 <strong>170° 이상</strong> (수직선 대비)</li>
                                 </ul>
                             </div>
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <div class="md:col-span-4 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-red-600 font-bold">• 흔한 보상작용 (하나라도 있으면 불합격):</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>무릎 굴곡 (대퇴사두근/장요근 보상)</li>
-                                    <li>요추 힌지(Lumbar hinge): 특정 요추 분절만 과신전</li>
+                                    <li>요추 힌지(Lumbar hinge): 특정 분절 과신전</li>
                                     <li>흉추 신전 부재(흉추 후만 고착)</li>
                                     <li>ASIS 전방 이동 부족 ➔ <a href="#bo-mse" class="text-blue-600 underline">MSE 하위검사</a></li>
                                 </ul>
+                            </div>
+                            <div class="md:col-span-3 flex justify-center">
+                                
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="MSE: ASIS 전방 & 견갑 후방 통과">
+            
+    <!-- Floor Line -->
+    <line x1="20" y1="120" x2="140" y2="120" stroke="currentColor" stroke-width="2"/>
+    <!-- Vertical Guidelines: Toes (x=90) and Heels (x=68) -->
+    <line x1="90" y1="20" x2="90" y2="120" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <line x1="68" y1="20" x2="68" y2="120" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <!-- Feet -->
+    <path d="M68,120 L90,120" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <!-- Legs Straight -->
+    <line x1="78" y1="120" x2="98" y2="78" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- ASIS Forward Past Toe Line -->
+    <circle cx="98" cy="78" r="3.5" fill="#10b981"/>
+    <!-- Arching Spine Backward -->
+    <path d="M98,78 Q85,55 58,52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Scapular Angle Backward Past Heel Line -->
+    <circle cx="58" cy="52" r="3.5" fill="#10b981"/>
+    <!-- Arms Extended Overhead Backward -->
+    <path d="M64,52 L48,22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <text x="100" y="76" fill="#10b981" font-size="8" font-weight="700">ASIS 전방 통과</text>
+    <text x="22" y="54" fill="#10b981" font-size="8" font-weight="700">견갑하각 후방</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">MSE: ASIS 전방 & 견갑 후방 통과</div>
+    </div>
+    
                             </div>
                         </div>
                     </div>
@@ -1500,8 +1781,8 @@
                     </h3>
                     <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
                         <p><strong>검사 방법:</strong> 발을 모으고 선 상태에서 양팔을 자연스럽게 늘어뜨리거나 가슴에 얹고 전신을 좌/우로 회전.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-2 items-center">
+                            <div class="md:col-span-5 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-green-600 font-bold">• 3대 필수 통과 기준:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>골반 회전 <strong>50° 이상</strong></li>
@@ -1509,7 +1790,7 @@
                                     <li>골반 및 척추의 수직 회전축 유지 (측방 기울임 없음)</li>
                                 </ul>
                             </div>
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <div class="md:col-span-4 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>발바닥 들림 또는 발 외회전 슬립</li>
@@ -1517,6 +1798,33 @@
                                     <li>골반 회전 실패 (고관절 회전 제한)</li>
                                     <li>체간 측방 굴곡 ➔ <a href="#bo-msr" class="text-blue-600 underline">MSR 하위검사</a></li>
                                 </ul>
+                            </div>
+                            <div class="md:col-span-3 flex justify-center">
+                                
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="MSR: 골반 50° + 체간 50° = 100°">
+            
+    <!-- Center Axis -->
+    <line x1="80" y1="20" x2="80" y2="120" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <!-- Feet Planted -->
+    <line x1="70" y1="120" x2="90" y2="120" stroke="currentColor" stroke-width="3"/>
+    <!-- Legs -->
+    <line x1="75" y1="120" x2="78" y2="75" stroke="currentColor" stroke-width="2.5"/>
+    <line x1="85" y1="120" x2="82" y2="75" stroke="currentColor" stroke-width="2.5"/>
+    <!-- Pelvis Rotated 50° -->
+    <line x1="62" y1="78" x2="98" y2="72" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M90,75 A15,15 0 0,0 98,72" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+    <!-- Torso / Shoulder Rotated further 50° (Total 100°) -->
+    <line x1="52" y1="48" x2="108" y2="38" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    <!-- Head in line -->
+    <circle cx="80" cy="28" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <text x="104" y="82" fill="#3b82f6" font-size="8" font-weight="700">골반 50°</text>
+    <text x="108" y="44" fill="#ef4444" font-size="8" font-weight="700">어깨 50° (총 100°)</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">MSR: 골반 50° + 체간 50° = 100°</div>
+    </div>
+    
                             </div>
                         </div>
                     </div>
@@ -1529,8 +1837,8 @@
                     </h3>
                     <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
                         <p><strong>검사 방법:</strong> 한쪽 무릎과 고관절을 90° 굴곡하여 들어올리고 정적인 기립 유지. 눈 뜨고 10초, 이어서 눈 감고 10초 수행.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-2 items-center">
+                            <div class="md:col-span-5 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-green-600 font-bold">• 필수 통과 기준:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li><strong>눈 뜨고 10초</strong> 안정적 정적 유지</li>
@@ -1539,7 +1847,7 @@
                                     <li>발바닥 흔들림(Ankle sway) 최소화</li>
                                 </ul>
                             </div>
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <div class="md:col-span-4 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>지지발 닿음, 점프, 지지 위치 이동</li>
@@ -1547,6 +1855,33 @@
                                     <li>눈 감자마자 3초 이내 즉각 균형 상실 (시각 의존성)</li>
                                     <li>지지측 무릎 과신전 ➔ <a href="#bo-sls" class="text-blue-600 underline">SLS 하위검사</a></li>
                                 </ul>
+                            </div>
+                            <div class="md:col-span-3 flex justify-center">
+                                
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="SLS: 90/90 굴곡 & 골반 수평">
+            
+    <!-- Ground -->
+    <line x1="20" y1="120" x2="140" y2="120" stroke="currentColor" stroke-width="2"/>
+    <!-- Stance Leg Straight -->
+    <line x1="65" y1="120" x2="65" y2="75" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Pelvis Level Bar -->
+    <line x1="45" y1="75" x2="105" y2="75" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Lifted Leg 90/90 Flexion -->
+    <path d="M95,75 L95,50 L115,50" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Torso & Head -->
+    <line x1="65" y1="75" x2="65" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="65" cy="26" r="11" stroke="currentColor" stroke-width="2" fill="none"/>
+    <!-- Level Check Landmark -->
+    <circle cx="45" cy="75" r="3" fill="#10b981"/>
+    <circle cx="105" cy="75" r="3" fill="#10b981"/>
+    <text x="96" y="42" fill="#ef4444" font-size="8" font-weight="700">고관절/무릎 90°</text>
+    <text x="32" y="90" fill="#10b981" font-size="8" font-weight="700">골반 수평 유지</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">SLS: 90/90 굴곡 & 골반 수평</div>
+    </div>
+    
                             </div>
                         </div>
                     </div>
@@ -1559,8 +1894,8 @@
                     </h3>
                     <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
                         <p><strong>검사 방법:</strong> 어깨너비로 서서 양팔을 머리 위로 곧게 뻗고(손바닥 전방), 발뒤꿈치를 붙인 채 깊은 스쿼트 수행.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-2 items-center">
+                            <div class="md:col-span-5 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-green-600 font-bold">• 4대 필수 통과 기준:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>대퇴골이 수평면 이하(Below parallel)로 하강</li>
@@ -1569,7 +1904,7 @@
                                     <li>발뒤꿈치가 바닥에 완전 밀착 유지</li>
                                 </ul>
                             </div>
-                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <div class="md:col-span-4 p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
                                 <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
                                 <ul class="list-disc list-inside mt-1 space-y-1">
                                     <li>발뒤꿈치 들림 (발목 배측굴곡 제한)</li>
@@ -1577,6 +1912,34 @@
                                     <li>체간 과도한 전방 경사 (고관절 굴곡근/코어 SMCD)</li>
                                     <li>무릎 내번(Valgus collapse) ➔ <a href="#bo-ods" class="text-blue-600 underline">ODS 하위검사</a></li>
                                 </ul>
+                            </div>
+                            <div class="md:col-span-3 flex justify-center">
+                                
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="ODS: 대퇴 수평 이하 & 상완 정렬">
+            
+    <!-- Ground -->
+    <line x1="20" y1="120" x2="140" y2="120" stroke="currentColor" stroke-width="2"/>
+    <!-- Foot Flat on Ground -->
+    <line x1="60" y1="120" x2="85" y2="120" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="60" cy="120" r="3" fill="#10b981"/>
+    <!-- Tibia Angled Forward -->
+    <line x1="72" y1="120" x2="98" y2="88" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Femur Descending BELOW Parallel -->
+    <line x1="98" y1="88" x2="58" y2="94" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Knee Horizontal Ref Line -->
+    <line x1="45" y1="88" x2="115" y2="88" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <!-- Torso Parallel to Tibia -->
+    <line x1="58" y1="94" x2="82" y2="58" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Arms Extended Overhead 180° -->
+    <line x1="82" y1="58" x2="98" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <text x="24" y="106" fill="#ef4444" font-size="8" font-weight="700">대퇴골 수평 이하</text>
+    <text x="88" y="24" fill="#10b981" font-size="8" font-weight="700">상지 180° 수직</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">ODS: 대퇴 수평 이하 & 상완 정렬</div>
+    </div>
+    
                             </div>
                         </div>
                     </div>
@@ -1589,13 +1952,13 @@
         <!-- ========================================================================= -->
         <section id="interactive-tool" class="infographic-section" style="border:2px solid var(--c-primary-border);box-shadow:var(--sh-md);">
             <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
-                <h2 class="section-title mb-0" style="border-bottom:none;padding-bottom:0;"><i class="fas fa-calculator"></i>SFMA 인터랙티브 실시간 채점 & 임상 의사결정 엔진</h2>
+                <h2 class="section-title mb-0" style="border-bottom:none;padding-bottom:0;"><i class="fas fa-clipboard-check"></i>SFMA 상위 움직임 채점 및 하위 검사(Breakout) 분기 가이드</h2>
                 <button id="btnResetScoring" class="px-3 py-1.5 rounded-md text-xs font-bold border border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" style="color:var(--ink-2);">
                     <i class="fas fa-redo-alt mr-1"></i>채점 초기화
                 </button>
             </div>
             <p class="text-xs text-slate-500 mb-4" style="word-break:keep-all;">
-                아래 15개 상위검사 패턴의 결과를 클릭하십시오. SFMA의 임상 우선순위(DN ➔ FP ➔ DP ➔ FN) 규칙에 따라 즉각적인 진단 소견과 연계 하위검사(Breakout) 경로가 실시간으로 제시됩니다.
+                상위 검사 15개 항목의 결과를 선택하면, SFMA 우선순위 원칙(DN → FP → DP → FN)에 따라 치료 우선순위와 연계 하위 검사(Breakout) 분기 경로가 안내됩니다.
             </p>
 
             <div class="overflow-x-auto">
@@ -1618,10 +1981,10 @@
             <!-- 실시간 진단 리포트 박스 -->
             <div class="mt-6 p-4 rounded-xl border border-slate-200 dark:border-slate-700" style="background:var(--surface);">
                 <h4 class="font-bold text-sm mb-2 flex items-center gap-2" style="color:var(--c-primary-strong);">
-                    <i class="fas fa-stethoscope"></i>실시간 임상 진단 및 하위검사 추천 경로
+                    <i class="fas fa-stethoscope"></i>평가 소견 및 하위 검사 분기 안내
                 </h4>
                 <div id="reportSummary" class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);">
-                    검사 항목의 점수를 선택하면 실시간 분석 결과가 여기에 표시됩니다.
+                    검사 항목의 결과를 선택하면 우선순위와 하위 검사 진입 경로가 표시됩니다.
                 </div>
                 <div id="priorityActions" class="space-y-2">
                     <!-- 하위검사 바로가기 버튼 동적 렌더링 -->
@@ -1630,10 +1993,10 @@
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 5] 경추 하위검사 알고리즘 (Cervical Spine Breakout) -->
+        <!-- [Section 5] 경추 하위검사 (Cervical Spine Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-cervical" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-head-side-couch"></i>경추 하위검사 알고리즘 (Cervical Spine Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-head-side-couch"></i>경추 하위검사 분기 절차 (Cervical Spine Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
                 선 자세 경추 평가(굴곡·신전·회전)에서 기능제한이나 통증이 발견되면, 테이블에 머리를 받치는 <strong>바로누운 자세(Supine)</strong>로 전환하여 흉추, 견갑대 및 척추 기립근의 자세 유지 부하를 제거한 후 단계적 감별을 시작합니다.
             </p>
@@ -1649,7 +2012,7 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 성공 (FN):</strong>
-                            선 자세에서는 닿지 않았으나 누운 자세에서 성공 ➔ <strong>체중부하 자세성 경추 모터 조절 기능제한 (SMCD)</strong> 확진. 척추 기립근 과긴장 또는 체중부하 전정-경추 반사 이상.
+                            선 자세에서는 닿지 않았으나 누운 자세에서 성공 ➔ <strong>체중부하 자세성 경추 운동제어 기능이상 (SMCD)</strong>으로 판정. 척추 기립근 과긴장 또는 체중부하 전정-경추 반사 결함.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 실패 (DN / DP):</strong>
@@ -1668,11 +2031,11 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 수동 정상 (FN):</strong>
-                            능동 실패 + 수동 성공 ➔ <strong>경추 심부 굴곡근(Longus colli/capitis)의 SMCD</strong> 확진. 가동성 문제 없음, 근신경계 발화 재교육 필요.
+                            능동 실패 + 수동 성공 ➔ <strong>경추 심부 굴곡근(Longus colli/capitis)의 SMCD</strong>로 판정. 관절 가동성 제한은 없으며, 심부 굴곡근 신경근 제어 재교육 필요.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 수동 제한 (DN / DP):</strong>
-                            수동으로도 턱이 닿지 않음 ➔ <strong>가동성 기능제한 (JMD 또는 TED)</strong> 확진. 후두-환추(OA) 분리 검사로 진행.
+                            수동으로도 턱이 닿지 않음 ➔ <strong>가동성 기능제한 (JMD 또는 TED)</strong>으로 분류. 후두-환추(OA) 분리 검사로 진행.
                         </div>
                     </div>
                 </div>
@@ -1687,11 +2050,11 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 양측 20° 이상 정상:</strong>
-                            상부 경추는 정상이므로, <strong>하부 경추(C2-C7) 굴곡 JMD</strong> 또는 <strong>항인대/후방 경추 신전근 TED</strong> 확진.
+                            상부 경추는 정상이므로, <strong>하부 경추(C2-C7) 굴곡 JMD</strong> 또는 <strong>항인대/후방 경추 신전근 TED</strong>로 감별.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 20° 미달 (DN):</strong>
-                            <strong>후두-환추(OA) 관절낭 굴곡 JMD</strong> 또는 <strong>후두하근(Suboccipital muscles) TED</strong> 확진.
+                            <strong>후두-환추(OA) 관절낭 굴곡 JMD</strong> 또는 <strong>후두하근(Suboccipital muscles) TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -1706,11 +2069,11 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 얼굴-바닥 90° 도달 (FN):</strong>
-                            기립 신전 실패 + 누운자세 성공 ➔ <strong>체중부하 경추/체간 신전 SMCD</strong> 확진. 흉추 후만 고착 또는 전방 사슬 과긴장.
+                            기립 신전 실패 + 누운자세 성공 ➔ <strong>체중부하 경추/체간 신전 SMCD</strong>로 판정. 흉추 후만 또는 전방 사슬 과긴장.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 수직 미달 또는 통증 (DN / DP):</strong>
-                            <strong>경추 전종인대/사각근/SCM의 TED</strong> 또는 <strong>경추 후방 후관절(Facet) 신전 JMD</strong> 확진.
+                            <strong>경추 전종인대/사각근/SCM의 TED</strong> 또는 <strong>경추 후방 후관절(Facet) 신전 JMD</strong>로 분류.
                         </div>
                     </div>
                 </div>
@@ -1725,22 +2088,45 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 좌우 회전 ≥ 40° (FN):</strong>
-                            C1-C2는 정상이므로, 선자세 회전 제한은 <strong>하부 경추(C3-C7) 회전 JMD</strong> 또는 <strong>견갑거근/상부승모근 TED</strong> 확진.
+                            C1-C2는 정상이므로, 선자세 회전 제한은 <strong>하부 경추(C3-C7) 회전 JMD</strong> 또는 <strong>견갑거근/상부승모근 TED</strong>로 감별.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 40° 미달 (DN):</strong>
-                            <strong>환축추(C1-C2, Atlanto-axial) 관절 회전 JMD</strong> 또는 <strong>두판상근/후두하근 TED</strong> 확진.
+                            <strong>환축추(C1-C2, Atlanto-axial) 관절 회전 JMD</strong> 또는 <strong>두판상근/후두하근 TED</strong>로 판정.
                         </div>
+                    </div>
+                    <div class="flex justify-center mt-3">
+                        
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="C1-C2 굴곡-회전: 40° 분리">
+            
+    <!-- Table Line -->
+    <line x1="15" y1="105" x2="145" y2="105" stroke="currentColor" stroke-width="2"/>
+    <!-- Supine Body -->
+    <line x1="30" y1="102" x2="90" y2="102" stroke="currentColor" stroke-width="2.5"/>
+    <!-- Cervical Fully Flexed Upward (C2-C7 locked) -->
+    <path d="M90,102 Q105,100 110,80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Head rotated 40° -->
+    <circle cx="112" cy="68" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+    <line x1="112" y1="68" x2="128" y2="55" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    <path d="M118,74 A14,14 0 0,0 128,62" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <text x="24" y="42" fill="currentColor" font-size="8" font-weight="700">완전 굴곡 잠금 후</text>
+    <text x="24" y="54" fill="#10b981" font-size="8" font-weight="700">C1-C2 회전 ≥ 40°</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">C1-C2 굴곡-회전: 40° 분리</div>
+    </div>
+    
                     </div>
                 </div>
             </div>
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 6] 상지 하위검사 알고리즘 (Upper Extremity Breakout) -->
+        <!-- [Section 6] 상지 하위검사 (Upper Extremity Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-ue" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-hands"></i>상지 하위검사 알고리즘 (Upper Extremity Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-hands"></i>상지 하위검사 분기 절차 (Upper Extremity Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
                 상지 패턴 1(MRE: 하방 도달) 및 패턴 2(LRE: 상방 도달) 실패 시, <strong>엎드린 자세(Prone)</strong>로 전환하여 흉추 및 견갑대의 자세 지지 요구를 제거한 후 관절와상완(GH) 관절과 견갑흉곽(ST) 관절의 개별 기여도를 정밀 분리합니다.
             </p>
@@ -1818,10 +2204,10 @@
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 7] 복수-분절 굴곡 하위검사 알고리즘 (MSF Breakout) -->
+        <!-- [Section 7] 복수-분절 굴곡 하위검사 (MSF Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-msf" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-child"></i>복수-분절 굴곡 하위검사 알고리즘 (MSF Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-child"></i>복수-분절 굴곡 하위 검사 분기 절차 (MSF Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
                 선 자세 발끝 닿기 실패 시, <strong>기립(Loaded) ➔ 롱시팅(Unloaded) ➔ 바로누운 자세(Supine)</strong>로 단계적으로 전환하여 햄스트링 신장성, 고관절 굴곡 가동성, 그리고 체중부하 시상면 코어 신경근 제어를 정밀 분리합니다.
             </p>
@@ -1837,7 +2223,7 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 발끝 터치 성공 (FN):</strong>
-                            서서는 닿지 못했으나 앉아서 성공 ➔ <strong>체중부하 기립 균형 및 후방 체중이동(Posterior weight shift) SMCD</strong> 확진. 햄스트링 유연성과 척추 굴곡 가동성은 정상이며, 기립 상태에서 넘어지지 않으려는 신경계의 과도한 햄스트링/기립근 보호 수축이 원인.
+                            서서는 닿지 못했으나 앉아서 성공 ➔ <strong>체중부하 기립 균형 및 후방 체중이동(Posterior weight shift) SMCD</strong>로 판정. 햄스트링 유연성과 척추 굴곡 가동성은 정상이며, 기립 상태에서 넘어지지 않으려는 신경계의 과도한 햄스트링/기립근 보호 수축이 원인.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 발끝 터치 실패 (DN / DP):</strong>
@@ -1856,12 +2242,34 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 수동 거상 ≥ 80° (FN):</strong>
-                            <strong>햄스트링 TED 완전 배제</strong>. 수동 정상인데 능동 거상 각도가 70° 미만이면 <strong>전방 코어 및 고관절 굴곡근 발화 타이밍 SMCD</strong> 확진.
+                            <strong>햄스트링 TED 배제</strong>. 수동 정상인데 능동 거상 각도가 70° 미만이면 <strong>전방 코어 및 고관절 굴곡근 발화 타이밍 SMCD</strong>로 판정.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 수동 거상 &lt; 80° (DN):</strong>
-                            수동으로도 다리가 올라가지 않음 ➔ <strong>햄스트링 TED 또는 좌골신경 활주 결함(Neural tension)</strong> 확진.
+                            수동으로도 다리가 올라가지 않음 ➔ <strong>햄스트링 TED 또는 좌골신경 활주 결함(Neural tension)</strong>으로 분류.
                         </div>
+                    </div>
+                    <div class="flex justify-center mt-3">
+                        
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="SLR: 능동 70° / 수동 80°">
+            
+    <!-- Table Line -->
+    <line x1="15" y1="105" x2="145" y2="105" stroke="currentColor" stroke-width="2"/>
+    <!-- Opposite Leg Flat -->
+    <line x1="30" y1="102" x2="80" y2="102" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Raised Leg 80° -->
+    <line x1="80" y1="102" x2="92" y2="35" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Angle Arc from horizontal -->
+    <path d="M105,102 A30,30 0 0,0 89,75" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <text x="96" y="55" fill="#ef4444" font-size="8" font-weight="700">수동 ≥ 80°</text>
+    <text x="96" y="66" fill="#3b82f6" font-size="8" font-weight="700">능동 ≥ 70°</text>
+    <text x="20" y="90" fill="currentColor" font-size="8">반대측 고정</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">SLR: 능동 70° / 수동 80°</div>
+    </div>
+    
                     </div>
                 </div>
 
@@ -1879,7 +2287,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 허벅지 밀착 실패 또는 통증 (DN / DP):</strong>
-                            <strong>고관절 후하방 관절낭 JMD 또는 단관절 둔근(대둔근 심부 섬유) TED</strong> 확진.
+                            <strong>고관절 후하방 관절낭 JMD 또는 단관절 둔근(대둔근 심부 섬유) TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -1891,19 +2299,19 @@
                         <span class="breakout-badge">시상면 굴곡 모터제어</span>
                     </div>
                     <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
-                        가동성 검사(SLS, 무릎 가슴당기기)가 모두 정상인데도 롱시팅이나 기립 발끝 닿기가 되지 않는 환자는 앙와위에서 복와위로 구르는 롤링 테스트를 시행합니다. 사지의 도움 없이 체간 굴곡과 회전을 개시하지 못한다면 복횡근과 내외복사근의 <strong>시상면-회전성 코어 통합 SMCD</strong>로 확진합니다.
+                        가동성 검사(SLS, 무릎 가슴당기기)가 모두 정상인데도 롱시팅이나 기립 발끝 닿기가 되지 않는 환자는 앙와위에서 복와위로 구르는 롤링 테스트를 시행합니다. 사지의 도움 없이 체간 굴곡과 회전을 개시하지 못한다면 복횡근과 내외복사근의 <strong>시상면-회전성 코어 통합 SMCD</strong>로 판정합니다.
                     </p>
                 </div>
             </div>
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 8] 복수-분절 신전 하위검사 알고리즘 (MSE Breakout) -->
+        <!-- [Section 8] 복수-분절 신전 하위검사 (MSE Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-mse" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-running"></i>복수-분절 신전 하위검사 알고리즘 (MSE Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-running"></i>복수-분절 신전 하위 검사 분기 절차 (MSE Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
-                선 자세 전신 신전 실패 시, <strong>상지 분리 ➔ 복와위 상체밀기(척추 신전) ➔ 네발기기 흉추 격리 ➔ 복와위 고관절 신전 ➔ 변형 토마스 검사</strong> 순서로 각각의 분절을 단독 격리하여 구조적 가동성 장애와 코어 전방 안정성 결함을 명확히 규명합니다.
+                선 자세 전신 신전 실패 시, <strong>상지 분리 ➔ 복와위 상체밀기(척추 신전) ➔ 네발기기 흉추 격리 ➔ 복와위 고관절 신전 ➔ 변형 토마스 검사</strong> 순서로 각각의 분절을 단독 격리하여 구조적 가동성 장애와 코어 전방 안정성 결함을 단계별로 감별합니다.
             </p>
 
             <div class="space-y-4">
@@ -1921,7 +2329,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 신전 제한 (DN / DP):</strong>
-                            상지 영향이 배제되었으므로 척추 또는 하지 자체의 결함 확진 ➔ <strong>Step 2 (복와위 상체밀기)</strong>로 진행.
+                            상지 영향이 배제되었으므로 척추 또는 하지 자체의 결함으로 판정 ➔ <strong>Step 2 (복와위 상체밀기)</strong>로 진행.
                         </div>
                     </div>
                 </div>
@@ -1940,7 +2348,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 골반 들림 또는 척추 뻣뻣함 (DN / DP):</strong>
-                            <strong>요추 분절간 신전 JMD</strong> 또는 <strong>흉추 후만 고착 / 복벽 전방 근막 TED</strong> 확진.
+                            <strong>요추 분절간 신전 JMD</strong> 또는 <strong>흉추 후만 고착 / 복벽 전방 근막 TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -1959,7 +2367,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 흉곽 신전 실패:</strong>
-                            <strong>흉추 후만증 및 흉추 신전 JMD / 늑골 간 인대 TED</strong> 확진.
+                            <strong>흉추 후만증 및 흉추 신전 JMD / 늑골 간 인대 TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -1974,11 +2382,11 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 수동 ≥ 10° + 능동 실패:</strong>
-                            가동성은 정상이나 대둔근 발화 타이밍 결함 및 햄스트링/기립근 과보상 ➔ <strong>둔근 동원 SMCD</strong> 확진.
+                            가동성은 정상이나 대둔근 발화 타이밍 결함 및 햄스트링/기립근 과보상 ➔ <strong>둔근 동원 SMCD</strong>로 판정.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 수동 신전 &lt; 10° (DN / DP):</strong>
-                            수동으로도 고관절이 펴지지 않음 ➔ 고관절 전방 연부조직/관절낭 가동성 문제 확진. <strong>Step 5 (변형 토마스 검사)</strong>로 진행.
+                            수동으로도 고관절이 펴지지 않음 ➔ 고관절 전방 연부조직/관절낭 가동성 결함으로 판정. <strong>Step 5 (변형 토마스 검사)</strong>로 진행.
                         </div>
                     </div>
                 </div>
@@ -2004,15 +2412,39 @@
                             허벅지가 외전(Abduction)되거나 수동 신전 시 끝느낌이 딱딱함 ➔ <strong>TFL TED 또는 전방 관절낭 JMD</strong>.
                         </div>
                     </div>
+                    <div class="flex justify-center mt-3">
+                        
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="변형 토마스: 허벅지 수평 & 무릎 80°">
+            
+    <!-- Table Surface -->
+    <line x1="20" y1="75" x2="90" y2="75" stroke="currentColor" stroke-width="3"/>
+    <line x1="90" y1="75" x2="90" y2="120" stroke="currentColor" stroke-width="2"/>
+    <!-- Supine Body Hugging Opposite Knee -->
+    <line x1="30" y1="72" x2="75" y2="72" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M75,72 Q60,50 65,50" stroke="currentColor" stroke-width="2" fill="none"/>
+    <!-- Tested Thigh Horizontal -->
+    <line x1="75" y1="72" x2="105" y2="75" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="60" y1="75" x2="120" y2="75" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 2"/>
+    <!-- Lower Leg Hanging 80-90° -->
+    <line x1="105" y1="75" x2="108" y2="105" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="82" y="65" fill="#10b981" font-size="8" font-weight="700">허벅지 수평 (장요근)</text>
+    <text x="82" y="118" fill="#ef4444" font-size="8" font-weight="700">무릎 80~90° (대퇴직근)</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">변형 토마스: 허벅지 수평 & 무릎 80°</div>
+    </div>
+    
+                    </div>
                 </div>
             </div>
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 9] 복수-분절 회전 하위검사 알고리즘 (MSR Breakout) -->
+        <!-- [Section 9] 복수-분절 회전 하위검사 (MSR Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-msr" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-sync-alt"></i>복수-분절 회전 하위검사 알고리즘 (MSR Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-sync-alt"></i>복수-분절 회전 하위 검사 분기 절차 (MSR Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
                 전신 회전(좌/우 100°) 실패 시, <strong>앉은 자세(골반 잠금) ➔ 네발기기(요추 잠금) ➔ 복와위 고관절 회전 ➔ 경골 회전</strong>을 순차적으로 적용하여 흉추, 요추, 고관절 및 하지의 회전 기여도를 명확히 분리합니다.
             </p>
@@ -2032,7 +2464,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 어깨 회전 &lt; 50° (DN / DP):</strong>
-                            <strong>흉추 회전 JMD/TED</strong> 확진. 흉추의 진정한 회전 가동성 평가를 위해 <strong>Step 2 (요추잠금 흉추회전)</strong>로 진행.
+                            <strong>흉추 회전 JMD/TED</strong>로 판정. 흉추의 진정한 회전 가동성 평가를 위해 <strong>Step 2 (요추잠금 흉추회전)</strong>로 진행.
                         </div>
                     </div>
                 </div>
@@ -2047,12 +2479,37 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 흉추 회전 ≥ 50° (FN):</strong>
-                            흉추 자체의 회전 가동성은 정상이므로, 앉은 자세 실패는 <strong>체간 복사근/회전근의 SMCD</strong> 확진.
+                            흉추 자체의 회전 가동성은 정상이므로, 앉은 자세 실패는 <strong>체간 복사근/회전근의 SMCD</strong>로 판정.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 흉추 회전 &lt; 50° (DN / DP):</strong>
-                            <strong>흉추 후관절 회전 JMD 또는 늑간 인대/흉근 TED</strong> 확진.
+                            <strong>흉추 후관절 회전 JMD 또는 늑간 인대/흉근 TED</strong>로 분류.
                         </div>
+                    </div>
+                    <div class="flex justify-center mt-3">
+                        
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="요추잠금 흉추회전: 50° 분리">
+            
+    <!-- Floor Line -->
+    <line x1="15" y1="115" x2="145" y2="115" stroke="currentColor" stroke-width="2"/>
+    <!-- Rocked-back Pelvis on Heels -->
+    <circle cx="45" cy="98" r="8" fill="currentColor" opacity="0.4"/>
+    <path d="M45,105 Q55,90 75,90" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <!-- Forearm on Floor -->
+    <line x1="75" y1="90" x2="95" y2="112" stroke="currentColor" stroke-width="2"/>
+    <!-- Thoracic Spine Rotating Upward 50° -->
+    <path d="M75,90 L95,60" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Head and Hand Behind Neck -->
+    <circle cx="98" cy="52" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M92,85 A20,20 0 0,0 95,68" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+    <text x="100" y="45" fill="#ef4444" font-size="8" font-weight="700">흉추 회전 ≥ 50°</text>
+    <text x="20" y="70" fill="#3b82f6" font-size="8" font-weight="600">요추 신전 차단</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">요추잠금 흉추회전: 50° 분리</div>
+    </div>
+    
                     </div>
                 </div>
 
@@ -2089,10 +2546,10 @@
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 10] 한발 서기 하위검사 알고리즘 (SLS Breakout) -->
+        <!-- [Section 10] 한발 서기 하위검사 (SLS Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-sls" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-shoe-prints"></i>한발 서기 하위검사 알고리즘 (Single Leg Stance Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-shoe-prints"></i>한발 서기 하위 검사 분기 절차 (Single Leg Stance Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
                 한발 서기 실패 시, <strong>시각 차단(전정/체성감각 박리) ➔ 족부 관상면 가동성 ➔ 동적 보행(뒤꿈치/발가락) ➔ 비체중부하 코어 제어</strong> 순서로 감각 입력 결함과 고관절 외측 안정화 사슬(Lateral sling)을 분리합니다.
             </p>
@@ -2112,7 +2569,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 눈 뜸 성공 + 눈 감음 즉시 실패:</strong>
-                            <strong>시각 의존성 보상 상태</strong> 확진. 시각을 차단했을 때 무너지는 것은 발목 고유수용성감각 손실(과거 염좌 병력) 또는 전정안구반사(VOR) 기능저하를 의미.
+                            <strong>시각 의존성 보상 상태</strong>로 판정. 시각을 차단했을 때 무너지는 것은 발목 고유수용성감각 손실(과거 염좌 병력) 또는 전정안구반사(VOR) 기능저하를 의미.
                         </div>
                     </div>
                 </div>
@@ -2131,7 +2588,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 가동범위 제한 (DN / DP):</strong>
-                            <strong>거골하(Subtalar) 관절낭 JMD</strong> 또는 <strong>비골근군/후경골근 TED</strong> 확진.
+                            <strong>거골하(Subtalar) 관절낭 JMD</strong> 또는 <strong>비골근군/후경골근 TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -2170,12 +2627,12 @@
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 11] 오버헤드 딥 스쿼트 하위검사 알고리즘 (ODS Breakout) -->
+        <!-- [Section 11] 오버헤드 딥 스쿼트 하위검사 (ODS Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-ods" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-dumbbell"></i>오버헤드 딥 스쿼트 하위검사 알고리즘 (ODS Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-dumbbell"></i>오버헤드 딥 스쿼트 하위 검사 분기 절차 (ODS Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
-                오버헤드 딥 스쿼트 실패 시, <strong>상지 분리(팔 내림) ➔ 발목 분리(뒤꿈치 거상) ➔ 코어 분리(기둥 어시스트) ➔ 비체중부하 앙와위 스쿼트 ➔ 반무릎 발목 배측굴곡</strong>의 5단계 박리 과정을 거쳐 원인 부위를 정확히 적출합니다.
+                오버헤드 딥 스쿼트 실패 시, <strong>상지 분리(팔 내림) ➔ 발목 분리(뒤꿈치 거상) ➔ 코어 분리(기둥 어시스트) ➔ 비체중부하 앙와위 스쿼트 ➔ 반무릎 발목 배측굴곡</strong>의 5단계 분기 절차를 통해 원인 부위를 단계별로 감별합니다.
             </p>
 
             <div class="space-y-4">
@@ -2189,11 +2646,11 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 대퇴골 수평 이하 성공 (FN):</strong>
-                            팔을 내리니 완벽하게 깊은 스쿼트 완성 ➔ 하지와 골반 문제는 전혀 없으며, <strong>견관절 굴곡 JMD/TED(광배근 단축)</strong> 또는 <strong>흉추 신전 JMD</strong>가 하지를 보상적으로 잠그고 있었음 확진.
+                            팔을 내렸을 때 정상 깊이의 스쿼트 달성 ➔ 하지 및 골반 가동성은 정상이며, <strong>견관절 굴곡 JMD/TED(광배근 단축)</strong> 또는 <strong>흉추 신전 JMD</strong>로 인한 보상작용으로 판정.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 딥 스쿼트 불가 (DN / DP):</strong>
-                            하지 및 족부 자체의 기계적·신경근적 제한 확진 ➔ <strong>Step 2 (뒤꿈치 거상 스쿼트)</strong>로 진행.
+                            하지 및 족부 자체의 기계적·신경근적 제한으로 분류 ➔ <strong>Step 2 (뒤꿈치 거상 스쿼트)</strong>로 진행.
                         </div>
                     </div>
                 </div>
@@ -2208,7 +2665,7 @@
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 뒤꿈치 거상 시 딥 스쿼트 통과:</strong>
-                            <strong>발목 배측굴곡 결핍 확진</strong>. 뒤꿈치를 받쳐 발목 움직임을 대체하자 즉시 통과되었으므로, 스쿼트 실패의 1차 원인은 고관절이 아닌 발목임. <strong>Step 5 (반무릎 족배굴곡 검사)</strong>로 이동하여 JMD와 TED 감별.
+                            <strong>발목 배측굴곡 제한 판정</strong>. 뒤꿈치 거상 시 통과되었으므로 스쿼트 기능이상의 주요 원인은 발목 가동성 결함으로 감별. <strong>Step 5 (반무릎 족배굴곡 검사)</strong>로 이동하여 JMD와 TED 감별.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 실패:</strong>
@@ -2226,8 +2683,8 @@
                     <p class="text-xs mb-2" style="color:var(--ink-2);">단단한 기둥이나 지지봉을 양손으로 가볍게 잡고 체중부하 시 균형 유지를 보조받으며 스쿼트 수행.</p>
                     <div class="flow-decision">
                         <div class="flow-branch">
-                            <strong class="text-green-600"><i class="fas fa-check"></i> 지지 시 완벽한 딥 스쿼트 성공:</strong>
-                            <strong>체중부하 시상면 코어 안정성/모터제어 결함 (SMCD)</strong> 확진. 모든 관절 가동성은 정상이며, 스스로의 체중을 지탱하고 전후 균형을 잡는 신경근 제어만 훈련하면 해결됨.
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 지지 시 정상 깊이 스쿼트 성공:</strong>
+                            <strong>체중부하 시상면 코어 안정성 및 운동제어 결함 (SMCD)</strong>으로 판정. 관절 가동성은 정상이며, 체중부하 상태에서의 전후 균형 및 신경근 제어 재교육이 필요.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 지지해도 대퇴 수평 미달:</strong>
@@ -2240,17 +2697,17 @@
                 <div class="breakout-step-card">
                     <div class="breakout-step-header">
                         <div class="breakout-step-title">Step 4: 앙와위 딥 스쿼트 검사 (Supine Deep Squat Test)</div>
-                        <span class="breakout-badge">무중력 비체중부하 관절 가동성 확인</span>
+                        <span class="breakout-badge">비체중부하 관절 가동성 확인</span>
                     </div>
                     <p class="text-xs mb-2" style="color:var(--ink-2);">바로누운 자세에서 양 무릎을 굽혀 발을 엉덩이 너비로 벌리고 양 무릎을 가슴 외측으로 깊게 당김 (무릎 굴곡 120° 이상, 고관절 굴곡 100° 이상).</p>
                     <div class="flow-decision">
                         <div class="flow-branch">
                             <strong class="text-green-600"><i class="fas fa-check"></i> 완전 굴곡 달성:</strong>
-                            고관절과 슬관절의 수동 가동성은 완전 정상 ➔ <strong>고관절 굴곡근/골반 모터제어 SMCD</strong> 확진.
+                            고관절과 슬관절의 수동 가동성은 정상 ➔ <strong>고관절 굴곡근/골반 운동제어 SMCD</strong>로 판정.
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 굴곡 미달 또는 서혜부 집힘 통증:</strong>
-                            <strong>고관절 전후방 관절낭 JMD(대퇴비구충돌 FAI 의심)</strong> 또는 <strong>단관절 둔근 TED</strong> 확진.
+                            <strong>고관절 전후방 관절낭 JMD(대퇴비구충돌 FAI 의심)</strong> 또는 <strong>단관절 둔근 TED</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -2270,42 +2727,91 @@
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 뒤꿈치 들림 또는 무릎 미달 (DN / DP):</strong>
                             앞쪽 발목 집힘 감각 ➔ <strong>거퇴(Talocrural) 관절낭 전방 JMD</strong>.<br>
-                            종아리 뒤쪽 팽팽한 당김 ➔ <strong>가자미근/아킬레스건 TED</strong> 확진.
+                            종아리 뒤쪽 팽팽한 당김 ➔ <strong>가자미근/아킬레스건 TED</strong>로 판정.
                         </div>
+                    </div>
+                    <div class="flex justify-center mt-3">
+                        
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="발목 WBLT: 벽 10cm 무릎 터치">
+            
+    <!-- Floor & Vertical Wall -->
+    <line x1="20" y1="120" x2="135" y2="120" stroke="currentColor" stroke-width="2"/>
+    <line x1="135" y1="20" x2="135" y2="120" stroke="currentColor" stroke-width="3"/>
+    <!-- 10cm Distance Marker -->
+    <line x1="105" y1="123" x2="135" y2="123" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="108" y="116" fill="#3b82f6" font-size="8" font-weight="700">10cm(4인치)</text>
+    <!-- Foot at 10cm -->
+    <line x1="85" y1="120" x2="105" y2="120" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="85" cy="120" r="3" fill="#10b981"/>
+    <!-- Knee Pressing to Wall Touching Wall at (135, 78) -->
+    <line x1="90" y1="120" x2="135" y2="78" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="135" cy="78" r="3.5" fill="#10b981"/>
+    <!-- Back Kneeling Leg -->
+    <path d="M45,120 L45,95 L85,90" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+    <text x="75" y="65" fill="#10b981" font-size="8" font-weight="700">뒤꿈치 밀착 + 무릎 터치</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">발목 WBLT: 벽 10cm 무릎 터치</div>
+    </div>
+    
                     </div>
                 </div>
             </div>
         </section>
     
         <!-- ========================================================================= -->
-        <!-- [Section 12] 롤링 패턴 하위검사 알고리즘 (Rolling Breakout) -->
+        <!-- [Section 12] 롤링 패턴 하위검사 (Rolling Breakout) -->
         <!-- ========================================================================= -->
         <section id="bo-rolling" class="infographic-section">
-            <h2 class="section-title"><i class="fas fa-sync"></i>롤링 패턴 하위검사 알고리즘 (Rolling Breakout)</h2>
+            <h2 class="section-title"><i class="fas fa-sync"></i>롤링 패턴 하위 검사 분기 절차 (Rolling Breakout)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
-                롤링(구르기)은 인간 발달 4~6개월 차에 획득되는 원초적 회전 패턴으로, <strong>사지와 체간의 해리(Dissociation) 능력과 대각선 나선형 코어(Spiral sling)의 피드포워드 신경근 제어</strong>를 평가하는 SFMA의 궁극적인 모터 컨트롤 검사입니다.
+                롤링(구르기)은 인간 발달 4~6개월 차에 획득되는 원초적 회전 패턴으로, <strong>사지와 체간의 해리(Dissociation) 능력과 대각선 나선형 코어(Spiral sling)의 선행 피드포워드 신경근 제어</strong>를 평가하는 SFMA의 핵심적인 모터 컨트롤 평가 항목입니다.
             </p>
 
-            <!-- 발달학적 배경 및 4대 절대 규칙 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="clinical-feature">
+            <!-- 발달학적 배경 및 4대 평가 원칙 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6 items-center">
+                <div class="md:col-span-5 clinical-feature">
                     <h4 class="font-bold text-sm mb-2 text-slate-800 dark:text-slate-200">
                         <i class="fas fa-baby mr-1"></i>신경발달학적 의의
                     </h4>
                     <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
-                        [사실] 얀다(Janda)와 콜라(Kolar, DNS)의 이론에 따르면, 롤링은 척추를 안정화시키는 심부 내재근(복횡근, 뭇갈래근, 골반저근)이 사지의 움직임보다 먼저 선행 활성화(Feedforward)되어야만 완벽하게 수행될 수 있습니다. 롤링의 결함은 기립 및 스포츠 동작에서의 보상작용과 만성 통증의 근본 원인입니다.
+                        [사실] 얀다(Janda)와 콜라(Kolar, DNS)의 이론에 따르면, 롤링은 척추를 안정화시키는 심부 내재근(복횡근, 뭇갈래근, 골반저근)이 사지의 움직임보다 먼저 선행 활성화(Feedforward)되어야만 원활하게 수행될 수 있습니다. 롤링의 결함은 기립 및 회전 동작에서의 보상작용과 만성 통증의 기저 요인으로 작용합니다.
                     </p>
                 </div>
-                <div class="clinical-feature">
+                <div class="md:col-span-4 clinical-feature">
                     <h4 class="font-bold text-sm mb-2 text-slate-800 dark:text-slate-200">
-                        <i class="fas fa-exclamation-circle mr-1"></i>롤링 평가의 4대 절대 규칙
+                        <i class="fas fa-exclamation-circle mr-1"></i>롤링 평가의 4대 기본 원칙
                     </h4>
                     <ul class="text-xs space-y-1" style="color:var(--ink-2);">
-                        <li><strong>1. 비사용 분절 완전 이완:</strong> 구르는 팔다리 외의 분절은 시체처럼 축 늘어져 있어야 함 (밀기 금지).</li>
-                        <li><strong>2. 반동(Momentum) 불허:</strong> 몸을 튕기거나 흔들어서 탄력으로 넘어가면 불합격.</li>
-                        <li><strong>3. 척추 과신전(Arching) 불허:</strong> 허리를 꺾어 뒤로 젖히며 구르는 보상작용 금지.</li>
-                        <li><strong>4. 시선과 두부의 선행:</strong> 시선과 머리가 먼저 회전 방향을 쳐다보며 동작을 유도해야 함.</li>
+                        <li><strong>1. 비사용 분절 완전 이완:</strong> 구르는 사지 외 분절 밀기 금지.</li>
+                        <li><strong>2. 반동(Momentum) 불허:</strong> 튕김이나 흔들림 금지.</li>
+                        <li><strong>3. 척추 과신전 불허:</strong> 허리 꺾임(Arching) 금지.</li>
+                        <li><strong>4. 시선과 두부의 선행:</strong> 머리가 먼저 회전 유도.</li>
                     </ul>
+                </div>
+                <div class="md:col-span-3 flex justify-center">
+                    
+    <div class="sfma-diagram-box">
+        <svg viewBox="0 0 160 130" class="sfma-svg" xmlns="http://www.w3.org/2000/svg" aria-label="롤링: 사지 선행 & 체간 해리">
+            
+    <!-- Floor -->
+    <line x1="15" y1="110" x2="145" y2="110" stroke="currentColor" stroke-width="2"/>
+    <!-- Body Rolling Axis Diagonal -->
+    <line x1="30" y1="102" x2="110" y2="85" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Upper Body Lead Rotation Arrow -->
+    <path d="M95,85 Q115,55 85,45" stroke="#ef4444" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <polygon points="85,42 80,48 88,49" fill="#ef4444"/>
+    <!-- Inactive Segments Relaxed Marker -->
+    <circle cx="45" cy="102" r="3.5" fill="#3b82f6"/>
+    <text x="24" y="60" fill="#ef4444" font-size="8" font-weight="700">사지 선행 리드</text>
+    <text x="24" y="70" fill="currentColor" font-size="8">비사용 사지 이완</text>
+    <text x="24" y="80" fill="#10b981" font-size="8" font-weight="600">반동·허리꺾임 불허</text>
+    
+        </svg>
+        <div class="sfma-diagram-caption">롤링: 사지 선행 & 체간 해리</div>
+    </div>
+    
                 </div>
             </div>
 
@@ -2328,7 +2834,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 다리로 밀거나 반동:</strong>
-                            <strong>상부 체간 회전 SMCD</strong> 확진. 경추 굴곡-회전 타이밍 결함.
+                            <strong>상부 체간 회전 SMCD</strong>로 판정. 경추 굴곡-회전 타이밍 결함.
                         </div>
                     </div>
                 </div>
@@ -2349,7 +2855,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 팔로 바닥을 밀거나 멈춤:</strong>
-                            <strong>골반-요추 회전 분리 SMCD</strong> 확진. 장요근/복횡근 동원 실패.
+                            <strong>골반-요추 회전 분리 SMCD</strong>로 판정. 장요근/복횡근 동원 실패.
                         </div>
                     </div>
                 </div>
@@ -2391,7 +2897,7 @@
                         </div>
                         <div class="flow-branch">
                             <strong class="text-red-600"><i class="fas fa-times"></i> 발 튕기기, 요추 힌지 발생:</strong>
-                            <strong>대둔근 단독 신전 결핍 및 둔부-체간 SMCD</strong> 확진.
+                            <strong>대둔근 단독 신전 결핍 및 둔부-체간 SMCD</strong>로 판정.
                         </div>
                     </div>
                 </div>
@@ -2399,8 +2905,8 @@
 
             <!-- 임상적 처방 가이드 -->
             <div class="mt-4 p-3.5 rounded-lg border border-slate-200 text-xs" style="background:var(--surface);color:var(--ink-2);">
-                <strong><i class="fas fa-magic mr-1"></i>롤링 기능제한 시 4x4 교정운동 처방:</strong><br>
-                롤링이 불가능한 사분면(Quadrant)은 <strong>4x4 매트릭스의 포지션 1 (누운 자세), 로드 1 (보조 하 롤링: Assisted Rolling with band/roller)</strong>을 적용하여 뇌에 올바른 회전성 모터 프로그램을 재입력합니다.
+                <strong><i class="fas fa-clipboard-list mr-1"></i>롤링 기능이상 시 4x4 운동 처방:</strong><br>
+                롤링이 제한되는 분절/사분면(Quadrant)은 <strong>4x4 매트릭스의 포지션 1 (누운 자세), 로드 1 (보조 하 롤링: Assisted Rolling with band/roller)</strong>을 적용하여 올바른 회전성 운동 제어 패턴을 재학습시킵니다.
             </div>
         </section>
     
@@ -2410,7 +2916,7 @@
         <section id="treatment" class="infographic-section">
             <h2 class="section-title"><i class="fas fa-th-large"></i>SFMA 치료 가이드라인 및 4x4 매트릭스 (Treatment Guidelines)</h2>
             <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
-                SFMA의 치료 철학은 <strong>Reset(재설정) ➔ Reinforce(강화/보존) ➔ Reload(재적재)</strong>의 엄격한 3단계 프로세스를 따릅니다. 관절 가동성(JMD)이나 조직 신장성(TED)을 먼저 수동으로 해결한 후, 4x4 매트릭스를 통해 신경계에 올바른 움직임 프로그램을 다시 학습시킵니다.
+                SFMA의 치료 접근은 <strong>Reset(재설정) ➔ Reinforce(보존) ➔ Reload(재적재)</strong>의 3단계 순서에 따라 진행합니다. 관절 가동성(JMD)이나 조직 신장성(TED)을 먼저 도수 중재로 해결한 후, 4x4 매트릭스를 통해 신경계에 올바른 움직임 패턴을 재학습시킵니다.
             </p>
 
             <!-- 3단계 치료 프로세스 카드 -->
@@ -2419,7 +2925,7 @@
                     <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Stage 1</div>
                     <div class="text-2xl font-bold mt-1" style="color:var(--ink);">Reset (재설정)</div>
                     <p class="text-xs mt-2" style="color:var(--ink-2);word-break:keep-all;">
-                        [가동성 해결] 관절 가동술(Mobilization), 관절 조작(Manipulation), 근막 이완술(IASTM/MFR), 드라이 니들링, 능동적 신경가동술을 통해 하드웨어의 기계적 가동성 장애(TED/JMD)를 즉각 해소합니다.
+                        [가동성 해결] 관절 가동술(Mobilization), 관절 조작(Manipulation), 근막 이완술(IASTM/MFR), 드라이 니들링, 능동적 신경가동술을 통해 관절 및 연부조직의 기계적 가동성 제한(TED/JMD)을 중재합니다.
                     </p>
                 </div>
                 <div class="stat-card">
@@ -2433,52 +2939,54 @@
                     <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Stage 3</div>
                     <div class="text-2xl font-bold mt-1" style="color:var(--ink);">Reload (재적재)</div>
                     <p class="text-xs mt-2" style="color:var(--ink-2);word-break:keep-all;">
-                        [운동 제어 재교육] 4x4 매트릭스의 발달학적 자세 진도(누운자세 ➔ 네발기기 ➔ 무릎서기 ➔ 기립)와 저항 진도(보조 ➔ 능동 ➔ 부하 ➔ 동적)에 따라 신경계에 최적의 모터 제어를 프로그래밍합니다.
+                        [운동 제어 재교육] 4x4 매트릭스의 발달학적 자세 진도(누운자세 ➔ 네발기기 ➔ 무릎서기 ➔ 기립)와 저항 진도(보조 ➔ 능동 ➔ 부하 ➔ 동적)에 따라 신경계의 올바른 운동 제어 패턴을 재학습시킵니다.
                     </p>
                 </div>
             </div>
 
-            <!-- 4x4 매트릭스 인터랙티브 설명 및 테이블 -->
-            <h3 class="subsection-title"><i class="fas fa-table"></i>4x4 교정운동 매트릭스 (Interactive Matrix)</h3>
+            <!-- 4x4 매트릭스 설명 및 테이블 -->
+            <h3 class="subsection-title"><i class="fas fa-table"></i>4x4 운동 매트릭스 (Exercise Progression Matrix)</h3>
             <p class="text-xs text-slate-500 mb-3" style="word-break:keep-all;">
-                아래 4x4 매트릭스의 각 셀을 클릭하면, 해당 포지션과 부하 단계에 최적화된 구체적인 교정운동 프로토콜과 임상 목적이 하단 디테일 박스에 표시됩니다.
+                아래 4x4 매트릭스의 각 셀을 클릭하면, 해당 단계의 대표 운동 프로토콜과 적용 목적이 하단 박스에 표시됩니다.
             </p>
 
-            <div class="matrix-4x4-grid">
-                <!-- Header Row -->
-                <div class="matrix-header">자세 \ 부하</div>
-                <div class="matrix-header">1. 보조 (Assisted)<br><span class="text-xs font-normal">도구/치료사 보조</span></div>
-                <div class="matrix-header">2. 능동 (Active)<br><span class="text-xs font-normal">자체 체중 제어</span></div>
-                <div class="matrix-header">3. 부하 (Loaded)<br><span class="text-xs font-normal">외력 저항 추가</span></div>
-                <div class="matrix-header">4. 동적 (Dynamic)<br><span class="text-xs font-normal">외란/속도 반응</span></div>
+            <div class="matrix-4x4-wrapper">
+                <div class="matrix-4x4-grid">
+                    <!-- Header Row -->
+                    <div class="matrix-header">자세 \ 부하</div>
+                    <div class="matrix-header">1. 보조 (Assisted)<br><span class="text-xs font-normal">도구/치료사 보조</span></div>
+                    <div class="matrix-header">2. 능동 (Active)<br><span class="text-xs font-normal">자체 체중 제어</span></div>
+                    <div class="matrix-header">3. 부하 (Loaded)<br><span class="text-xs font-normal">외력 저항 추가</span></div>
+                    <div class="matrix-header">4. 동적 (Dynamic)<br><span class="text-xs font-normal">외란/속도 반응</span></div>
 
-                <!-- Position 1 -->
-                <div class="matrix-header">1. 누운 자세<br><span class="text-xs font-normal">Supine/Prone</span></div>
-                <div class="matrix-cell" data-pos="1" data-load="1"><strong>1 × 1</strong><br><span class="text-xs text-slate-500">패시브 롤링, 호흡 리셋</span></div>
-                <div class="matrix-cell" data-pos="1" data-load="2"><strong>1 × 2</strong><br><span class="text-xs text-slate-500">데드버그, 능동 롤링</span></div>
-                <div class="matrix-cell" data-pos="1" data-load="3"><strong>1 × 3</strong><br><span class="text-xs text-slate-500">밴드 저항 레그 로우어</span></div>
-                <div class="matrix-cell" data-pos="1" data-load="4"><strong>1 × 4</strong><br><span class="text-xs text-slate-500">빠른 복와위 회전 전환</span></div>
+                    <!-- Position 1 -->
+                    <div class="matrix-header">1. 누운 자세<br><span class="text-xs font-normal">Supine/Prone</span></div>
+                    <div class="matrix-cell" data-pos="1" data-load="1"><strong>1 × 1</strong><br><span class="text-xs text-slate-500">패시브 롤링, 호흡 리셋</span></div>
+                    <div class="matrix-cell" data-pos="1" data-load="2"><strong>1 × 2</strong><br><span class="text-xs text-slate-500">데드버그, 능동 롤링</span></div>
+                    <div class="matrix-cell" data-pos="1" data-load="3"><strong>1 × 3</strong><br><span class="text-xs text-slate-500">밴드 저항 레그 로우어</span></div>
+                    <div class="matrix-cell" data-pos="1" data-load="4"><strong>1 × 4</strong><br><span class="text-xs text-slate-500">빠른 복와위 회전 전환</span></div>
 
-                <!-- Position 2 -->
-                <div class="matrix-header">2. 네발기기<br><span class="text-xs font-normal">Quadruped</span></div>
-                <div class="matrix-cell" data-pos="2" data-load="1"><strong>2 × 1</strong><br><span class="text-xs text-slate-500">밴드 보조 락백</span></div>
-                <div class="matrix-cell" data-pos="2" data-load="2"><strong>2 × 2</strong><br><span class="text-xs text-slate-500">버드독, 흉추 회전</span></div>
-                <div class="matrix-cell" data-pos="2" data-load="3"><strong>2 × 3</strong><br><span class="text-xs text-slate-500">버드독 케틀벨 로우</span></div>
-                <div class="matrix-cell" data-pos="2" data-load="4"><strong>2 × 4</strong><br><span class="text-xs text-slate-500">베어 크롤 기어가기</span></div>
+                    <!-- Position 2 -->
+                    <div class="matrix-header">2. 네발기기<br><span class="text-xs font-normal">Quadruped</span></div>
+                    <div class="matrix-cell" data-pos="2" data-load="1"><strong>2 × 1</strong><br><span class="text-xs text-slate-500">밴드 보조 락백</span></div>
+                    <div class="matrix-cell" data-pos="2" data-load="2"><strong>2 × 2</strong><br><span class="text-xs text-slate-500">버드독, 흉추 회전</span></div>
+                    <div class="matrix-cell" data-pos="2" data-load="3"><strong>2 × 3</strong><br><span class="text-xs text-slate-500">버드독 케틀벨 로우</span></div>
+                    <div class="matrix-cell" data-pos="2" data-load="4"><strong>2 × 4</strong><br><span class="text-xs text-slate-500">베어 크롤 기어가기</span></div>
 
-                <!-- Position 3 -->
-                <div class="matrix-header">3. 무릎서기<br><span class="text-xs font-normal">Kneeling/Half</span></div>
-                <div class="matrix-cell" data-pos="3" data-load="1"><strong>3 × 1</strong><br><span class="text-xs text-slate-500">지지봉 하프닐링 밸런스</span></div>
-                <div class="matrix-cell" data-pos="3" data-load="2"><strong>3 × 2</strong><br><span class="text-xs text-slate-500">자유 하프닐링 체간 회전</span></div>
-                <div class="matrix-cell" data-pos="3" data-load="3"><strong>3 × 3</strong><br><span class="text-xs text-slate-500">케이블 촙 & 리프트</span></div>
-                <div class="matrix-cell" data-pos="3" data-load="4"><strong>3 × 4</strong><br><span class="text-xs text-slate-500">런지 반사 전환 훈련</span></div>
+                    <!-- Position 3 -->
+                    <div class="matrix-header">3. 무릎서기<br><span class="text-xs font-normal">Kneeling/Half</span></div>
+                    <div class="matrix-cell" data-pos="3" data-load="1"><strong>3 × 1</strong><br><span class="text-xs text-slate-500">지지봉 하프닐링 밸런스</span></div>
+                    <div class="matrix-cell" data-pos="3" data-load="2"><strong>3 × 2</strong><br><span class="text-xs text-slate-500">자유 하프닐링 체간 회전</span></div>
+                    <div class="matrix-cell" data-pos="3" data-load="3"><strong>3 × 3</strong><br><span class="text-xs text-slate-500">케이블 촙 & 리프트</span></div>
+                    <div class="matrix-cell" data-pos="3" data-load="4"><strong>3 × 4</strong><br><span class="text-xs text-slate-500">런지 반사 전환 훈련</span></div>
 
-                <!-- Position 4 -->
-                <div class="matrix-header">4. 선 자세<br><span class="text-xs font-normal">Standing</span></div>
-                <div class="matrix-cell" data-pos="4" data-load="1"><strong>4 × 1</strong><br><span class="text-xs text-slate-500">TRX 서스펜션 스쿼트</span></div>
-                <div class="matrix-cell" data-pos="4" data-load="2"><strong>4 × 2</strong><br><span class="text-xs text-slate-500">맨몸 스쿼트, 싱글 데드리프트</span></div>
-                <div class="matrix-cell" data-pos="4" data-load="3"><strong>4 × 3</strong><br><span class="text-xs text-slate-500">케틀벨 스윙, 파머스 캐리</span></div>
-                <div class="matrix-cell" data-pos="4" data-load="4"><strong>4 × 4</strong><br><span class="text-xs text-slate-500">플라이오메트릭 점프/착지</span></div>
+                    <!-- Position 4 -->
+                    <div class="matrix-header">4. 선 자세<br><span class="text-xs font-normal">Standing</span></div>
+                    <div class="matrix-cell" data-pos="4" data-load="1"><strong>4 × 1</strong><br><span class="text-xs text-slate-500">TRX 서스펜션 스쿼트</span></div>
+                    <div class="matrix-cell" data-pos="4" data-load="2"><strong>4 × 2</strong><br><span class="text-xs text-slate-500">맨몸 스쿼트, 싱글 데드리프트</span></div>
+                    <div class="matrix-cell" data-pos="4" data-load="3"><strong>4 × 3</strong><br><span class="text-xs text-slate-500">케틀벨 스윙, 파머스 캐리</span></div>
+                    <div class="matrix-cell" data-pos="4" data-load="4"><strong>4 × 4</strong><br><span class="text-xs text-slate-500">플라이오메트릭 점프/착지</span></div>
+                </div>
             </div>
 
             <!-- 매트릭스 상세 인터랙티브 박스 -->
@@ -2725,12 +3233,39 @@
       });
     })();
 
-    // 3. 네비게이션 활성화 연동
+    // 3. 스마트 스티키 네비게이션 (스크롤 다운 시 숨김, 스크롤 업 시 노출) & 섹션 연동
     (function() {
+      var nav = document.getElementById("stickyNav");
       var navLinks = document.querySelectorAll(".nav-container a");
       var sections = document.querySelectorAll("section[id]");
+      var lastScrollY = window.scrollY;
+      var threshold = 8; // 미세 스크롤 무시 임계값
+
       window.addEventListener("scroll", function() {
-        var scrollPos = window.scrollY + 120;
+        var currentScrollY = window.scrollY;
+
+        // 3-1. 스마트 스티키 네비게이션 동작 (Show on scroll up, Hide on scroll down)
+        if (nav) {
+          if (currentScrollY <= 120) {
+            // 최상단 근처에서는 항상 노출
+            nav.classList.remove("nav-hidden");
+            nav.classList.add("nav-visible");
+          } else if (Math.abs(currentScrollY - lastScrollY) > threshold) {
+            if (currentScrollY > lastScrollY) {
+              // 스크롤 다운 ➔ 네비게이션 바 숨김 (본문 가독성 극대화)
+              nav.classList.remove("nav-visible");
+              nav.classList.add("nav-hidden");
+            } else {
+              // 스크롤 업 ➔ 네비게이션 바 즉시 복원
+              nav.classList.remove("nav-hidden");
+              nav.classList.add("nav-visible");
+            }
+          }
+        }
+        lastScrollY = currentScrollY;
+
+        // 3-2. 현재 보고 있는 섹션 하이라이트 및 모바일 가로 탭 자동 스크롤
+        var scrollPos = currentScrollY + 140;
         sections.forEach(function(sec) {
           var top = sec.offsetTop;
           var height = sec.offsetHeight;
@@ -2738,17 +3273,23 @@
           if (scrollPos >= top && scrollPos < top + height) {
             navLinks.forEach(function(link) {
               if (link.getAttribute("href") === "#" + id) {
-                link.classList.add("active");
+                if (!link.classList.contains("active")) {
+                  link.classList.add("active");
+                  // 모바일 가로 탭 바에서 현재 활성 탭을 화면 중앙으로 자동 정렬
+                  if (window.innerWidth <= 768 && link.scrollIntoView) {
+                    link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                  }
+                }
               } else {
                 link.classList.remove("active");
               }
             });
           }
         });
-      });
+      }, { passive: true });
     })();
 
-    // 4. SFMA 15개 패턴 인터랙티브 실시간 채점 엔진
+    // 4. SFMA 15개 항목 상위검사 채점 및 하위검사 분기 로직
     (function() {
       var DATA = {
         patterns: [
@@ -2827,35 +3368,35 @@
           else if (s === "fn") fnList.push(pat);
         });
 
-        var html = "<strong>채점 현황:</strong> 총 15개 지표 중 " + (15 - unselected) + "개 완료 (FN: " + fnList.length + ", DN: " + dnList.length + ", FP: " + fpList.length + ", DP: " + dpList.length + ")<br>";
+        var html = "<strong>채점 현황:</strong> 총 15개 항목 중 " + (15 - unselected) + "개 완료 (FN: " + fnList.length + ", DN: " + dnList.length + ", FP: " + fpList.length + ", DP: " + dpList.length + ")<br>";
         
         actionsEl.innerHTML = "";
 
         if (dnList.length > 0) {
-          html += "<span class='text-blue-600 dark:text-blue-400 font-bold'>[제1순위 교정 타깃]</span> 통증 없는 기능제한(DN)이 <strong>" + dnList.length + "개</strong> 발견되었습니다. 가장 먼저 하위검사를 수행하고 4x4 교정운동을 적용하십시오.<br>";
+          html += "<span class='text-blue-600 dark:text-blue-400 font-bold'>[치료 1순위]</span> 통증 없는 기능이상(DN) <strong>" + dnList.length + "개</strong>: 우선적으로 하위 검사(Breakout)를 진행하여 TED/JMD/SMCD를 감별하고 4x4 매트릭스를 적용합니다.<br>";
           dnList.forEach(function(p) {
             var item = document.createElement("div");
             item.className = "p-2.5 rounded-lg flex items-center justify-between";
             item.style.background = "var(--surface)";
             item.style.border = "1px solid var(--c-primary-border)";
             item.innerHTML = "<div><span class='font-bold text-blue-600 dark:text-blue-400 mr-2'>[DN 최우선]</span>" + p.name + "</div>" +
-                             "<a href='#" + p.breakout + "' class='px-3 py-1 rounded text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition'>하위검사 바로가기 ➔</a>";
+                             "<a href='#" + p.breakout + "' class='px-3 py-1 rounded text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition'>하위 검사 이동</a>";
             actionsEl.appendChild(item);
           });
         }
 
         if (fpList.length > 0) {
-          html += "<span class='text-amber-600 dark:text-amber-400 font-bold mt-2 inline-block'>[제2순위 추적]</span> 기능적 유통(FP) 패턴 <strong>" + fpList.length + "개</strong>는 치료 경과의 호전 여부를 평가하는 모니터링 재평가 지표로 활용합니다.<br>";
+          html += "<span class='text-amber-600 dark:text-amber-400 font-bold mt-2 inline-block'>[모니터링]</span> 기능적 유통(FP) <strong>" + fpList.length + "개</strong>: 중재 경과를 확인하는 재평가 지표로 활용합니다.<br>";
         }
 
         if (dpList.length > 0) {
-          html += "<span class='text-red-600 dark:text-red-400 font-bold mt-2 inline-block'>[제3순위 주의]</span> 기능제한 유통(DP) 패턴 <strong>" + dpList.length + "개</strong>는 급성 염증 악화를 방지하기 위해 마지막에 다루며, 도수치료 및 의료 장비 중재를 우선 고려하십시오.";
+          html += "<span class='text-red-600 dark:text-red-400 font-bold mt-2 inline-block'>[치료 후순위]</span> 기능이상 유통(DP) <strong>" + dpList.length + "개</strong>: 통증 유발을 줄이기 위해 DN 문제를 먼저 해결한 후 다루며, 필요 시 통증 완화 중재를 병행합니다.";
         }
 
         if (unselected === 15) {
-          html = "검사 항목의 점수를 선택하면 실시간 분석 결과가 여기에 표시됩니다.";
+          html = "검사 항목의 결과를 선택하면 우선순위와 하위 검사 진입 경로가 표시됩니다.";
         } else if (dnList.length === 0 && fpList.length === 0 && dpList.length === 0 && unselected === 0) {
-          html += "<span class='text-green-600 dark:text-green-400 font-bold'>[완전 정상]</span> 모든 상위검사 패턴이 FN(기능적 무통)으로 합격하였습니다. FMS 스크리닝 또는 스포츠 퍼포먼스(Y-Balance) 평가로 진행하십시오.";
+          html += "<span class='text-green-600 dark:text-green-400 font-bold'>[정상 패턴]</span> 모든 상위 검사가 FN(기능적 무통)으로 통과되었습니다. FMS 스크리닝 또는 퍼포먼스 검사로 이행할 수 있습니다.";
         }
 
         summaryEl.innerHTML = html;
@@ -2880,22 +3421,22 @@
       var dText = document.getElementById("matrixDetailText");
 
       var matrixData = {
-        "1-1": { title: "포지션 1 × 로드 1 (Supine/Prone, Assisted)", desc: "바닥에 완전히 누운 상태에서 도구(폼롤러, 밴드)나 치료사의 보조를 받아 수행. 횡격막 호흡 유도 및 패시브 롤링을 통해 뇌의 회전성 코어 반사를 초기화(Reset)합니다." },
-        "1-2": { title: "포지션 1 × 로드 2 (Supine/Prone, Active)", desc: "중력 부하가 최소화된 누운 자세에서 외부 보조 없이 자신의 힘으로 사지 제어. 데드버그(Deadbug), 프론 버드독 변형, 능동 롤링 패턴을 완성합니다." },
+        "1-1": { title: "포지션 1 × 로드 1 (Supine/Prone, Assisted)", desc: "바닥에 누운 상태에서 도구(폼롤러, 밴드)나 치료사의 보조를 받아 수행. 횡격막 호흡 유도 및 패시브 롤링을 통해 회전성 코어 안정화 패턴을 촉진합니다." },
+        "1-2": { title: "포지션 1 × 로드 2 (Supine/Prone, Active)", desc: "중력 부하가 최소화된 누운 자세에서 외부 보조 없이 자체 힘으로 사지 제어. 데드버그(Deadbug), 프론 버드독 변형, 능동 롤링 패턴을 연습합니다." },
         "1-3": { title: "포지션 1 × 로드 3 (Supine/Prone, Loaded)", desc: "누운 자세에서 밴드 또는 덤벨 저항을 추가하여 척추 중립을 유지한 채 코어 토크 및 사지 신장성 부하를 견디는 능력을 향상시킵니다." },
-        "1-4": { title: "포지션 1 × 로드 4 (Supine/Prone, Dynamic)", desc: "앙와위에서 복와위로의 빠른 방향 전환 롤링, 메디신볼 가슴 패스 등 누운 자세에서의 가속 및 감속 제어를 훈련합니다." },
+        "1-4": { title: "포지션 1 × 로드 4 (Supine/Prone, Dynamic)", desc: "앙와위에서 복와위로의 방향 전환 롤링, 메디신볼 가슴 패스 등 누운 자세에서의 가속 및 감속 제어를 훈련합니다." },
         "2-1": { title: "포지션 2 × 로드 1 (Quadruped, Assisted)", desc: "네발기기 자세에서 무릎 아래 패드를 대거나 탄성 밴드로 복부를 받쳐 척추 중립 유지를 돕는 락백(Rock-back) 운동을 시행합니다." },
         "2-2": { title: "포지션 2 × 로드 2 (Quadruped, Active)", desc: "자유 네발기기 자세에서 반대측 팔다리를 교차 신전하는 버드독(Bird-Dog) 및 요추잠금 흉추 회전 운동을 통해 체간-고관절 해리를 촉진합니다." },
         "2-3": { title: "포지션 2 × 로드 3 (Quadruped, Loaded)", desc: "네발기기 자세에서 밴드 저항을 걸거나 케틀벨을 당기는 버드독 로우(Bird-Dog Row)를 통해 회전 저항 코어 안정성을 강화합니다." },
-        "2-4": { title: "포지션 2 × 로드 4 (Quadruped, Dynamic)", desc: "무릎을 바닥에서 2cm 살짝 띄운 베어 크롤(Bear Crawl) 전진/후진 기어다니기를 통해 다방향 동적 안정성을 완성합니다." },
+        "2-4": { title: "포지션 2 × 로드 4 (Quadruped, Dynamic)", desc: "무릎을 바닥에서 2cm 살짝 띄운 베어 크롤(Bear Crawl) 전진/후진 기어가기를 통해 다방향 동적 안정성을 훈련합니다." },
         "3-1": { title: "포지션 3 × 로드 1 (Kneeling, Assisted)", desc: "벽이나 지지봉을 잡고 반무릎자세(Half-kneeling)를 유지하며 골반 전후방 안정성과 장요근 신장 감각을 안전하게 학습합니다." },
         "3-2": { title: "포지션 3 × 로드 2 (Kneeling, Active)", desc: "외부 지지 없이 반무릎 자세에서 양팔을 머리 위로 올리거나 체간 회전을 수행하여 골반-척추 해리(Dissociation)를 능동 제어합니다." },
         "3-3": { title: "포지션 3 × 로드 3 (Kneeling, Loaded)", desc: "반무릎 자세에서 케이블 또는 밴드를 이용한 촙 앤 리프트(Chop & Lift), 팔로프 프레스(Pallof Press)를 시행하여 3차원 회전 저항을 적재합니다." },
         "3-4": { title: "포지션 3 × 로드 4 (Kneeling, Dynamic)", desc: "반무릎 자세에서 즉시 일어서는 동적 런지 전환 및 불안정한 에어렉스 패드 위에서의 회전 충격 흡수 훈련을 진행합니다." },
-        "4-1": { title: "포지션 4 × 로드 1 (Standing, Assisted)", desc: "선 자세에서 TRX 서스펜션 또는 막대를 잡고 스쿼트나 힌지를 수행하여 체중부하 상태의 적절한 관절 궤적을 뇌에 프로그래밍합니다." },
-        "4-2": { title: "포지션 4 × 로드 2 (Standing, Active)", desc: "체중부하 기립 자세에서 보조 없이 완전한 가동범위의 맨몸 딥 스쿼트, 싱글 레그 데드리프트(SLDL)를 완벽한 정렬로 수행합니다." },
+        "4-1": { title: "포지션 4 × 로드 1 (Standing, Assisted)", desc: "선 자세에서 TRX 서스펜션 또는 막대를 잡고 스쿼트나 힌지를 수행하여 체중부하 상태에서의 올바른 관절 정렬과 움직임 경로를 습득합니다." },
+        "4-2": { title: "포지션 4 × 로드 2 (Standing, Active)", desc: "체중부하 기립 자세에서 보조 없이 완전한 가동범위의 맨몸 딥 스쿼트, 싱글 레그 데드리프트(SLDL)를 올바른 정렬로 수행합니다." },
         "4-3": { title: "포지션 4 × 로드 3 (Standing, Loaded)", desc: "케틀벨 스윙, 고중량 힌지, 비대칭 수트케이스 캐리(Suitcase Carry)를 통해 전신에 걸친 실전 고강도 안정화 부하를 적재합니다." },
-        "4-4": { title: "포지션 4 × 로드 4 (Standing, Dynamic)", desc: "박스 점프, 한발 착지, 스포츠 특이적 다방향 감속 및 플라이오메트릭(Plyometric) 운동으로 완전한 일상 및 스포츠 복귀를 달성합니다." }
+        "4-4": { title: "포지션 4 × 로드 4 (Standing, Dynamic)", desc: "박스 점프, 한발 착지, 스포츠 특이적 다방향 감속 및 플라이오메트릭(Plyometric) 운동으로 기능적 활동 및 스포츠 동작으로의 전환을 도모합니다." }
       };
 
       cells.forEach(function(cell) {
