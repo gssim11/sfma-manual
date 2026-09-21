@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFMA™ 선택적 기능 움직임 평가 완결 임상 지침서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* === [완전 오프라인] FontAwesome 6.5.1 인라인 서브셋 (사용 아이콘 62종만) === */
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(data:font/woff2;base64,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) format("woff2");}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(data:font/woff2;base64,d09GMgABAAAAAAKUAAoAAAAABWwAAAJOAwUDAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANMqDWAE2AiQDCMsGBCAFgygHIBu7BCAuB+zG8RtCEYJuexmiEN6bd1TG27OIWoII/v9/v7bPfTLmqFZxS5DxkiZFUmL9SCRUOo01+R/Ma0rh4ujmPHfiwa7YP/3R3CYmP5O2HW6hJTwlWqFCIh9SNC4AJH5kyD2z5pHXX3WN9X7+mnq8tR0uC3hK7x+tggrn0RrRxtnapE0+3WRM6SfKMPz0f0An4PWjEUAXegHh+GF18r28RnA4vSqW3d9f8t/xUEmBvjmBIABt41dgBAIY4IAmHIk4wQgEj8nTkf7bFYVTUAACpImlhD6ayNcXJtcA1E1d5CwjeMtyHXw4mE4s4+y0AsTAELzNZWqg0trUL8RYAAzySAFEjpSZQoRtCh5UwAh6oO0NUwLq6e0CVMMkdOPpxMqYpZ2Wig/nAWLwz0AIMJ1qTYgGP/x6ZflqfTxurvIM79u+C5kImZao66pcQ1HbRkiX1e7f4rj5WPap0ZvkQlRV9TxVw7WR+8zTYgDEumS16yKEoiBnDt/LYlHmeYmcC3w2spCX7phSpVw1DFU1AITTNEV9kJmPJakUfVeRl8UB2waxIoZJo+A8ELjguOqtprLx5UQD4LfZcHj6P1uALJdb8JNZra3YByBc3tQGQ/9nXMv8k5sIrMrwCEc+ByxAhnyxROUbZT74jj2PXF/GDzz5PSoykxjz7A6eTka9wQUg1SggtNvI53Pctc52qzblALoxQydEWCUQ710tynhkY5l/laPjaXiSQuvkbLTbAINBwRNJJAaJyaAB5Ib5N+u1wSYmamqiZtY/UR3XOo4D) format("woff2");}
+.fa,.fas,.fa-solid,.far,.fa-regular{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto;}
+.fas,.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900;}
+.far,.fa-regular{font-family:"Font Awesome 6 Free";font-weight:400;}
+.fa-lg{font-size:1.25em;line-height:.05em;vertical-align:-.075em;}
+.fa-fw{text-align:center;width:1.25em;}
+.fa-arrow-up:before{content:"\f062"}.fa-baby:before{content:"\f77c"}.fa-baby-carriage:before{content:"\f77d"}.fa-bolt:before{content:"\f0e7"}.fa-bone:before{content:"\f5d7"}.fa-book-medical:before{content:"\f7e6"}.fa-bookmark:before{content:"\f02e"}.fa-brain:before{content:"\f5dc"}.fa-bullseye:before{content:"\f140"}.fa-chart-bar:before{content:"\f080"}.fa-chart-line:before{content:"\f201"}.fa-chart-pie:before{content:"\f200"}.fa-clipboard-check:before{content:"\f46c"}.fa-clipboard-list:before{content:"\f46d"}.fa-code-branch:before{content:"\f126"}.fa-cogs:before{content:"\f085"}.fa-cubes:before{content:"\f1b3"}.fa-diagram-project:before{content:"\f542"}.fa-dna:before{content:"\f471"}.fa-dumbbell:before{content:"\f44b"}.fa-exclamation-circle:before{content:"\f06a"}.fa-exclamation-triangle:before{content:"\f071"}.fa-face-meh:before{content:"\f11a"}.fa-file-medical:before{content:"\f477"}.fa-gauge-high:before{content:"\f625"}.fa-hand-back-fist:before{content:"\f255"}.fa-hands:before{content:"\f2a7"}.fa-heart-pulse:before{content:"\f21e"}.fa-layer-group:before{content:"\f5fd"}.fa-lightbulb:before{content:"\f0eb"}.fa-microscope:before{content:"\f610"}.fa-notes-medical:before{content:"\f481"}.fa-pen:before{content:"\f304"}.fa-pen-alt:before{content:"\f305"}.fa-pencil-alt:before{content:"\f303"}.fa-person-falling:before{content:"\e546"}.fa-person-stretching:before{content:"\f554"}.fa-person-walking:before{content:"\f554"}.fa-print:before{content:"\f02f"}.fa-procedures:before{content:"\f487"}.fa-robot:before{content:"\f544"}.fa-rotate-left:before{content:"\f2ea"}.fa-route:before{content:"\f4d7"}.fa-ruler:before{content:"\f545"}.fa-scale-balanced:before{content:"\f24e"}.fa-scale-unbalanced:before{content:"\f515"}.fa-search:before{content:"\f002"}.fa-shoe-prints:before{content:"\f54b"}.fa-sitemap:before{content:"\f0e8"}.fa-smile-beam:before{content:"\f5b8"}.fa-stairs:before{content:"\e289"}.fa-stethoscope:before{content:"\f0f1"}.fa-tags:before{content:"\f02c"}.fa-timeline:before{content:"\e29c"}.fa-triangle-exclamation:before{content:"\f071"}.fa-up-down:before{content:"\f338"}.fa-user-md:before{content:"\f0f0"}.fa-vial:before{content:"\f492"}.fa-virus:before{content:"\e074"}.fa-virus-covid:before{content:"\e4a8"}.fa-walking:before{content:"\f554"}.fa-wheelchair:before{content:"\f193"}
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .infographic-section {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .highlight {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+        .emphasis {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .subsection-title i {
+            margin-right: 0.75rem;
+            color: #3b82f6;
+        }
+        .stat-card {
+            background-color: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .clinical-feature {
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .clinical-pearl {
+            background-color: #fffaeb;
+            border-left: 5px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .exam-tip {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* --- Navigation Bar New Styles --- */
+        nav {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        nav a {
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            background-color: #f1f5f9; /* slate-200 */
+            color: #334155; /* slate-700 */
+            white-space: nowrap;
+        }
+        nav a:hover {
+            background-color: #dbeafe; /* blue-200 */
+            color: #1e40af; /* blue-800 */
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07);
+        }
+        nav a.active {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            transform: translateY(-1px);
+        }
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        nav a.ai-support-link {
+            background-color: #e0e7ff; /* indigo-200 */
+            color: #3730a3; /* indigo-800 */
+            font-weight: 700;
+        }
+        nav a.ai-support-link:hover {
+            background-color: #c7d2fe; /* indigo-300 */
+            color: #312e81; /* indigo-900 */
+        }
+
+        /* --- Scroll to Top Button --- */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #2563eb;
+            color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+        #scrollTopBtn.show {
+            display: flex;
+        }
+        #scrollTopBtn:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.1);
+        }
+
+        /* --- Search Bar Styles --- */
+        .search-container {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        #no-results {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: #fffbeb;
+            border-radius: 1rem;
+            color: #b45309;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        .hidden-section {
+            display: none;
+        }
+
+        /* --- Gemini AI Feature Styles --- */
+        .gemini-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .gemini-btn {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+        }
+        .gemini-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(59, 130, 246, 0.3);
+        }
+        .gemini-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* --- Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: transform 0.3s;
+        }
+        .modal-overlay.show .modal-container {
+            transform: scale(1);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #9ca3af;
+        }
+        .modal-close-btn:hover {
+            color: #1f2937;
+        }
+        
+        /* Markdown Renderer Styles */
+        .modal-content {
+            line-height: 1.7;
+            color: #334155;
+        }
+        .modal-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .modal-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .modal-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal-content ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal-content li {
+            margin-bottom: 0.25rem;
+        }
+        .modal-content strong {
+            color: #1e3a8a;
+        }
+        .modal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .modal-content th, .modal-content td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .modal-content th {
+            background-color: #f8fafc;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        /* --- AI Support Tool Styles --- */
+        #patientInfoInput {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 2px solid #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        #patientInfoInput:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        /* --- Loader --- */
+        .loader-container {
+            position: relative;
+            min-height: 150px;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #e2e8f0;
+            border-bottom-color: #3b82f6;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* --- Notification Styles --- */
+        #notification {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 9999;
+            transition: transform 0.5s ease-in-out;
+            transform: translateX(120%);
+        }
+        #notification.show {
+            transform: translateX(0);
+        }
+
+        /* === [통합 보강] 비교·평가·기전·요약 섹션 (라이트 테마) === */
+        .comp-table { width:100%; border-collapse:collapse; margin-top:1rem; font-size:0.93rem; border-radius:0.75rem; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+        .comp-table th, .comp-table td { padding:0.65rem 0.85rem; text-align:left; border-bottom:1px solid #e2e8f0; vertical-align:top; }
+        .comp-table thead th { background:#1e40af; color:#fff; font-weight:700; }
+        .comp-table tbody tr:nth-child(even){ background:#f8fafc; }
+        .comp-table td:first-child{ font-weight:600; color:#1e3a8a; background:#eff6ff; width:24%; }
+        .comp-table .umn{ color:#b91c1c; font-weight:600; }
+        .comp-table .lmn{ color:#1d4ed8; font-weight:600; }
+        .vs-grid{ display:grid; grid-template-columns:1fr 44px 1fr; gap:0.8rem; align-items:stretch; margin-top:1rem; }
+        @media(max-width:768px){ .vs-grid{ grid-template-columns:1fr; } .vs-badge{ padding:0.3rem 0; } }
+        .vs-card{ border-radius:0.9rem; padding:1.1rem 1.25rem; border:1px solid #e2e8f0; }
+        .vs-card.red{ background:#fef2f2; border-color:#fecaca; }
+        .vs-card.blue{ background:#eff6ff; border-color:#bfdbfe; }
+        .vs-card h4{ font-weight:700; font-size:1.12rem; margin-bottom:0.55rem; }
+        .vs-card.red h4{ color:#b91c1c; }
+        .vs-card.blue h4{ color:#1d4ed8; }
+        .vs-card .row{ display:flex; justify-content:space-between; gap:0.6rem; padding:0.32rem 0; border-bottom:1px dashed #e5e7eb; font-size:0.9rem; }
+        .vs-card .row:last-child{ border-bottom:none; }
+        .vs-card .row span:first-child{ color:#64748b; flex:0 0 38%; }
+        .vs-card .row span:last-child{ text-align:right; font-weight:600; color:#0f172a; }
+        .vs-badge{ display:flex; align-items:center; justify-content:center; font-weight:800; color:#94a3b8; }
+        .grade-row{ display:grid; grid-template-columns:96px 1fr; gap:0.75rem; padding:0.55rem 0.8rem; border-radius:0.6rem; background:#f8fafc; margin-bottom:0.45rem; border:1px solid #eef2f7; }
+        .grade-row .g{ font-weight:800; color:#1e40af; font-size:0.92rem; }
+        .grade-row .d{ font-size:0.9rem; color:#334155; }
+        .grade-row .d strong{ color:#0f172a; }
+        .qr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
+        .qr-card{ background:#fff; border:1px solid #e2e8f0; border-radius:0.9rem; padding:1rem 1.1rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); }
+        .qr-card h4{ font-weight:700; color:#1e3a8a; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.45rem; }
+        .qr-card .qr-row{ display:flex; justify-content:space-between; gap:0.5rem; padding:0.26rem 0; border-bottom:1px dashed #eef2f7; font-size:0.88rem; }
+        .qr-card .qr-row:last-child{ border-bottom:none; }
+        .qr-card .qr-row b{ color:#2563eb; }
+        .pathway{ display:flex; flex-wrap:wrap; align-items:center; gap:0.55rem; margin-top:1rem; }
+        .pathway .node{ background:#eef2ff; border:1px solid #c7d2fe; color:#3730a3; border-radius:0.6rem; padding:0.55rem 0.9rem; font-weight:600; font-size:0.9rem; }
+        .pathway .node small{ display:block; color:#6366f1; font-weight:500; }
+        .pathway .arrow{ color:#6366f1; font-weight:800; }
+        .bmn-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0.8rem; margin-top:1rem; }
+        .bmn-card{ text-align:center; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:0.8rem; padding:1rem; }
+        .bmn-card .big{ font-size:1.8rem; }
+        .evidence{ background:#f0f9ff; border-left:5px solid #0284c7; border-radius:0.5rem; padding:0.9rem 1.1rem; margin-top:1.1rem; font-size:0.9rem; color:#0c4a6e; }
+        .evidence .ev-head{ font-weight:700; color:#075985; margin-bottom:0.35rem; }
+        .evidence ul{ margin:0.3rem 0 0 0; padding-left:1.1rem; }
+        .evidence li{ margin-bottom:0.25rem; }
+        .ev-tag{ display:inline-block; font-size:0.7rem; font-weight:700; padding:1px 7px; border-radius:999px; margin-right:5px; vertical-align:middle; }
+        .ev-tag.fact{ background:#dcfce7; color:#166534; }
+        .ev-tag.guide{ background:#dbeafe; color:#1e40af; }
+        .ev-tag.review{ background:#fef3c7; color:#92400e; }
+        .ev-tag.rct{ background:#ede9fe; color:#6b21a8; }
+        .ev-tag.assume{ background:#f1f5f9; color:#475569; }
+        .evidence a{ color:#0369a1; text-decoration:underline; word-break:break-all; }
+        .assess-pills{ display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.4rem 0 1.2rem; }
+        .assess-pills .pill{ background:#1e40af; color:#fff; border-radius:999px; padding:0.32rem 0.8rem; font-size:0.83rem; font-weight:600; }
+        .assess-pills .pill small{ font-weight:400; opacity:0.85; }
+        .ref-list{ font-size:0.82rem; color:#475569; line-height:1.65; padding-left:1.1rem; }
+        .ref-list li{ margin-bottom:0.4rem; }
+        .ref-list a{ color:#2563eb; text-decoration:underline; word-break:break-all; }
+        .method-note{ background:#fffbeb; border:1px dashed #f59e0b; border-radius:0.6rem; padding:0.9rem 1.1rem; margin-top:1rem; font-size:0.85rem; color:#78350f; }
+
+
+        /* ===== [오프라인 폴백] Tailwind CDN 미로드 시 최소 레이아웃 보장 =====
+           온라인에서 Tailwind가 로드되면 런타임 주입 스타일이 뒤에 와서 우선 적용됨 */
+        .container{max-width:1100px;width:100%}
+        .mx-auto{margin-left:auto;margin-right:auto}
+        .mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}
+        .mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}
+        .mr-2{margin-right:.5rem}.mr-3{margin-right:.75rem}.mr-4{margin-right:1rem}
+        .p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}
+        .py-2{padding-top:.5rem;padding-bottom:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.pr-3{padding-right:.75rem}
+        .text-xs{font-size:.75rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}
+        .text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}
+        .font-bold{font-weight:700}.font-semibold{font-weight:600}
+        .text-white{color:#fff}.text-gray-400{color:#9ca3af}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-800{color:#1f2937}
+        .text-slate-500{color:#64748b}.text-slate-600{color:#475569}
+        .text-red-600{color:#dc2626}.text-red-700{color:#b91c1c}
+        .text-blue-500{color:#3b82f6}.text-blue-600{color:#2563eb}.text-blue-700{color:#1d4ed8}.text-green-700{color:#15803d}
+        .text-center{text-align:center}
+        .bg-slate-50{background-color:#f8fafc}.bg-red-50{background-color:#fef2f2}.bg-red-100{background-color:#fee2e2}.bg-red-500{background-color:#ef4444}
+        .bg-green-500{background-color:#22c55e}.bg-blue-100{background-color:#dbeafe}
+        .border{border:1px solid #e5e7eb}.border-slate-300{border-color:#cbd5e1}
+        .rounded-md{border-radius:.375rem}.rounded-lg{border-radius:.5rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}
+        .shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+        .flex{display:flex}.grid{display:grid}.hidden{display:none}.block{display:block}.inline{display:inline}
+        .items-center{align-items:center}.w-full{width:100%}
+        .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+        .gap-4{gap:1rem}.gap-8{gap:2rem}
+        .space-y-2>*+*{margin-top:.5rem}.space-y-4>*+*{margin-top:1rem}.space-x-2>*+*{margin-left:.5rem}
+        @media(min-width:768px){
+          .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+          .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+          .md\:text-5xl{font-size:3rem;line-height:1}
+          .md\:text-base{font-size:1rem}
+          .md\:p-8{padding:2rem}
+          .md\:w-auto{width:auto}
+        }
+
+        /* ===== [오프라인 운동처방 엔진] 입력 폼 & 결과 스타일 ===== */
+        .rx-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-top:1rem}
+        .rx-field label{display:block;font-weight:600;color:#334155;font-size:.88rem;margin-bottom:.3rem}
+        .rx-field select,.rx-field input,.rx-field textarea{width:100%;padding:.55rem .7rem;border:1px solid #cbd5e1;border-radius:.5rem;font-size:.92rem;background:#fff;font-family:inherit;color:#0f172a}
+        .rx-field select:focus,.rx-field input:focus,.rx-field textarea:focus{outline:2px solid #93c5fd;border-color:#3b82f6}
+        .rx-goals{grid-column:1/-1}
+        .rx-goal-grid{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.4rem}
+        .rx-goal-grid label{display:inline-flex;align-items:center;gap:.4rem;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:.35rem .85rem;font-size:.86rem;cursor:pointer;font-weight:500;color:#334155}
+        .rx-goal-grid input{accent-color:#2563eb}
+        .rx-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+        .rx-btn{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;border:none;border-radius:.6rem;padding:.7rem 1.3rem;font-weight:700;cursor:pointer;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+        .rx-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px -6px rgba(37,99,235,.5)}
+        .rx-btn.sec{background:#e2e8f0;color:#334155}
+        .rx-btn.sec:hover{box-shadow:none}
+        #rxResult{display:none;margin-top:1.5rem;border-top:2px dashed #cbd5e1;padding-top:1.2rem}
+        .rx-summary{background:#eff6ff;border:1px solid #bfdbfe;border-radius:.9rem;padding:1.1rem 1.25rem;margin-bottom:1rem}
+        .rx-summary h3{font-size:1.25rem;font-weight:700;color:#1e3a8a;margin-bottom:.5rem;display:flex;align-items:center}
+        .rx-core{font-size:.92rem;color:#334155;margin-top:.4rem;line-height:1.55}
+        .rx-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0}
+        .rx-chip{background:#1e40af;color:#fff;border-radius:999px;padding:.25rem .7rem;font-size:.8rem;font-weight:600}
+        .rx-chip.alt{background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+        .rx-block{margin-top:1.1rem}
+        .rx-block>h4{font-size:1.05rem;font-weight:700;color:#1e40af;margin-bottom:.55rem;display:flex;align-items:center}
+        .rx-warn{background:#fffaeb;border-left:5px solid #f59e0b;border-radius:.5rem;padding:.9rem 1.1rem}
+        .rx-warn>h4{color:#b45309}
+        .rx-warn ul{margin:0;padding-left:1.2rem}
+        .rx-warn li{margin-bottom:.3rem;color:#78350f;font-size:.92rem}
+        @media print{
+          nav,.rx-form,.gemini-btn,#scrollTopBtn{display:none!important}
+          .infographic-section{box-shadow:none;page-break-inside:avoid;border:1px solid #e2e8f0}
+          body{background:#fff}
+        }
+
+
+        /* ============================================================
+           DESIGN REFRESH v2 — 디자인 시스템 정리 (색·타이포·간격·깊이 통일)
+           원본 규칙 뒤에 위치하여 동일 특이도에서 우선 적용. 내용/구조 변경 없음.
+           ============================================================ */
+        :root{
+          --c-primary:#2563eb; --c-primary-strong:#1d4ed8; --c-primary-deep:#17255a;
+          --c-primary-050:#eff5ff; --c-primary-100:#dbe7fe; --c-primary-border:#cfe0fb;
+          --ink:#0f172a; --ink-2:#334155; --ink-3:#64748b; --ink-4:#94a3b8;
+          --bg:#eef2f8; --surface:#ffffff; --line:#e6eaf1;
+          --amber:#f59e0b; --amber-bg:#fffbeb;
+          --green:#16a34a; --green-bg:#f0fdf4;
+          --sky:#0ea5e9; --sky-bg:#f0f9ff;
+          --r-sm:8px; --r-md:12px; --r-lg:16px; --r-pill:999px;
+          --sh-sm:0 1px 2px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.07);
+          --sh-md:0 6px 18px -6px rgba(15,23,42,.12), 0 2px 6px -2px rgba(15,23,42,.06);
+          --sh-lg:0 18px 40px -12px rgba(15,23,42,.20);
+        }
+        /* ---- Base ---- */
+        body{
+          font-family:'Noto Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,-apple-system,sans-serif;
+          color:var(--ink-2); line-height:1.72; letter-spacing:-.01em;
+          background-color:var(--bg);
+          background-image:linear-gradient(180deg,#e6efff 0%, rgba(230,239,255,0) 460px);
+          background-repeat:no-repeat;
+          -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+        }
+        ::selection{background:#c7dbfe;color:#0b1e46}
+        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+          outline:3px solid rgba(37,99,235,.38); outline-offset:2px; border-radius:8px;
+        }
+        /* ---- Hero ---- */
+        #page-top{margin-bottom:2.75rem;padding-top:1.25rem}
+        #page-top h1{
+          font-size:clamp(1.95rem,4.2vw,3rem); font-weight:800; color:var(--ink);
+          letter-spacing:-.025em; line-height:1.18;
+          display:inline-block; position:relative; padding-bottom:.7rem;
+        }
+        #page-top h1::after{
+          content:''; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+          width:76px; height:4px; border-radius:var(--r-pill);
+          background:linear-gradient(90deg,var(--c-primary),#60a5fa);
+        }
+        #page-top p{color:var(--ink-3);font-size:1.06rem;margin-top:1.1rem;max-width:62ch;margin-left:auto;margin-right:auto}
+        /* ---- Section shells ---- */
+        .infographic-section{
+          background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg);
+          padding:2rem 2.15rem; box-shadow:var(--sh-md); scroll-margin-top:1.25rem;
+          transition:box-shadow .25s ease;
+        }
+        /* ---- Titles ---- */
+        .section-title{
+          font-size:clamp(1.55rem,2.6vw,2rem); font-weight:800; color:var(--c-primary-deep);
+          letter-spacing:-.02em; border-bottom:2px solid var(--line);
+          padding-bottom:.65rem; margin-bottom:1.5rem; position:relative;
+        }
+        .section-title::after{content:'';position:absolute;left:0;bottom:-2px;width:64px;height:2px;background:var(--c-primary);border-radius:2px}
+        .section-title i{color:var(--c-primary)}
+        .subsection-title{font-size:1.3rem;font-weight:700;color:var(--c-primary-strong);letter-spacing:-.01em;margin-top:1.75rem;margin-bottom:.9rem}
+        .subsection-title i{color:var(--c-primary);margin-right:.6rem}
+        /* ---- Navigation ---- */
+        nav{
+          background:rgba(255,255,255,.92); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+          border:1px solid var(--line); border-radius:var(--r-lg); padding:.9rem 1rem; box-shadow:var(--sh-sm);
+        }
+        .nav-container{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+        nav a{
+          padding:.48rem 1rem; border-radius:var(--r-pill); font-weight:600; font-size:.9rem;
+          background:transparent; color:var(--ink-3); border:1px solid transparent; white-space:nowrap;
+          transition:background .18s,color .18s,border-color .18s,box-shadow .18s;
+        }
+        nav a:hover{background:var(--c-primary-050);color:var(--c-primary-strong);border-color:var(--c-primary-border);transform:none;box-shadow:none}
+        nav a.active{background:var(--c-primary);color:#fff;border-color:var(--c-primary);box-shadow:0 3px 10px -3px rgba(37,99,235,.55);transform:none;font-weight:700}
+        nav a.ai-support-link{background:linear-gradient(135deg,#eef4ff,#e2eafe);color:var(--c-primary-strong);border-color:var(--c-primary-border);font-weight:700}
+        nav a.ai-support-link:hover{background:linear-gradient(135deg,#e2eafe,#d5e0fd);color:var(--c-primary-deep)}
+        /* ---- Search ---- */
+        .search-container{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);padding:1.15rem 1.25rem}
+        #searchInput{border:1.5px solid var(--line);border-radius:var(--r-md);font-size:1rem}
+        #searchInput:focus{border-color:var(--c-primary);box-shadow:0 0 0 4px rgba(37,99,235,.14)}
+        /* ---- Cards ---- */
+        .stat-card{background:var(--c-primary-050);border-left:4px solid var(--c-primary);border-radius:var(--r-md)}
+        .clinical-feature{background:#f4f7fb;border:1px solid var(--line);border-radius:var(--r-md)}
+        .clinical-pearl{background:var(--amber-bg);border-left:5px solid var(--amber);border-radius:var(--r-md);color:#78350f}
+        .exam-tip{background:var(--green-bg);border-left:5px solid var(--green);border-radius:var(--r-md)}
+        .method-note{border-radius:var(--r-md)}
+        /* ---- Buttons ---- */
+        .gemini-btn{background:var(--c-primary-050);color:var(--c-primary-strong);border:1px solid var(--c-primary-border);box-shadow:none;font-weight:600;border-radius:var(--r-md);padding:.6rem 1.15rem}
+        .gemini-btn:hover{background:var(--c-primary-100);transform:none;box-shadow:var(--sh-sm)}
+        .rx-btn{border-radius:var(--r-md)}
+        /* ---- Reference tables ---- */
+        .comp-table{border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh-sm)}
+        .comp-table thead th{background:var(--c-primary-strong)}
+        .comp-table td:first-child{background:var(--c-primary-050);color:var(--c-primary-deep)}
+        .comp-table tbody tr{transition:background .15s}
+        .comp-table tbody tr:hover{background:#eef4ff}
+        /* ---- Misc component radius harmonize ---- */
+        .evidence,.qr-card,.vs-card,.bmn-card,.rx-summary{border-radius:var(--r-md)}
+        /* ---- Scroll-top ---- */
+        #scrollTopBtn{background:var(--c-primary);border-radius:14px;width:3.25rem;height:3.25rem;box-shadow:var(--sh-lg)}
+        #scrollTopBtn:hover{background:var(--c-primary-strong);transform:translateY(-2px) scale(1.03)}
+        /* ---- Footer ---- */
+        .site-footer{margin-top:3rem;padding:2.6rem 1.5rem;background:linear-gradient(180deg,#12213f,#0b1730);border-radius:var(--r-lg);text-align:center;color:#c7d2e4}
+        .site-footer .foot-brand{font-weight:800;color:#fff;font-size:1.12rem;letter-spacing:-.01em}
+        .site-footer .foot-sub{margin-top:.45rem;color:#9fb0d0;font-weight:600}
+        .site-footer .foot-meta{margin-top:.65rem;font-size:.85rem;color:#8092b4}
+        .site-footer .foot-copy{margin-top:1.1rem;font-size:.78rem;color:#63769c}
+        /* ---- Responsive polish ---- */
+        @media(max-width:640px){
+          .infographic-section{padding:1.4rem 1.15rem}
+          .comp-table{font-size:.8rem}
+          .comp-table th,.comp-table td{padding:.5rem .55rem}
+        }
+        @media print{
+          body{background:#fff}
+          .site-footer{background:#0b1730 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+        }
+
+    
+        /* === [완전 오프라인] Tailwind 폴백 보강 (오프라인 레이아웃 정합) === */
+        .relative{position:relative;}
+        .absolute{position:absolute;}
+        .fixed{position:fixed;}
+        .top-0{top:0;}.top-5{top:1.25rem;}
+        .right-0{right:0;}.right-5{right:1.25rem;}
+        .ml-4{margin-left:1rem;}
+        .mt-3{margin-top:.75rem;}
+        .text-green-600{color:#16a34a;}
+        .text-orange-600{color:#ea580c;}
+        .text-sky-600{color:#0284c7;}
+        .text-slate-800{color:#1e293b;}
+        .bg-green-100{background-color:#dcfce7;}
+        .list-disc{list-style-type:disc;}
+        .list-inside{list-style-position:inside;}
+        .transition,.transition-colors,.transition-shadow{transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-property:all;}
+        .hover\:bg-red-600:hover{background-color:#dc2626;}
+        .hover\:shadow-xl:hover{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);}
+        @media (min-width:768px){
+          .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+          .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+          .md\:p-8{padding:2rem;}
+          .md\:text-5xl{font-size:3rem;line-height:1;}
+          .md\:text-base{font-size:1rem;line-height:1.5rem;}
+        }
+        @media (min-width:1024px){
+          .lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+          .lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+        }
+
+    
+        /* === [처방 인쇄/PDF] 결과만 깔끔히 출력 === */
+        @media print {
+          body * { visibility: hidden !important; }
+          #rxResult, #rxResult * { visibility: visible !important; }
+          #rxResult { position: absolute !important; left: 0; top: 0; width: 100%;
+                      box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; background: #fff !important; }
+          #rxResult .rx-block { break-inside: avoid; page-break-inside: avoid; }
+          #rxResult h4 { break-after: avoid; }
+          #rxResult a { text-decoration: none !important; color: #000 !important; }
+          .no-print { display: none !important; }
+          @page { margin: 1.4cm; }
+        }
+
+    
+
+    
+
+    
+
+    
+        /* ==================================================================
+           [코스믹 테마] 라이트/다크 + 성운·별필드 (오리지널, 외부 이미지 0)
+           ================================================================== */
+        :root[data-theme="light"]{ color-scheme: light; }
+        :root[data-theme="dark"]{
+          color-scheme: dark;
+          /* --- 다크(코스믹) 토큰 재정의: 기존 컴포넌트가 자동 적응 --- */
+          --c-primary:#7aa2ff; --c-primary-strong:#9dbcff; --c-primary-deep:#d6e0ff;
+          --c-primary-050:rgba(122,162,255,.12); --c-primary-100:rgba(122,162,255,.18); --c-primary-border:rgba(122,162,255,.34);
+          --ink:#e9edfb; --ink-2:#c6cee7; --ink-3:#9aa4c4; --ink-4:#727c9c;
+          --bg:#070a18; --surface:rgba(18,23,44,.72); --line:rgba(165,183,232,.15);
+          --amber:#fbbf24; --amber-bg:rgba(245,158,11,.13);
+          --green:#34d399; --green-bg:rgba(52,211,153,.12);
+          --sky:#38bdf8; --sky-bg:rgba(56,189,248,.12);
+          --sh-sm:0 1px 2px rgba(0,0,0,.5); --sh-md:0 10px 30px -10px rgba(0,0,0,.6); --sh-lg:0 24px 55px -18px rgba(0,0,0,.7);
+        }
+
+        /* --- 배경 코스믹 레이어 (고정) --- */
+        #cosmos{ position:fixed; inset:0; z-index:-2; pointer-events:none; }
+        #starfield{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+        :root[data-theme="light"] #cosmos{
+          background:
+            radial-gradient(1200px 720px at 10% -8%, rgba(129,140,248,.16), transparent 60%),
+            radial-gradient(1000px 620px at 110% 4%, rgba(56,189,248,.14), transparent 60%),
+            radial-gradient(900px 900px at 50% 122%, rgba(167,139,250,.10), transparent 60%),
+            linear-gradient(180deg, #f4f7ff, #eef2f8);
+        }
+        :root[data-theme="dark"] #cosmos{
+          background:
+            radial-gradient(1100px 720px at 8% -6%, rgba(99,102,241,.38), transparent 55%),
+            radial-gradient(1000px 680px at 112% 3%, rgba(14,165,233,.30), transparent 55%),
+            radial-gradient(920px 720px at 80% 120%, rgba(168,85,247,.32), transparent 55%),
+            radial-gradient(680px 500px at 28% 90%, rgba(236,72,153,.18), transparent 60%),
+            linear-gradient(180deg, #0a0e22 0%, #080b1c 55%, #070a18 100%);
+        }
+        :root[data-theme="light"] body{ background:transparent; }
+        :root[data-theme="dark"]{ background:#070a18; }
+        :root[data-theme="dark"] body{ background:transparent !important; color:var(--ink); }
+
+        /* --- 테마 토글 버튼 --- */
+        #themeToggle{ position:fixed; top:14px; right:14px; z-index:60; width:44px; height:44px; border-radius:50%;
+          border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer;
+          display:inline-flex; align-items:center; justify-content:center; box-shadow:var(--sh-sm);
+          -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:color .2s, border-color .2s, transform .2s; }
+        #themeToggle:hover{ color:var(--c-primary); border-color:var(--c-primary-border); transform:translateY(-1px); }
+        #themeToggle svg{ width:20px; height:20px; display:block; }
+        #themeToggle .ico-sun, #themeToggle .ico-moon{ display:none; }
+        :root[data-theme="light"] #themeToggle .ico-moon{ display:block; }
+        :root[data-theme="dark"] #themeToggle .ico-sun{ display:block; }
+
+        /* --- 다크: 유리 패널 느낌 --- */
+        :root[data-theme="dark"] .infographic-section{ -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+          background:rgba(18,23,44,.72); border-color:rgba(165,183,232,.14); }
+
+        /* --- 다크: 하드코딩 색상 컴포넌트 보정 --- */
+        :root[data-theme="dark"] .highlight{ color:#9dbcff; }
+        :root[data-theme="dark"] .emphasis{ background:rgba(122,162,255,.18); color:#d6e0ff; }
+        :root[data-theme="dark"] .clinical-pearl{ color:#fde68a; }
+        :root[data-theme="dark"] nav a.ai-support-link{ background:linear-gradient(135deg,rgba(122,162,255,.18),rgba(139,92,246,.2)); color:#d6e0ff; border-color:rgba(122,162,255,.32); }
+        :root[data-theme="dark"] nav a.ai-support-link:hover{ background:linear-gradient(135deg,rgba(122,162,255,.26),rgba(139,92,246,.28)); color:#eaf0ff; }
+        /* 모달 */
+        :root[data-theme="dark"] .modal-container{ background:#0f1428; border:1px solid var(--line); }
+        :root[data-theme="dark"] .modal-title{ color:#d6e0ff; }
+        :root[data-theme="dark"] .modal-content{ color:var(--ink-2); }
+        :root[data-theme="dark"] .modal-content strong{ color:#d6e0ff; }
+        :root[data-theme="dark"] .modal-content th{ background:rgba(122,162,255,.12); color:#d6e0ff; }
+        :root[data-theme="dark"] .loader{ border-color:rgba(255,255,255,.15); border-bottom-color:var(--c-primary); }
+        /* 비교표 */
+        :root[data-theme="dark"] .comp-table th, :root[data-theme="dark"] .comp-table td{ border-bottom-color:var(--line); }
+        :root[data-theme="dark"] .comp-table thead th{ background:#1e2a52; }
+        :root[data-theme="dark"] .comp-table tbody tr:nth-child(even){ background:rgba(255,255,255,.03); }
+        :root[data-theme="dark"] .comp-table td:first-child{ background:rgba(122,162,255,.1); color:#d6e0ff; }
+        :root[data-theme="dark"] .comp-table .umn{ color:#fca5a5; }
+        :root[data-theme="dark"] .comp-table .lmn{ color:#93c5fd; }
+        /* vs 카드 */
+        :root[data-theme="dark"] .vs-card{ border-color:var(--line); }
+        :root[data-theme="dark"] .vs-card.red{ background:rgba(239,68,68,.1); border-color:rgba(239,68,68,.3); }
+        :root[data-theme="dark"] .vs-card.blue{ background:rgba(59,130,246,.1); border-color:rgba(59,130,246,.3); }
+        :root[data-theme="dark"] .vs-card.red h4{ color:#fca5a5; }
+        :root[data-theme="dark"] .vs-card.blue h4{ color:#93c5fd; }
+        :root[data-theme="dark"] .vs-card .row{ border-bottom-color:rgba(255,255,255,.08); }
+        :root[data-theme="dark"] .vs-card .row span:first-child{ color:var(--ink-3); }
+        :root[data-theme="dark"] .vs-card .row span:last-child{ color:var(--ink); }
+        /* qr 카드 */
+        :root[data-theme="dark"] .qr-card{ background:rgba(20,26,48,.7); border-color:var(--line); }
+        :root[data-theme="dark"] .qr-card h4{ color:#d6e0ff; }
+        :root[data-theme="dark"] .qr-card .qr-row{ border-bottom-color:rgba(255,255,255,.08); }
+        :root[data-theme="dark"] .qr-card .qr-row b{ color:#9dbcff; }
+        /* 경로/노드, bmn */
+        :root[data-theme="dark"] .pathway .node{ background:rgba(122,162,255,.12); border-color:rgba(122,162,255,.3); color:#d6e0ff; }
+        :root[data-theme="dark"] .pathway .node small{ color:#a5b4fc; }
+        :root[data-theme="dark"] .bmn-card{ background:rgba(255,255,255,.04); border-color:var(--line); }
+        /* 근거 박스 / method-note */
+        :root[data-theme="dark"] .evidence{ background:rgba(56,189,248,.1); border-left-color:var(--sky); }
+        :root[data-theme="dark"] .evidence .ev-head{ color:#7dd3fc; }
+        :root[data-theme="dark"] .evidence a{ color:#7dd3fc; }
+        :root[data-theme="dark"] .method-note{ background:rgba(245,158,11,.1); }
+        /* 근거 태그 */
+        :root[data-theme="dark"] .ev-tag.fact{ background:rgba(34,197,94,.16); color:#86efac; }
+        :root[data-theme="dark"] .ev-tag.guide{ background:rgba(59,130,246,.18); color:#bfdbfe; }
+        :root[data-theme="dark"] .ev-tag.review{ background:rgba(245,158,11,.18); color:#fcd34d; }
+        :root[data-theme="dark"] .ev-tag.rct{ background:rgba(139,92,246,.2); color:#ddd6fe; }
+        :root[data-theme="dark"] .ev-tag.assume{ background:rgba(148,163,184,.18); color:#cbd5e1; }
+        /* 운동처방기 폼/결과 */
+        :root[data-theme="dark"] .rx-field label{ color:var(--ink-2); }
+        :root[data-theme="dark"] .rx-field select, :root[data-theme="dark"] .rx-field input, :root[data-theme="dark"] .rx-field textarea{ background:#0f1428; border-color:rgba(165,183,232,.22); color:var(--ink); }
+        :root[data-theme="dark"] .rx-goal-grid label{ background:rgba(255,255,255,.04); border-color:var(--line); color:var(--ink-2); }
+        :root[data-theme="dark"] .rx-btn.sec{ background:rgba(255,255,255,.08); color:var(--ink); }
+        :root[data-theme="dark"] .rx-core{ color:var(--ink-2); }
+        :root[data-theme="dark"] .rx-summary{ background:rgba(122,162,255,.1); border-color:rgba(122,162,255,.3); }
+        :root[data-theme="dark"] .rx-summary h3{ color:#d6e0ff; }
+        :root[data-theme="dark"] .rx-chip.alt{ background:rgba(122,162,255,.15); color:#d6e0ff; border-color:rgba(122,162,255,.3); }
+        :root[data-theme="dark"] .rx-block>h4{ color:#d6e0ff; }
+        :root[data-theme="dark"] .rx-warn{ background:rgba(245,158,11,.1); }
+        :root[data-theme="dark"] .rx-warn>h4{ color:#fcd34d; }
+        :root[data-theme="dark"] .rx-warn li{ color:#fde68a; }
+        /* 국시 게시판 퀴즈 */
+        /* 챕터 인라인 퀴즈 */
+        /* Tailwind 유틸리티(HTML 인라인) 다크 보정 */
+        :root[data-theme="dark"] .bg-white{ background-color:var(--surface) !important; }
+        :root[data-theme="dark"] .bg-green-100{ background-color:rgba(34,197,94,.15) !important; }
+        :root[data-theme="dark"] .text-gray-900, :root[data-theme="dark"] .text-gray-800, :root[data-theme="dark"] .text-gray-700{ color:var(--ink) !important; }
+        :root[data-theme="dark"] .text-gray-600, :root[data-theme="dark"] .text-gray-500{ color:var(--ink-3) !important; }
+        :root[data-theme="dark"] .text-slate-800, :root[data-theme="dark"] .text-slate-700{ color:var(--ink) !important; }
+        :root[data-theme="dark"] .text-green-600{ color:#34d399 !important; }
+        :root[data-theme="dark"] .text-orange-600{ color:#fb923c !important; }
+        :root[data-theme="dark"] .text-sky-600{ color:#38bdf8 !important; }
+        :root[data-theme="dark"] .text-blue-900, :root[data-theme="dark"] .text-blue-800, :root[data-theme="dark"] .text-blue-700, :root[data-theme="dark"] .text-blue-600{ color:#93c5fd !important; }
+        :root[data-theme="dark"] .text-indigo-800, :root[data-theme="dark"] .text-indigo-700{ color:#c7d2fe !important; }
+
+        /* --- 라이트: 미세 프리미엄 정제(가독성 유지) --- */
+        :root[data-theme="light"] .infographic-section{ box-shadow:0 8px 26px -14px rgba(30,58,138,.18), 0 2px 6px -2px rgba(15,23,42,.06); }
+
+        /* --- 인쇄: 항상 라이트/무배경 강제 --- */
+        @media print{
+          #cosmos, #starfield, #themeToggle{ display:none !important; }
+          :root[data-theme="dark"]{
+            --c-primary:#2563eb; --c-primary-strong:#1d4ed8; --c-primary-deep:#17255a;
+            --c-primary-050:#eff5ff; --c-primary-100:#dbe7fe; --c-primary-border:#cfe0fb;
+            --ink:#0f172a; --ink-2:#334155; --ink-3:#64748b; --ink-4:#94a3b8;
+            --bg:#ffffff; --surface:#ffffff; --line:#e6eaf1;
+            --amber-bg:#fffbeb; --green-bg:#f0fdf4; --sky-bg:#f0f9ff;
+          }
+          :root[data-theme="dark"] body{ background:#fff !important; color:#0f172a !important; }
+          :root[data-theme="dark"] #rxResult, :root[data-theme="dark"] #rxResult *{ color:#0f172a; }
+        }
+
+    
+        /* ==================================================================
+           [대비 수정] 다크 모드에서 밝은 배경이 안 어두워져 생긴 흰글자/저대비 보정
+           ================================================================== */
+        /* ① 내비 배경 어둡게 → 링크·'AI 운동처방' 가독성 확보 */
+        :root[data-theme="dark"] nav{
+          background:rgba(13,18,32,.85) !important;
+          -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+          border-color:rgba(255,255,255,.09) !important; }
+        :root[data-theme="dark"] nav a{ color:var(--ink-2); }
+
+        /* ② 밝은 카드/배경 유틸리티 어둡게(다크 모드 누락분) */
+        :root[data-theme="dark"] .bg-slate-50{ background-color:rgba(255,255,255,.05) !important; border:1px solid rgba(255,255,255,.08); }
+        :root[data-theme="dark"] .bg-red-50{ background-color:rgba(244,63,94,.1) !important; }
+        :root[data-theme="dark"] .bg-blue-100{ background-color:rgba(59,130,246,.2) !important; }
+        :root[data-theme="dark"] .bg-red-100{ background-color:rgba(244,63,94,.2) !important; }
+        :root[data-theme="dark"] .bg-green-100{ background-color:rgba(52,211,153,.18) !important; }
+
+        /* ③ 어두운 텍스트 색을 밝게(다크 모드 누락분) */
+        :root[data-theme="dark"] .text-red-600, :root[data-theme="dark"] .text-red-700{ color:#fca5a5 !important; }
+        :root[data-theme="dark"] .text-blue-500{ color:#93c5fd !important; }
+        :root[data-theme="dark"] .text-green-700{ color:#6ee7b7 !important; }
+        :root[data-theme="dark"] .text-slate-600, :root[data-theme="dark"] .text-slate-500{ color:var(--ink-3) !important; }
+        :root[data-theme="dark"] .text-gray-400{ color:var(--ink-4) !important; }
+
+        /* ④ 색 미지정 카드 제목(예: '근력 운동')이 밝은 본문색을 상속 → 다크 카드 위에서 밝게 유지(가독) */
+        :root[data-theme="dark"] .infographic-section h2:not(.section-title){ color:var(--ink); }
+
+        /* ⑤ 인쇄 시에도 위 보정이 라이트로 강제되도록(기존 인쇄 규칙 보완) */
+        @media print{
+          :root[data-theme="dark"] nav{ background:#fff !important; border-color:#e6eaf1 !important; }
+          :root[data-theme="dark"] nav a{ color:#334155; }
+          :root[data-theme="dark"] .bg-slate-50{ background-color:#f8fafc !important; border:none; }
+          :root[data-theme="dark"] .text-red-600, :root[data-theme="dark"] .text-red-700{ color:#b91c1c !important; }
+          :root[data-theme="dark"] .text-blue-500{ color:#2563eb !important; }
+          :root[data-theme="dark"] .text-green-700{ color:#15803d !important; }
+          :root[data-theme="dark"] .text-slate-600, :root[data-theme="dark"] .text-slate-500{ color:#475569 !important; }
+          :root[data-theme="dark"] .infographic-section h2:not(.section-title){ color:#0f172a; }
+        }
+
+    
+        /* ==================================================================
+           [대비 종합수정 2] 다크 모드 잔여 저대비 일괄 보정
+           (배경만 어둡고 글자색이 짙어 흐린 경우 + 밝은 배경 카드 미보정)
+           ================================================================== */
+        /* ① clinical-feature: 밝은 카드(#f4f7fb) → 다크 글래스 (이미지 1·3의 MCA/ACA/PCA·파킨슨 카드) */
+        :root[data-theme="dark"] .clinical-feature{
+          background:rgba(255,255,255,.045) !important; border-color:rgba(255,255,255,.09) !important; }
+        /* 카드 안 색 미지정 제목/본문은 밝은 본문색을 상속하므로 다크 카드 위에서 가독(추가 안전 규칙) */
+        :root[data-theme="dark"] .clinical-feature h3, :root[data-theme="dark"] .clinical-feature h4,
+        :root[data-theme="dark"] .clinical-feature p, :root[data-theme="dark"] .clinical-feature > .font-bold{ color:var(--ink); }
+
+        /* ② evidence: 배경은 어둡지만 글자색 #0c4a6e가 짙어 흐림 → 밝게 (이미지 2) */
+        :root[data-theme="dark"] .evidence{ color:var(--ink-2) !important; }
+        /* ③ method-note: 동일 패턴(글자 #78350f) */
+        :root[data-theme="dark"] .method-note{ color:var(--ink-2) !important; }
+
+        /* ④ ref-list(참고문헌): 텍스트/링크 밝게 */
+        :root[data-theme="dark"] .ref-list{ color:var(--ink-2); }
+        :root[data-theme="dark"] .ref-list a{ color:#93c5fd; }
+
+        /* ⑤ grade-row(평가 등급표): 밝은 배경 → 다크 + 짙은 글자 → 밝게 */
+        :root[data-theme="dark"] .grade-row{ background:rgba(255,255,255,.04) !important; border-color:rgba(255,255,255,.08); }
+        :root[data-theme="dark"] .grade-row .g{ color:#93c5fd; }
+        :root[data-theme="dark"] .grade-row .d{ color:var(--ink-2); }
+        :root[data-theme="dark"] .grade-row .d strong{ color:var(--ink); }
+
+        /* ⑥ no-results(검색 결과 없음): 밝은 박스 → 다크 */
+        :root[data-theme="dark"] #no-results{ background:rgba(245,158,11,.12) !important; color:#fcd34d !important; border-color:rgba(245,158,11,.3); }
+
+        /* ⑦ modal-content(AI 모달 본문): 짙은 글자 → 밝게 (안전 보정) */
+        :root[data-theme="dark"] .modal-content{ color:var(--ink-2); }
+        :root[data-theme="dark"] .modal-content h3{ color:#dbeafe; }
+        :root[data-theme="dark"] .modal-content h4{ color:#93c5fd; }
+        :root[data-theme="dark"] .modal-close-btn:hover{ color:var(--ink); }
+
+        /* ⑧ 인쇄: 위 보정을 라이트로 되돌려 흑백 출력 가독 유지 */
+        @media print{
+          :root[data-theme="dark"] .clinical-feature{ background:#f4f7fb !important; border-color:#e6eaf1 !important; }
+          :root[data-theme="dark"] .clinical-feature h3, :root[data-theme="dark"] .clinical-feature h4,
+          :root[data-theme="dark"] .clinical-feature p, :root[data-theme="dark"] .clinical-feature > .font-bold{ color:#0f172a; }
+          :root[data-theme="dark"] .evidence{ color:#0c4a6e !important; }
+          :root[data-theme="dark"] .method-note{ color:#78350f !important; }
+          :root[data-theme="dark"] .ref-list{ color:#475569; }
+          :root[data-theme="dark"] .ref-list a{ color:#2563eb; }
+          :root[data-theme="dark"] .grade-row{ background:#f8fafc !important; }
+          :root[data-theme="dark"] .grade-row .g{ color:#1e40af; }
+          :root[data-theme="dark"] .grade-row .d{ color:#334155; }
+          :root[data-theme="dark"] .grade-row .d strong{ color:#0f172a; }
+        }
+
+    
+    /* --- SFMA Custom Styling Additions --- */
+    .traffic-light-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .traffic-box {
+      padding: 1.4rem;
+      border-radius: var(--r-md);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .traffic-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--sh-md);
+    }
+    .traffic-box.red {
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .traffic-box.yellow {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    .traffic-box.green {
+      background: rgba(34, 197, 94, 0.08);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    .traffic-box.blue {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    .traffic-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .traffic-box.red .traffic-title { color: #dc2626; }
+    .traffic-box.yellow .traffic-title { color: #d97706; }
+    .traffic-box.green .traffic-title { color: #16a34a; }
+    .traffic-box.blue .traffic-title { color: #2563eb; }
+
+    :root[data-theme="dark"] .traffic-box.red { background: rgba(239, 68, 68, 0.15); }
+    :root[data-theme="dark"] .traffic-box.yellow { background: rgba(245, 158, 11, 0.15); }
+    :root[data-theme="dark"] .traffic-box.green { background: rgba(34, 197, 94, 0.15); }
+    :root[data-theme="dark"] .traffic-box.blue { background: rgba(59, 130, 246, 0.15); }
+    :root[data-theme="dark"] .traffic-box.red .traffic-title { color: #f87171; }
+    :root[data-theme="dark"] .traffic-box.yellow .traffic-title { color: #fbbf24; }
+    :root[data-theme="dark"] .traffic-box.green .traffic-title { color: #4ade80; }
+    :root[data-theme="dark"] .traffic-box.blue .traffic-title { color: #60a5fa; }
+
+    /* Interactive Scoring Table */
+    .score-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+    }
+    .score-matrix th, .score-matrix td {
+      padding: 0.85rem 0.65rem;
+      text-align: center;
+      border: 1px solid var(--line);
+    }
+    .score-matrix th {
+      background: var(--c-primary-050);
+      color: var(--c-primary-deep);
+      font-weight: 700;
+    }
+    .score-matrix td.pattern-name {
+      text-align: left;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .btn-score {
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      background: var(--surface);
+      color: var(--ink-3);
+      transition: all 0.15s;
+    }
+    .btn-score:hover {
+      border-color: var(--c-primary);
+      color: var(--c-primary);
+      transform: scale(1.05);
+    }
+    .btn-score.selected-fn { background: #16a34a !important; color: #fff !important; border-color: #16a34a !important; }
+    .btn-score.selected-fp { background: #f59e0b !important; color: #fff !important; border-color: #f59e0b !important; }
+    .btn-score.selected-dp { background: #ef4444 !important; color: #fff !important; border-color: #ef4444 !important; }
+    .btn-score.selected-dn { background: #3b82f6 !important; color: #fff !important; border-color: #3b82f6 !important; }
+
+    /* 4x4 Grid */
+    .matrix-4x4-grid {
+      display: grid;
+      grid-template-columns: 110px repeat(4, 1fr);
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+    }
+    .matrix-header {
+      font-weight: 800;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      background: var(--c-primary-050);
+      border-radius: var(--r-sm);
+      color: var(--c-primary-deep);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .matrix-cell {
+      padding: 0.9rem 0.6rem;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .matrix-cell:hover {
+      border-color: var(--c-primary);
+      box-shadow: var(--sh-sm);
+      transform: translateY(-2px);
+    }
+    .matrix-cell.active {
+      background: var(--c-primary-100);
+      border-color: var(--c-primary);
+      font-weight: 700;
+      color: var(--c-primary-deep);
+    }
+
+    /* Breakout Detailed Cards */
+    .breakout-step-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--sh-sm);
+    }
+    .breakout-step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.85rem;
+    }
+    .breakout-step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--c-primary-strong);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .breakout-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--c-primary-050);
+      color: var(--c-primary-strong);
+      border: 1px solid var(--c-primary-border);
+    }
+    .flow-decision {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(0,0,0,0.02);
+      border-radius: var(--r-sm);
+    }
+    :root[data-theme="dark"] .flow-decision {
+      background: rgba(255,255,255,0.03);
+    }
+    .flow-branch {
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+    .flow-branch strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .matrix-4x4-grid {
+        grid-template-columns: 85px repeat(4, 1fr);
+        font-size: 0.72rem;
+      }
+      .flow-decision {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- 고정 코스믹 성운 & 별필드 -->
+    <div id="cosmos"></div>
+    <canvas id="starfield"></canvas>
+
+    <!-- 상단 진행률 바 -->
+    <div id="progressBar" style="position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);z-index:9999;width:0%;transition:width 0.1s;"></div>
+
+    <!-- 우상단 컨트롤: 테마 토글 및 스크롤 탑 -->
+    <div style="position:fixed;top:1.25rem;right:1.25rem;z-index:1001;display:flex;gap:0.6rem;align-items:center;">
+        <button id="themeToggle" type="button" aria-label="테마 전환" style="width:2.75rem;height:2.75rem;border-radius:50%;background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);">
+            <svg id="sunIcon" style="width:1.25rem;height:1.25rem;display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg id="moonIcon" style="width:1.25rem;height:1.25rem;display:block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+    </div>
+    <a href="#page-top" id="scrollTopBtn" title="맨 위로"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- 메인 컨테이너 -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        
+        <!-- 히어로 헤더 -->
+        <header id="page-top" class="text-center mb-10 pt-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4" style="background:var(--c-primary-050);color:var(--c-primary-strong);border:1px solid var(--c-primary-border);">
+                <span>Functional Movement Systems</span> · <span>Clinical Diagnostic & Treatment Manual</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                SFMA™ 선택적 기능 움직임 평가 완결 임상 지침서
+            </h1>
+            <p class="text-base md:text-lg max-w-3xl mx-auto font-semibold" style="color:var(--ink-3);word-break:keep-all;">
+                굿얼라인재활필라테스협회
+            </p>
+        </header>
+
+        <!-- 반응형 스티키 내비게이션 바 (15대 섹션 1:1 완벽 매칭) -->
+        <nav class="sticky top-4 z-40 mb-8 backdrop-blur-md">
+            <div class="nav-container">
+                <a href="#overview" class="active">SFMA 철학·신경근 이론</a>
+                <a href="#terminology">기능제한 분류 (TED·JMD·SMCD)</a>
+                <a href="#top-tier">7대 상위 검사 프로토콜</a>
+                <a href="#interactive-tool" class="ai-support-link"><i class="fas fa-calculator mr-1"></i>실시간 점수판 & 진단</a>
+                <a href="#bo-cervical">경추 하위검사 알고리즘</a>
+                <a href="#bo-ue">상지 하위검사 알고리즘</a>
+                <a href="#bo-msf">복수-분절 굴곡 (MSF)</a>
+                <a href="#bo-mse">복수-분절 신전 (MSE)</a>
+                <a href="#bo-msr">복수-분절 회전 (MSR)</a>
+                <a href="#bo-sls">한발 서기 (SLS)</a>
+                <a href="#bo-ods">오버헤드 스쿼트 (ODS)</a>
+                <a href="#bo-rolling">롤링 패턴 (Rolling)</a>
+                <a href="#treatment">4x4 교정운동 치료 매트릭스</a>
+                <a href="#comp-table">정밀 감별표 & 치트시트</a>
+                <a href="#references">학술 참고문헌</a>
+            </div>
+        </nav>
+
+        <!-- 실시간 검색창 -->
+        <div class="search-container mb-8">
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="검사명, 랜드마크, 신경근 기전, TED/JMD/SMCD, 4x4 매트릭스, 키워드 검색..." class="w-full">
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- [Section 1] SFMA 철학 및 신경근 기전 심층 분석 -->
+        <!-- ========================================================================= -->
+        <section id="overview" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-compass"></i>SFMA의 임상 철학 및 신경근 기전 (Neuro-Mechanisms)</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Clinical Philosophy</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">컴파스(나침반) 원리</div>
+                    <p class="text-sm mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 정량적 측정(각도기 ROM 측정, MMT 근력 평가)은 올바른 방향(질적 전신 움직임 사슬 진단)이 설정된 후에만 가치가 있습니다. 방향을 모른 채 측정된 국소 데이터는 잘못된 치료로 환자를 유도합니다.
+                    </p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Evaluation Hierarchy</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">FMS ➔ SFMA ➔ Y-Balance</div>
+                    <p class="text-sm mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 통증이 없는 무증상 개인은 FMS로 스크리닝하며, 통증이 유발되면 즉시 SFMA 평가로 진입합니다. SFMA를 통해 기능제한과 통증이 해결된 후 FMS 및 스포츠 퍼포먼스(Y-Balance) 검사로 복귀합니다.
+                    </p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Priority Rule</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">DN 최우선 치료 원칙</div>
+                    <p class="text-sm mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 통증이 없는 기능제한(DN: Dysfunctional Non-painful)을 가장 먼저 검사하고 치료합니다. 통증이 있는 기능제한(DP)은 염증과 신경 억제를 유발하므로 마지막에 다루며, DN 교정을 통해 무의식적 보상작용을 먼저 제거합니다.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title"><i class="fas fa-traffic-light"></i>신호등 시스템 (Traffic Light System)의 엄밀한 운영 규칙</h3>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                SFMA는 평가자와 치료자 간의 일관된 임상 의사결정을 보장하기 위해 상위검사와 하위검사에 걸쳐 4가지 색상 코드를 엄격히 적용합니다.
+            </p>
+
+            <div class="traffic-light-grid">
+                <div class="traffic-box red">
+                    <div class="traffic-title"><i class="fas fa-ban"></i>빨간 불 (STOP)</div>
+                    <div class="text-xs space-y-1.5" style="word-break:keep-all;color:var(--ink-2);">
+                        <p><strong>상위 검사:</strong> 정지 (FN). 기능적이며 통증이 없으므로 해당 패턴의 하위검사로 진입할 필요가 없음.</p>
+                        <p><strong>하위 검사:</strong> 플로우차트 즉시 정지. 통증 유발 패턴이므로 교정 운동을 중단하고 물리치료 기기, 소염 요법, 도수적 통증 완화 등 의료적 중재로 전환.</p>
+                    </div>
+                </div>
+                <div class="traffic-box yellow">
+                    <div class="traffic-title"><i class="fas fa-exclamation-triangle"></i>노란 불 (CAUTION)</div>
+                    <div class="text-xs space-y-1.5" style="word-break:keep-all;color:var(--ink-2);">
+                        <p><strong>상위 검사:</strong> 주의하며 하위검사 진행 (FP / DP). 통증이 동반되므로 환자 반응을 면밀히 감시.</p>
+                        <p><strong>임상적 의의:</strong> 이 패턴의 검사 결과는 치료 중재가 올바르게 작동하고 있는지 확인하는 '재평가 지표(Audit marker)'로 활용.</p>
+                    </div>
+                </div>
+                <div class="traffic-box green">
+                    <div class="traffic-title"><i class="fas fa-check-circle"></i>녹색 불 (PROCEED)</div>
+                    <div class="text-xs space-y-1.5" style="word-break:keep-all;color:var(--ink-2);">
+                        <p><strong>상위 검사:</strong> 하위검사 적극 진행 (DN). 통증이 없으면서 신체 움직임 사슬이 무너진 핵심 표적.</p>
+                        <p><strong>하위 검사:</strong> 기능제한을 유발하는 근본 원인(TED, JMD, SMCD)에 대한 명확한 진단 도출 완료. 4x4 매트릭스 교정운동 적용.</p>
+                    </div>
+                </div>
+                <div class="traffic-box blue">
+                    <div class="traffic-title"><i class="fas fa-directions"></i>파란 불 (REDIRECT)</div>
+                    <div class="text-xs space-y-1.5" style="word-break:keep-all;color:var(--ink-2);">
+                        <p><strong>하위 검사:</strong> 해당 국소 분절 검사 통과(정상). 현재 검사 부위는 정상이므로 플로우차트의 안내에 따라 다른 인접 분절이나 연관 하위검사로 이동하여 원인 추적.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title"><i class="fas fa-dna"></i>신경근 생역학 및 근거 기반 연구 (Scientific Evidence)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="clinical-feature">
+                    <h4 class="font-bold text-base mb-2 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-project-diagram"></i>지역 상호보완 (Regional Interdependence)
+                    </h4>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 롭 우회이너(Rob Wainner 2007)와 블라디미르 얀다(Vladimir Janda)의 연구에 따르면, 인체 운동 시스템은 하나의 통합된 유기체로 작동합니다. 통증 부위와 해부학적으로 멀리 떨어진 관절의 기능장애가 주 증상을 유발합니다.
+                    </p>
+                    <div class="p-3 rounded-lg text-xs space-y-1.5" style="background:var(--c-primary-050);color:var(--c-primary-deep);">
+                        <p><strong>• 발목 염좌와 둔근 억제:</strong> Bullock-Saxton(1994) 연구에서 발목 염좌 병력이 있는 환자는 통증이 완전히 사라진 후에도 대둔근 동원 시작이 지연(Gluteal lag)되고 동적 균형 능력이 유의하게 저하됨을 증명.</p>
+                        <p><strong>• 슬관절 치환술 후 학습된 비사용:</strong> 슬관절 전치환술 1년 후 대퇴사두근 근력이 정상 회복되었음에도, 기립 시 환측 대퇴를 쓰지 않고 발목/고관절 보상 전략에 의존하는 변형된 운동 프로그램 고착 확인.</p>
+                        <p><strong>• 흉추 가동성과 경추/견관절 통증:</strong> 흉추 신전 결핍은 경추의 과신전 보상 및 견갑골 상방회전 제한을 유발하여 견관절 충돌증후군의 직접적 원인으로 작용.</p>
+                    </div>
+                </div>
+
+                <div class="clinical-feature">
+                    <h4 class="font-bold text-base mb-2 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-bolt"></i>통증과 모터 조절 왜곡 (Altered Motor Control)
+                    </h4>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] Hodges & Tucker(Pain, 2011)의 통증과 운동 제어 신이론은, 통증이 단순한 단일 근육 억제가 아니라 부상 부위를 보호하기 위한 신경계의 전방위적 재조직화(Reorganization) 과정임을 밝힙니다.
+                    </p>
+                    <div class="p-3 rounded-lg text-xs space-y-1.5" style="background:var(--c-primary-050);color:var(--c-primary-deep);">
+                        <p><strong>• 뭇갈래근(Multifidus)의 적응:</strong> 과제 요구와 신체 부하 방향에 따라 뭇갈래근의 발화 타이밍이 불규칙하게 지연되며, 통증 완화 후에도 자연 회복되지 않음.</p>
+                        <p><strong>• 코어 고역치 전략 (High-threshold strategy):</strong> Cholewicki 연구에서 요통 병력이 있는 환자는 통증이 없어도 복직근, 광배근 등 천층 대근육을 과도하게 동시수축하여 척추 압박력을 가중시킴.</p>
+                        <p><strong>• 신경발달학적 회복:</strong> 부상으로 왜곡된 모터 프로그램은 근력 강화가 아닌, 인간 발달학적 단계(누운자세 ➔ 네발기기 ➔ 무릎 ➔ 기립)를 거치는 신경 재교육으로만 정상화됨.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinical-pearl">
+                <strong><i class="fas fa-graduation-cap mr-1"></i>임상 실무 지침: 움직임 평가의 5대 철칙</strong><br>
+                1. <strong>워밍업 금지:</strong> 일시적인 혈류 증가나 사전 스트레칭으로 결함을 가리지 않고, 환자가 평소 뇌에 저장해 둔 본래의 변형된 신경근 패턴을 평가해야 합니다.<br>
+                2. <strong>개처럼 보이고 냄새나면 개다:</strong> 애매하게 합격시키지 말고, 완벽하지 않은 동작은 즉시 기능제한(Dysfunction)으로 엄격히 판정합니다.<br>
+                3. <strong>까다로운 채점:</strong> "그 정도면 일상생활에 지장 없다"는 통과 기준이 아닙니다. 사소한 보상작용도 불합격 처리합니다.<br>
+                4. <strong>신발 탈의:</strong> 현대의 쿠션 신발은 발바닥 기계수용기의 고유감각 피드백을 차단하므로 반드시 맨발로 평가합니다.<br>
+                5. <strong>원숭이는 보고 따라한다:</strong> 복잡한 언어 지시는 환자의 인지적 왜곡을 유발합니다. 평가자가 직접 시범을 보이고 환자가 본능적으로 따라 하게 합니다.
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 2] 기능제한 용어 체계 (TED, JMD, SMCD) 심층 해설 -->
+        <!-- ========================================================================= -->
+        <section id="terminology" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i>SFMA 기능제한 분류 체계 (TED · JMD · SMCD)</h2>
+            <p class="mb-6 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                SFMA는 전통적인 물리치료에서 혼용되던 '가동성'과 '안정성'의 개념을 명확한 병태생리학적 범주로 세분화하여, 도수치료(Joint/Soft Tissue)와 운동학습(Motor Learning)의 적용 대상을 정밀하게 분리합니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- TED -->
+                <div class="clinical-feature">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded text-xs font-bold text-white bg-blue-600">TED</span>
+                        <span class="text-xs font-bold text-slate-500">다관절 연부조직</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1" style="color:var(--c-primary-deep);">조직 신장성 기능제한</h4>
+                    <div class="text-xs font-semibold text-slate-500 mb-3">Tissue Extensibility Dysfunction</div>
+                    <p class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 2개 이상의 관절을 가로지르는 근육, 근막, 신경, 피부 등 연부조직의 신장성이 결여되어 관절 움직임의 끝범위를 기계적으로 제한하는 상태입니다.
+                    </p>
+                    <div class="p-2.5 rounded text-xs space-y-1" style="background:var(--bg);color:var(--ink-2);">
+                        <p><strong>• 능동/수동 근육 불충분:</strong> 햄스트링, 대퇴직근, 비복근 등 다관절 근육의 신장성 부족.</p>
+                        <p><strong>• 신경 긴장 (Neural Tension):</strong> 좌골신경, 대퇴신경, 상완신경총 등의 활주 결함 및 유착.</p>
+                        <p><strong>• 근막 발화점 및 섬유화:</strong> 만성 근막통증증후군, 반흔 조직(Scar tissue), 근막 유착.</p>
+                        <p><strong>• 특징:</strong> 인접 관절의 위치를 바꾸면 가동범위가 변화함 (예: 무릎을 굽히면 고관절 굴곡 각도 증가).</p>
+                    </div>
+                </div>
+
+                <!-- JMD -->
+                <div class="clinical-feature">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded text-xs font-bold text-white bg-indigo-600">JMD</span>
+                        <span class="text-xs font-bold text-slate-500">단일 관절 구조물</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1" style="color:var(--c-primary-deep);">관절 가동성 기능제한</h4>
+                    <div class="text-xs font-semibold text-slate-500 mb-3">Joint Mobility Dysfunction</div>
+                    <p class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 관절낭, 관절순, 관절 연골 등 단일 관절 내부의 관절학적(Arthrokinematic) 미끄러짐(Glide) 및 구름(Roll)이 구조적으로 소실된 상태입니다.
+                    </p>
+                    <div class="p-2.5 rounded text-xs space-y-1" style="background:var(--bg);color:var(--ink-2);">
+                        <p><strong>• 관절낭 유착 및 구축:</strong> 오십견(동결견), 발목 거태관절 후방 관절낭 구축, 고관절 낭 단축.</p>
+                        <p><strong>• 관절염 및 골성 제한:</strong> 퇴행성 관절염(OA), 대퇴비구 충돌증후군(FAI), 골극 형성.</p>
+                        <p><strong>• 위치 오류 및 관절하위 아탈구:</strong> 관절 위치 정렬 오류(Positional fault, Mulligan 개념).</p>
+                        <p><strong>• 특징:</strong> 인접 관절의 위치를 변경해도 관절 끝느낌(End-feel)과 각도 제한이 변하지 않음.</p>
+                    </div>
+                </div>
+
+                <!-- SMCD -->
+                <div class="clinical-feature">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded text-xs font-bold text-white bg-emerald-600">SMCD</span>
+                        <span class="text-xs font-bold text-slate-500">신경근 제어 결함</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1" style="color:var(--c-primary-deep);">안정성 및 모터 조절</h4>
+                    <div class="text-xs font-semibold text-slate-500 mb-3">Stability & Motor Control Dysfunction</div>
+                    <p class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 수동 관절가동범위(PROM)는 완벽하게 정상이나, 신경계의 협응, 타이밍, 고유감각 결여로 환자 스스로 능동 움직임을 제어하지 못하는 상태입니다.
+                    </p>
+                    <div class="p-2.5 rounded text-xs space-y-1" style="background:var(--bg);color:var(--ink-2);">
+                        <p><strong>• 정적 안정성 결함:</strong> 기립 및 단하지 지지 시 척추/골반의 시상면·관상면 정렬 유지 불가.</p>
+                        <p><strong>• 동적 모터 조절 결함:</strong> 움직임 도중 비정상적 비대칭, 떨림, 보상 반동(Momentum) 사용.</p>
+                        <p><strong>• 고역치 전략 보상:</strong> 국소 심부 안정화 근육 대신 글로벌 대근육 과수축 및 호흡 멈춤(Valsalva).</p>
+                        <p><strong>• 특징:</strong> 비체중부하 또는 외부 보조(Assisted) 상태에서는 정상 가동범위 발현.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-tip">
+                <strong><i class="fas fa-check-circle mr-1"></i>절대 감별 법칙 (Golden Rule of Differential Diagnosis)</strong><br>
+                • <strong>수동 가동성(PROM) 정상 + 능동 가동성(AROM) 제한</strong> ➔ 100% <strong>SMCD</strong> (운동 조절 결함). 연부조직 스트레칭이나 관절 가동술이 금기이며, 4x4 신경근 재학습 적용.<br>
+                • <strong>수동 가동성(PROM) 제한 + 능동 가동성(AROM) 제한</strong> ➔ <strong>가동성 기능제한 (TED 또는 JMD)</strong>. 인접 다관절 위치 변화에 따라 제한 각도가 바뀌면 TED, 일정하면 JMD.<br>
+                • <strong>체중부하(Loaded) 제한 + 비체중부하(Unloaded) 정상</strong> ➔ <strong>체중부하 신경근 안정성 결함(Loaded SMCD)</strong>.
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 3] 7대 상위 검사 (Top-Tier Assessments) 전면 심층 해설 -->
+        <!-- ========================================================================= -->
+        <section id="top-tier" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-tasks"></i>SFMA 7대 상위 검사 상세 프로토콜 및 보상작용</h2>
+            <p class="mb-6 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                상위 검사는 신체 전체의 전역적 움직임 패턴을 스크리닝하는 관문입니다. 모든 검사는 <strong>발을 모으고 발끝이 정면을 향한 직립 자세(Standing, feet together)</strong>에서 맨발로 시작하며, 총 15개의 세부 항목으로 채점됩니다.
+            </p>
+
+            <div class="space-y-6">
+                <!-- 1. 경추 움직임 패턴 -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-head-side-cough"></i>1. 경추 움직임 패턴 (Cervical Spine Patterns: 굴곡 · 신전 · 좌/우 회전)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs" style="color:var(--ink-2);">
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <div class="font-bold text-sm mb-1 text-slate-800">경추 굴곡 (Flexion)</div>
+                            <p class="mb-1.5"><strong>검사 방법:</strong> 입을 가볍게 다문 상태에서 턱을 아래로 숙여 가슴에 닿게 함.</p>
+                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱이 흉골 상병 노치(Sternal notch)에 완전히 접촉 (입 벌어짐 없음, 매끄러운 곡선).</p>
+                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 입 벌림(턱벌림 보상), 흉추 굴곡 과다, 턱 접촉 실패 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <div class="font-bold text-sm mb-1 text-slate-800">경추 신전 (Extension)</div>
+                            <p class="mb-1.5"><strong>검사 방법:</strong> 입을 다물고 고개를 뒤로 젖혀 천장을 바라봄.</p>
+                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 얼굴 평면이 천장/바닥과 <strong>10° 이내</strong> 수평 유지, 균일한 경추 아치.</p>
+                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 후방 기울임, 입 벌림, 흉곽 들림, 얼굴 수평 미달 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <div class="font-bold text-sm mb-1 text-slate-800">경추 좌/우 회전 (Rotation)</div>
+                            <p class="mb-1.5"><strong>검사 방법:</strong> 머리를 중립에서 좌/우로 최대한 회전.</p>
+                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 턱 끝이 쇄골 중간선(Mid-clavicular line, 약 <strong>80°</strong>)을 통과.</p>
+                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 어깨 으쓱임(승모근 대상작용), 경추 측방 굴곡, 체간 회전 ➔ <a href="#bo-cervical" class="text-blue-600 underline">경추 하위검사</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 상지 움직임 패턴 -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-hands"></i>2. 상지 움직임 패턴 (Upper Extremity Patterns: 패턴 1 MRE · 패턴 2 LRE)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" style="color:var(--ink-2);">
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <div class="font-bold text-sm mb-1 text-slate-800">패턴 1: 내측회전-신전 (MRE: 하방 도달)</div>
+                            <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 아래에서 뒤로 돌려 반대측 견갑골 하각에 도달하게 함 (Medial Rotation Extension).</p>
+                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑골 하각(Inferior angle, T7 수준)</strong>에 완전히 접촉.</p>
+                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 체간 굴곡 및 측방 기울임, 견갑골 전방 경사(Winging/Tipping), 턱 앞으로 빼기 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <div class="font-bold text-sm mb-1 text-slate-800">패턴 2: 외측회전-외전 (LRE: 상방 도달)</div>
+                            <p class="mb-1.5"><strong>검사 방법:</strong> 팔을 머리 위에서 뒤로 넘겨 반대측 견갑골 극에 도달하게 함 (Lateral Rotation Extension).</p>
+                            <p class="mb-1.5"><span class="text-green-600 font-bold">• 통과 기준:</span> 손가락 끝이 반대측 <strong>견갑극(Spine of scapula, T3 수준)</strong>에 완전히 접촉.</p>
+                            <p><span class="text-red-600 font-bold">• 보상작용:</span> 흉추 과신전 및 요추 전만 증가, 두부 전방 돌출, 팔꿈치 굴곡 부족 ➔ <a href="#bo-ue" class="text-blue-600 underline">상지 하위검사</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 복수-분절 굴곡 (MSF) -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-child"></i>3. 복수-분절 굴곡 (Multi-Segmental Flexion, MSF)
+                    </h3>
+                    <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
+                        <p><strong>검사 방법:</strong> 발을 모으고 서서 무릎을 편 채 허리를 굽혀 손가락으로 발끝을 터치 (서서 발끝 닿기).</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-green-600 font-bold">• 4대 필수 통과 기준 (모두 충족해야 FN):</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>손가락 끝이 발끝에 완전 접촉</li>
+                                    <li>천골 각도(Sacral angle) <strong>70° 이상</strong> 전방 경사</li>
+                                    <li>흉요추의 매끄러운 C자형 후만 곡선 형성</li>
+                                    <li>체중의 <strong>후방 이동(Posterior weight shift)</strong> 관찰</li>
+                                </ul>
+                            </div>
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-red-600 font-bold">• 흔한 보상작용 (하나라도 있으면 불합격):</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>무릎 굴곡 (햄스트링 긴장 회피)</li>
+                                    <li>체중 후방 이동 없음 (앞으로 넘어질 듯한 불안정)</li>
+                                    <li>천골 각도 70° 미달 (골반 회전 잠김)</li>
+                                    <li>요추 편평화(Flat lumbar) ➔ <a href="#bo-msf" class="text-blue-600 underline">MSF 하위검사</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 복수-분절 신전 (MSE) -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-running"></i>4. 복수-분절 신전 (Multi-Segmental Extension, MSE)
+                    </h3>
+                    <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
+                        <p><strong>검사 방법:</strong> 양팔을 머리 위로 곧게 뻗고(어깨 170° 굴곡), 골반과 척추를 뒤로 신전.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-green-600 font-bold">• 4대 필수 통과 기준 (모두 충족해야 FN):</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>골반(ASIS)이 발끝 수직선을 전방으로 통과</li>
+                                    <li>견갑골 하각이 발뒤꿈치 수직선을 후방으로 통과</li>
+                                    <li>흉요추의 매끄럽고 균일한 신전 곡선</li>
+                                    <li>척추 신전 각도 <strong>170° 이상</strong> (수직선 대비)</li>
+                                </ul>
+                            </div>
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-red-600 font-bold">• 흔한 보상작용 (하나라도 있으면 불합격):</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>무릎 굴곡 (대퇴사두근/장요근 보상)</li>
+                                    <li>요추 힌지(Lumbar hinge): 특정 요추 분절만 과신전</li>
+                                    <li>흉추 신전 부재(흉추 후만 고착)</li>
+                                    <li>ASIS 전방 이동 부족 ➔ <a href="#bo-mse" class="text-blue-600 underline">MSE 하위검사</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 복수-분절 회전 (MSR) -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-sync-alt"></i>5. 복수-분절 회전 (Multi-Segmental Rotation, MSR: 좌 · 우)
+                    </h3>
+                    <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
+                        <p><strong>검사 방법:</strong> 발을 모으고 선 상태에서 양팔을 자연스럽게 늘어뜨리거나 가슴에 얹고 전신을 좌/우로 회전.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-green-600 font-bold">• 3대 필수 통과 기준:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>골반 회전 <strong>50° 이상</strong></li>
+                                    <li>체간/어깨 회전 <strong>50° 이상</strong> (전신 총합 <strong>100° 회전</strong>)</li>
+                                    <li>골반 및 척추의 수직 회전축 유지 (측방 기울임 없음)</li>
+                                </ul>
+                            </div>
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>발바닥 들림 또는 발 외회전 슬립</li>
+                                    <li>무릎 굴곡을 통한 회전 보상</li>
+                                    <li>골반 회전 실패 (고관절 회전 제한)</li>
+                                    <li>체간 측방 굴곡 ➔ <a href="#bo-msr" class="text-blue-600 underline">MSR 하위검사</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. 한발 서기 (SLS) -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-shoe-prints"></i>6. 한발 서기 (Single Leg Stance, SLS: 좌 · 우)
+                    </h3>
+                    <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
+                        <p><strong>검사 방법:</strong> 한쪽 무릎과 고관절을 90° 굴곡하여 들어올리고 정적인 기립 유지. 눈 뜨고 10초, 이어서 눈 감고 10초 수행.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-green-600 font-bold">• 필수 통과 기준:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li><strong>눈 뜨고 10초</strong> 안정적 정적 유지</li>
+                                    <li><strong>눈 감고 10초</strong> 자세 붕괴 없이 유지</li>
+                                    <li>골반 수평 유지 (Trendelenburg sign 없음)</li>
+                                    <li>발바닥 흔들림(Ankle sway) 최소화</li>
+                                </ul>
+                            </div>
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>지지발 닿음, 점프, 지지 위치 이동</li>
+                                    <li>체간 외측 기울임 (중둔근 약화 보상)</li>
+                                    <li>눈 감자마자 3초 이내 즉각 균형 상실 (시각 의존성)</li>
+                                    <li>지지측 무릎 과신전 ➔ <a href="#bo-sls" class="text-blue-600 underline">SLS 하위검사</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. 오버헤드 딥 스쿼트 (ODS) -->
+                <div class="clinical-feature">
+                    <h3 class="text-base font-bold mb-3 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                        <i class="fas fa-dumbbell"></i>7. 오버헤드 딥 스쿼트 (Overhead Deep Squat, ODS)
+                    </h3>
+                    <div class="p-3.5 rounded-lg border border-slate-200 text-xs space-y-2" style="background:var(--surface);color:var(--ink-2);">
+                        <p><strong>검사 방법:</strong> 어깨너비로 서서 양팔을 머리 위로 곧게 뻗고(손바닥 전방), 발뒤꿈치를 붙인 채 깊은 스쿼트 수행.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-green-600 font-bold">• 4대 필수 통과 기준:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>대퇴골이 수평면 이하(Below parallel)로 하강</li>
+                                    <li>상완이 수직선을 유지하며 머리 위에 위치</li>
+                                    <li>체간이 경골과 평행하거나 수직선에 가깝게 유지</li>
+                                    <li>발뒤꿈치가 바닥에 완전 밀착 유지</li>
+                                </ul>
+                            </div>
+                            <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                                <span class="text-red-600 font-bold">• 흔한 보상작용:</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1">
+                                    <li>발뒤꿈치 들림 (발목 배측굴곡 제한)</li>
+                                    <li>상지 전방 낙하 (광배근 TED, 흉추 신전 결핍)</li>
+                                    <li>체간 과도한 전방 경사 (고관절 굴곡근/코어 SMCD)</li>
+                                    <li>무릎 내번(Valgus collapse) ➔ <a href="#bo-ods" class="text-blue-600 underline">ODS 하위검사</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 4] 인터랙티브 SFMA 15개 패턴 실시간 채점기 -->
+        <!-- ========================================================================= -->
+        <section id="interactive-tool" class="infographic-section" style="border:2px solid var(--c-primary-border);box-shadow:var(--sh-md);">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+                <h2 class="section-title mb-0" style="border-bottom:none;padding-bottom:0;"><i class="fas fa-calculator"></i>SFMA 인터랙티브 실시간 채점 & 임상 의사결정 엔진</h2>
+                <button id="btnResetScoring" class="px-3 py-1.5 rounded-md text-xs font-bold border border-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" style="color:var(--ink-2);">
+                    <i class="fas fa-redo-alt mr-1"></i>채점 초기화
+                </button>
+            </div>
+            <p class="text-xs text-slate-500 mb-4" style="word-break:keep-all;">
+                아래 15개 상위검사 패턴의 결과를 클릭하십시오. SFMA의 임상 우선순위(DN ➔ FP ➔ DP ➔ FN) 규칙에 따라 즉각적인 진단 소견과 연계 하위검사(Breakout) 경로가 실시간으로 제시됩니다.
+            </p>
+
+            <div class="overflow-x-auto">
+                <table class="score-matrix" id="scoreMatrixTable">
+                    <thead>
+                        <tr>
+                            <th style="width:40%;">검사 평가 항목 (15 지표)</th>
+                            <th style="width:15%;background:rgba(34,197,94,0.15);color:#16a34a;">FN (기능적 무통)</th>
+                            <th style="width:15%;background:rgba(59,130,246,0.15);color:#2563eb;">DN (기능제한 무통)</th>
+                            <th style="width:15%;background:rgba(245,158,11,0.15);color:#d97706;">FP (기능적 유통)</th>
+                            <th style="width:15%;background:rgba(239,68,68,0.15);color:#dc2626;">DP (기능제한 유통)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scoreMatrixBody">
+                        <!-- JS에서 동적 주입 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 실시간 진단 리포트 박스 -->
+            <div class="mt-6 p-4 rounded-xl border border-slate-200 dark:border-slate-700" style="background:var(--surface);">
+                <h4 class="font-bold text-sm mb-2 flex items-center gap-2" style="color:var(--c-primary-strong);">
+                    <i class="fas fa-stethoscope"></i>실시간 임상 진단 및 하위검사 추천 경로
+                </h4>
+                <div id="reportSummary" class="text-xs leading-relaxed mb-3" style="color:var(--ink-2);">
+                    검사 항목의 점수를 선택하면 실시간 분석 결과가 여기에 표시됩니다.
+                </div>
+                <div id="priorityActions" class="space-y-2">
+                    <!-- 하위검사 바로가기 버튼 동적 렌더링 -->
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 5] 경추 하위검사 알고리즘 (Cervical Spine Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-cervical" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-head-side-couch"></i>경추 하위검사 알고리즘 (Cervical Spine Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                선 자세 경추 평가(굴곡·신전·회전)에서 기능제한이나 통증이 발견되면, 테이블에 머리를 받치는 <strong>바로누운 자세(Supine)</strong>로 전환하여 흉추, 견갑대 및 척추 기립근의 자세 유지 부하를 제거한 후 단계적 감별을 시작합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 능동 누운자세 굴곡 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 능동 누운자세 경추 굴곡 (Active Supine Cervical Flexion)</div>
+                        <span class="breakout-badge">체중부하 제거</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">환자가 바로누운 자세에서 턱을 당겨(Chin tuck) 흉골에 닿도록 능동적으로 굴곡 수행 (입 다문 상태 유지).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 성공 (FN):</strong>
+                            선 자세에서는 닿지 않았으나 누운 자세에서 성공 ➔ <strong>체중부하 자세성 경추 모터 조절 기능제한 (SMCD)</strong> 확진. 척추 기립근 과긴장 또는 체중부하 전정-경추 반사 이상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 실패 (DN / DP):</strong>
+                            누운 자세에서도 턱이 흉골에 닿지 않음 ➔ <strong>Step 2 (수동 누운자세 굴곡)</strong>로 즉시 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 수동 누운자세 굴곡 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 수동 누운자세 경추 굴곡 (Passive Supine Cervical Flexion)</div>
+                        <span class="breakout-badge">PROM 가동성 검사</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">검사자가 환자의 후두부를 부드럽게 감싸 쥐고 이완된 상태에서 수동으로 턱을 흉골로 굴곡.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 수동 정상 (FN):</strong>
+                            능동 실패 + 수동 성공 ➔ <strong>경추 심부 굴곡근(Longus colli/capitis)의 SMCD</strong> 확진. 가동성 문제 없음, 근신경계 발화 재교육 필요.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 수동 제한 (DN / DP):</strong>
+                            수동으로도 턱이 닿지 않음 ➔ <strong>가동성 기능제한 (JMD 또는 TED)</strong> 확진. 후두-환추(OA) 분리 검사로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: OA 관절 굴곡 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 후두-환추(OA, C0-C1) 굴곡 검사 (Occipito-Atlantal Flexion Test)</div>
+                        <span class="breakout-badge">상부 경추 단독 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">환자의 머리를 한쪽으로 45~60° 회전시켜 하부 경추를 잠근 후, 턱을 가볍게 끄덕임(Nodding)시켜 순수 C0-C1 굴곡 관찰 (정상 각도 20° 이상).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 양측 20° 이상 정상:</strong>
+                            상부 경추는 정상이므로, <strong>하부 경추(C2-C7) 굴곡 JMD</strong> 또는 <strong>항인대/후방 경추 신전근 TED</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 20° 미달 (DN):</strong>
+                            <strong>후두-환추(OA) 관절낭 굴곡 JMD</strong> 또는 <strong>후두하근(Suboccipital muscles) TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 누운자세 경추 신전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 누운자세 경추 신전 검사 (Supine Cervical Extension Test)</div>
+                        <span class="breakout-badge">경추 신전 가동성 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">환자의 머리를 테이블 끝으로 나오게 위치시키고 뒤로 수동 신전. 얼굴 평면이 바닥과 직각(90°)을 이루는지 관찰.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 얼굴-바닥 90° 도달 (FN):</strong>
+                            기립 신전 실패 + 누운자세 성공 ➔ <strong>체중부하 경추/체간 신전 SMCD</strong> 확진. 흉추 후만 고착 또는 전방 사슬 과긴장.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 수직 미달 또는 통증 (DN / DP):</strong>
+                            <strong>경추 전종인대/사각근/SCM의 TED</strong> 또는 <strong>경추 후방 후관절(Facet) 신전 JMD</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: C1-C2 경추 굴곡-회전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 5: C1-C2 경추 굴곡-회전 검사 (Flexion-Rotation Test)</div>
+                        <span class="breakout-badge">환축추 관절 회전 분리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">검사자가 환자의 목을 완전 수동 굴곡시켜 C2-C7 후관절면을 역학적으로 잠근 채, 턱을 가슴에 유지하며 좌/우 회전 측정 (정상 40° 이상).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 좌우 회전 ≥ 40° (FN):</strong>
+                            C1-C2는 정상이므로, 선자세 회전 제한은 <strong>하부 경추(C3-C7) 회전 JMD</strong> 또는 <strong>견갑거근/상부승모근 TED</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 40° 미달 (DN):</strong>
+                            <strong>환축추(C1-C2, Atlanto-axial) 관절 회전 JMD</strong> 또는 <strong>두판상근/후두하근 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 6] 상지 하위검사 알고리즘 (Upper Extremity Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-ue" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-hands"></i>상지 하위검사 알고리즘 (Upper Extremity Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                상지 패턴 1(MRE: 하방 도달) 및 패턴 2(LRE: 상방 도달) 실패 시, <strong>엎드린 자세(Prone)</strong>로 전환하여 흉추 및 견갑대의 자세 지지 요구를 제거한 후 관절와상완(GH) 관절과 견갑흉곽(ST) 관절의 개별 기여도를 정밀 분리합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- 패턴 1 브레이크아웃 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">패턴 1 (MRE) 하위검사: 엎드린 자세 90/90 내회전 & 신전</div>
+                        <span class="breakout-badge">MRE 분해 평가</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mb-2" style="color:var(--ink-2);">
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 엎드린 자세 90/90 내회전 (Active/Passive IR):</strong>
+                            <p class="mt-1 mb-1.5">팔 90° 외전, 팔꿈치 90° 굴곡 상태에서 전완을 바닥 쪽으로 내회전.</p>
+                            <p><span class="text-green-600 font-bold">정상 기준:</span> 능동 <strong>60° 이상</strong> (전완이 바닥과 30° 각도 형성).</p>
+                            <p class="mt-1 text-slate-600 dark:text-slate-400">• 수동 정상(≥60°) + 능동 실패 ➔ <strong>견갑하근/내회전근 SMCD</strong>.<br>• 수동 제한(&lt;60°) ➔ <strong>후방 관절낭 JMD</strong> 또는 <strong>극하근/소원근 TED</strong>.</p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 엎드린 자세 어깨 신전 검사 (Active/Passive Extension):</strong>
+                            <p class="mt-1 mb-1.5">팔을 곧게 펴고 몸 옆에서 바닥과 평행 이상으로 천장 쪽 거상.</p>
+                            <p><span class="text-green-600 font-bold">정상 기준:</span> 능동 <strong>50° 이상</strong> 신전.</p>
+                            <p class="mt-1 text-slate-600 dark:text-slate-400">• 수동 정상 + 능동 실패 ➔ <strong>광배근/삼두근/후면삼각근 SMCD</strong>.<br>• 수동 제한 ➔ <strong>오구상완인대/전방 관절낭 JMD</strong> 또는 <strong>대흉근/전면삼각근 TED</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="p-3 rounded bg-slate-50 dark:bg-slate-800/40 text-xs" style="color:var(--ink-2);">
+                        <strong>• 엎드린 자세 수동 팔꿈치 굴곡 검사 (Passive Prone Elbow Flexion):</strong> 환자의 팔을 옆에 두고 검사자가 수동으로 엄지손가락을 동측 어깨에 접촉시킴. 접촉 실패 시 어깨가 아닌 <strong>팔꿈치 관절낭 JMD 또는 상완삼두근 TED</strong>로 판정.
+                    </div>
+                </div>
+
+                <!-- 패턴 2 브레이크아웃 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">패턴 2 (LRE) 하위검사: 엎드린 자세 90/90 외회전 & 굴곡/외전</div>
+                        <span class="breakout-badge">LRE 분해 평가</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mb-2" style="color:var(--ink-2);">
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 엎드린 자세 90/90 외회전 (Active/Passive ER):</strong>
+                            <p class="mt-1 mb-1.5">팔 90/90 위치에서 전완을 천장 쪽으로 외회전.</p>
+                            <p><span class="text-green-600 font-bold">정상 기준:</span> 능동 <strong>90° 이상</strong> (전완이 테이블과 완전 수직 도달).</p>
+                            <p class="mt-1 text-slate-600 dark:text-slate-400">• 수동 정상(90°) + 능동 실패 ➔ <strong>극하근/소원근 모터 조절 SMCD</strong>.<br>• 수동 제한(&lt;90°) ➔ <strong>전방 관절낭/상완인대 JMD</strong> 또는 <strong>견갑하근/대흉근 TED</strong>.</p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 엎드린 자세 어깨 굴곡/외전 (Active/Passive Flexion 170°):</strong>
+                            <p class="mt-1 mb-1.5">팔을 머리 위 Y자 형태로 뻗어 천장으로 들어올림.</p>
+                            <p><span class="text-green-600 font-bold">정상 기준:</span> 팔이 체간선 대비 <strong>170° 이상</strong> 거상.</p>
+                            <p class="mt-1 text-slate-600 dark:text-slate-400">• 수동 정상 + 능동 실패 ➔ <strong>전거근/하부승모근 견갑골 상방회전 SMCD</strong>.<br>• 수동 제한 ➔ <strong>하부 관절낭 JMD</strong> 또는 <strong>광배근/대원근/오구완근 TED</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 앙와위 교차 패턴 및 충돌 검사 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="breakout-step-card mb-0">
+                        <div class="breakout-step-header">
+                            <div class="breakout-step-title text-sm">앙와위 교차 상지 패턴 검사 (Supine Reciprocal UE)</div>
+                            <span class="breakout-badge">동시성 코어 SMCD</span>
+                        </div>
+                        <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                            바로누운 자세에서 한 팔은 머리 위로, 다른 팔은 몸 옆에 두고 양팔을 동시에 들어올리는 힘에 저항하게 함. 저항 붕괴 시 단일 어깨 문제가 아닌 <strong>전신 교차성 체간/견갑대 동시성 SMCD</strong>로 감별.
+                        </p>
+                    </div>
+                    <div class="breakout-step-card mb-0">
+                        <div class="breakout-step-header">
+                            <div class="breakout-step-title text-sm">견관절 충돌 제거 검사 (Impingement Clearing)</div>
+                            <span class="breakout-badge text-red-600">안전 클리어링</span>
+                        </div>
+                        <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                            손을 반대쪽 어깨 위에 올리고 팔꿈치를 턱 높이로 수동 거상. 통증 발생 시(DP) 점액낭염, 회전근개 건병증 등 국소 염증성 병변으로 판정하고 적극적 교정운동을 즉시 중단.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 7] 복수-분절 굴곡 하위검사 알고리즘 (MSF Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-msf" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-child"></i>복수-분절 굴곡 하위검사 알고리즘 (MSF Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                선 자세 발끝 닿기 실패 시, <strong>기립(Loaded) ➔ 롱시팅(Unloaded) ➔ 바로누운 자세(Supine)</strong>로 단계적으로 전환하여 햄스트링 신장성, 고관절 굴곡 가동성, 그리고 체중부하 시상면 코어 신경근 제어를 정밀 분리합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 롱싯 발끝 닿기 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 롱싯 발끝 닿기 (Long Sitting Toe Touch Test)</div>
+                        <span class="breakout-badge">기립 체중부하 제거</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">바닥에 다리를 뻗고 앉은 자세에서 무릎을 편 채 허리를 굽혀 양손으로 발끝을 터치하게 함.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 발끝 터치 성공 (FN):</strong>
+                            서서는 닿지 못했으나 앉아서 성공 ➔ <strong>체중부하 기립 균형 및 후방 체중이동(Posterior weight shift) SMCD</strong> 확진. 햄스트링 유연성과 척추 굴곡 가동성은 정상이며, 기립 상태에서 넘어지지 않으려는 신경계의 과도한 햄스트링/기립근 보호 수축이 원인.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 발끝 터치 실패 (DN / DP):</strong>
+                            앉아서도 발끝에 닿지 못함 ➔ 하지 및 골반의 구조적 가동성 결함 확인을 위해 <strong>Step 2 (능동/수동 SLR)</strong>로 이동.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 능동 및 수동 하지직거상 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 하지직거상 검사 (Active & Passive SLR)</div>
+                        <span class="breakout-badge">햄스트링 TED vs 코어 SMCD 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">바로누운 자세에서 반대측 다리를 바닥에 고정하고 한쪽 다리를 무릎을 편 채 천장으로 거상 (능동 70° 이상, 수동 80° 이상 기준).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 수동 거상 ≥ 80° (FN):</strong>
+                            <strong>햄스트링 TED 완전 배제</strong>. 수동 정상인데 능동 거상 각도가 70° 미만이면 <strong>전방 코어 및 고관절 굴곡근 발화 타이밍 SMCD</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 수동 거상 &lt; 80° (DN):</strong>
+                            수동으로도 다리가 올라가지 않음 ➔ <strong>햄스트링 TED 또는 좌골신경 활주 결함(Neural tension)</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: 앙와위 양측 무릎 가슴당기기 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 앙와위 양측 무릎 가슴당기기 (Supine Knee to Chest Holding)</div>
+                        <span class="breakout-badge">고관절 관절낭 JMD vs 척추 굴곡 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">바로누운 자세에서 양쪽 무릎을 가슴으로 가져와 정강이를 잡고 허벅지를 하부 흉곽에 밀착 (고관절 굴곡 120° 이상).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 허벅지-흉곽 밀착 성공 (FN):</strong>
+                            고관절 자체의 가동성은 정상. 롱시팅 실패 원인은 <strong>흉요추 분절간 굴곡 JMD</strong> 또는 <strong>천골 전방경사 제한(Sacral nutation JMD)</strong>으로 국한.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 허벅지 밀착 실패 또는 통증 (DN / DP):</strong>
+                            <strong>고관절 후하방 관절낭 JMD 또는 단관절 둔근(대둔근 심부 섬유) TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 앙와위 롤링 연계 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 앙와위 롤링 평가 (Supine Rolling Test) 연계</div>
+                        <span class="breakout-badge">시상면 굴곡 모터제어</span>
+                    </div>
+                    <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                        가동성 검사(SLS, 무릎 가슴당기기)가 모두 정상인데도 롱시팅이나 기립 발끝 닿기가 되지 않는 환자는 앙와위에서 복와위로 구르는 롤링 테스트를 시행합니다. 사지의 도움 없이 체간 굴곡과 회전을 개시하지 못한다면 복횡근과 내외복사근의 <strong>시상면-회전성 코어 통합 SMCD</strong>로 확진합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 8] 복수-분절 신전 하위검사 알고리즘 (MSE Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-mse" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-running"></i>복수-분절 신전 하위검사 알고리즘 (MSE Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                선 자세 전신 신전 실패 시, <strong>상지 분리 ➔ 복와위 상체밀기(척추 신전) ➔ 네발기기 흉추 격리 ➔ 복와위 고관절 신전 ➔ 변형 토마스 검사</strong> 순서로 각각의 분절을 단독 격리하여 구조적 가동성 장애와 코어 전방 안정성 결함을 명확히 규명합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 상지 없는 신전 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 상지 없는 신전 검사 (Hands-Free Extension Test)</div>
+                        <span class="breakout-badge">상지 거상 영향 배제</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">양손을 허리에 얹거나 가슴에 교차하고 선 자세에서 체간 신전을 다시 수행.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 신전 각도 정상 회복 (FN):</strong>
+                            상지를 내리니 척추 신전이 정상화됨 ➔ 척추나 고관절 문제가 아니며, <strong>어깨 거상 제한(광배근/흉근 TED 또는 어깨 굴곡 JMD)</strong>에 의해 척추가 보상적으로 잠겼던 것임.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 신전 제한 (DN / DP):</strong>
+                            상지 영향이 배제되었으므로 척추 또는 하지 자체의 결함 확진 ➔ <strong>Step 2 (복와위 상체밀기)</strong>로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 복와위 상체밀기 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 복와위 상체밀기 (Prone Press-up Cobra Test)</div>
+                        <span class="breakout-badge">척추 신전 가동성 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">엎드린 자세에서 손을 어깨 옆에 두고 골반(ASIS)을 테이블에 밀착한 채 팔로 상체를 밀어올림 (팔꿈치 완전 신전).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 골반 밀착 + 완전 거상 (FN):</strong>
+                            척추 자체의 신전 가동성은 완전 정상. 기립 신전 실패는 <strong>고관절 신전 가동성 결핍</strong> 또는 <strong>체중부하 척추 전방안정성 SMCD</strong>.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 골반 들림 또는 척추 뻣뻣함 (DN / DP):</strong>
+                            <strong>요추 분절간 신전 JMD</strong> 또는 <strong>흉추 후만 고착 / 복벽 전방 근막 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: 요추잠금 흉추 신전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 요추잠금 흉추 신전 검사 (Lumbar Locked Thoracic Extension)</div>
+                        <span class="breakout-badge">흉추 단독 신전 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">네발기기에서 둔부를 발뒤꿈치에 완전히 닿게 앉아(락백 자세) 요추 신전을 차단한 채, 손을 목 뒤에 대고 흉곽을 천장으로 거상.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 흉곽 신전 성공:</strong>
+                            흉추 문제는 배제되며, 척추 신전 제한의 원인은 <strong>하부 요추 분절간 신전 JMD</strong>로 국한.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 흉곽 신전 실패:</strong>
+                            <strong>흉추 후만증 및 흉추 신전 JMD / 늑골 간 인대 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 복와위 고관절 신전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 복와위 고관절 신전 검사 (Prone Active/Passive Hip Extension)</div>
+                        <span class="breakout-badge">고관절 전방 사슬 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">엎드린 자세에서 무릎을 편 채 다리를 바닥에서 들어올림 (능동 10° 이상, 이어서 검사자가 수동 거상 10° 이상 평가).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 수동 ≥ 10° + 능동 실패:</strong>
+                            가동성은 정상이나 대둔근 발화 타이밍 결함 및 햄스트링/기립근 과보상 ➔ <strong>둔근 동원 SMCD</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 수동 신전 &lt; 10° (DN / DP):</strong>
+                            수동으로도 고관절이 펴지지 않음 ➔ 고관절 전방 연부조직/관절낭 가동성 문제 확진. <strong>Step 5 (변형 토마스 검사)</strong>로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: 변형 토마스 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 5: 변형 토마스 검사 (Modified Thomas Test)</div>
+                        <span class="breakout-badge">3대 고관절 굴곡근 정밀 감별</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">환자를 테이블 끝에 걸터앉게 하고 한쪽 무릎을 가슴에 안고 뒤로 누움. 반대측 다리의 허벅지 수평 여부와 무릎 굴곡 각도 측정.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs mt-2" style="color:var(--ink-2);">
+                        <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <strong>1. 장요근 (Iliopsoas) TED:</strong><br>
+                            허벅지가 테이블 수평면 위로 들림 (고관절 신전 0° 미달).
+                        </div>
+                        <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <strong>2. 대퇴직근 (Rectus Femoris) TED:</strong><br>
+                            무릎이 80° 이상 자연스럽게 굴곡되지 못하고 전방으로 펴짐.
+                        </div>
+                        <div class="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40">
+                            <strong>3. TFL / ITB 및 관절낭:</strong><br>
+                            허벅지가 외전(Abduction)되거나 수동 신전 시 끝느낌이 딱딱함 ➔ <strong>TFL TED 또는 전방 관절낭 JMD</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 9] 복수-분절 회전 하위검사 알고리즘 (MSR Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-msr" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-sync-alt"></i>복수-분절 회전 하위검사 알고리즘 (MSR Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                전신 회전(좌/우 100°) 실패 시, <strong>앉은 자세(골반 잠금) ➔ 네발기기(요추 잠금) ➔ 복와위 고관절 회전 ➔ 경골 회전</strong>을 순차적으로 적용하여 흉추, 요추, 고관절 및 하지의 회전 기여도를 명확히 분리합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 앉은 자세 체간 회전 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 앉은 자세 체간 회전 검사 (Seated Trunk Rotation Test)</div>
+                        <span class="breakout-badge">골반 회전 차단</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">무릎 사이에 단단한 블록을 끼우고 앉아 골반과 대퇴 회전을 차단한 채 상체를 회전 (어깨 회전 각도 50° 이상 기준).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 어깨 회전 ≥ 50° (FN):</strong>
+                            흉추와 체간 회전 가동성은 완전 정상. 기립 회전 제한의 원인은 <strong>고관절 회전 결함</strong> 또는 <strong>하지 체중부하 회전 SMCD</strong>.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 어깨 회전 &lt; 50° (DN / DP):</strong>
+                            <strong>흉추 회전 JMD/TED</strong> 확진. 흉추의 진정한 회전 가동성 평가를 위해 <strong>Step 2 (요추잠금 흉추회전)</strong>로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 네발기기 요추잠금 흉추회전 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 요추잠금 능동 흉추회전 (Lumbar Locked Active Rotation)</div>
+                        <span class="breakout-badge">흉추 단독 회전 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">네발기기에서 둔부를 발뒤꿈치에 완전히 닿게 앉고 한 손을 등 뒤에 놓은 채 어깨를 천장으로 회전 (정상 50° 이상).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 흉추 회전 ≥ 50° (FN):</strong>
+                            흉추 자체의 회전 가동성은 정상이므로, 앉은 자세 실패는 <strong>체간 복사근/회전근의 SMCD</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 흉추 회전 &lt; 50° (DN / DP):</strong>
+                            <strong>흉추 후관절 회전 JMD 또는 늑간 인대/흉근 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: 복와위 고관절 회전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 복와위 고관절 내회전 & 외회전 검사 (Prone Hip IR / ER)</div>
+                        <span class="breakout-badge">고관절 단독 회전 분리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">엎드린 자세에서 무릎을 90° 굴곡시키고 고관절 내회전(IR) 및 외회전(ER)을 능동/수동으로 측정.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mt-2" style="color:var(--ink-2);">
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 고관절 내회전 (IR, 정상 30~40°):</strong>
+                            <p class="mt-1">하퇴를 바깥쪽으로 벌림. 수동 정상 + 능동 실패 시 <strong>내회전근 SMCD</strong>.<br>수동 제한 시 <strong>이상근/심부외회전근 TED</strong> 또는 <strong>후방 관절낭 JMD</strong>.</p>
+                        </div>
+                        <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                            <strong class="text-sm text-slate-800">• 고관절 외회전 (ER, 정상 40~50°):</strong>
+                            <p class="mt-1">하퇴를 안쪽으로 교차. 수동 정상 + 능동 실패 시 <strong>둔근/외회전근 SMCD</strong>.<br>수동 제한 시 <strong>TFL/내전근 TED</strong> 또는 <strong>전방 관절낭 JMD</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 앉은 자세 경골 회전 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 앉은 자세 경골 회전 검사 (Seated Tibial Rotation Test)</div>
+                        <span class="breakout-badge">슬관절 회전 분리</span>
+                    </div>
+                    <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                        의자에 앉아 무릎을 90° 굴곡한 상태에서 발목을 회전시켜 경골의 내회전(정상 20°)과 외회전(정상 30°)을 측정. 경골 회전 결함은 선 자세 MSR 시 지면 반발력에 따른 발-무릎 회전 사슬을 잠그는 숨겨진 원인으로 작용합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 10] 한발 서기 하위검사 알고리즘 (SLS Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-sls" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-shoe-prints"></i>한발 서기 하위검사 알고리즘 (Single Leg Stance Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                한발 서기 실패 시, <strong>시각 차단(전정/체성감각 박리) ➔ 족부 관상면 가동성 ➔ 동적 보행(뒤꿈치/발가락) ➔ 비체중부하 코어 제어</strong> 순서로 감각 입력 결함과 고관절 외측 안정화 사슬(Lateral sling)을 분리합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 시각 차단 감별 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 시각 차단 감별 검사 (Eyes Closed SLS Test)</div>
+                        <span class="breakout-badge">감각계 삼원소 박리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">눈을 감고 한발 서기 10초를 다시 시도하여 시각계, 전정계, 발바닥 체성감각의 기여도를 감별.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 눈 감고 10초 유지 성공 (FN):</strong>
+                            전정계와 체성감각 정상. 기립 불합격 원인은 <strong>단순 기립 집중력 결여</strong> 또는 <strong>경미한 하지 피로</strong>.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 눈 뜸 성공 + 눈 감음 즉시 실패:</strong>
+                            <strong>시각 의존성 보상 상태</strong> 확진. 시각을 차단했을 때 무너지는 것은 발목 고유수용성감각 손실(과거 염좌 병력) 또는 전정안구반사(VOR) 기능저하를 의미.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 발목 관상면 가동성 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 앉은 자세 발목 내반 & 외반 검사 (Seated Ankle Inversion / Eversion)</div>
+                        <span class="breakout-badge">거골하관절 가동성 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">의자에 앉아 발을 바닥에서 살짝 띄운 채 발목 내반(Inversion, 정상 30°)과 외반(Eversion, 정상 15°)을 능동 및 수동으로 측정.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 내반 30° / 외반 15° 정상 (FN):</strong>
+                            거골하관절 가동성은 정상. 단하지 흔들림 원인은 <strong>발목 주위 동적 안정화근 SMCD</strong>.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 가동범위 제한 (DN / DP):</strong>
+                            <strong>거골하(Subtalar) 관절낭 JMD</strong> 또는 <strong>비골근군/후경골근 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: 뒤꿈치 걷기 및 발가락 걷기 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 뒤꿈치 걷기 & 발가락 걷기 (Standing Heel & Toe Walk)</div>
+                        <span class="breakout-badge">원위부 신경근 동적 제어</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mt-2" style="color:var(--ink-2);">
+                        <div class="p-3 rounded border border-slate-200" style="background:var(--surface);">
+                            <strong>• 뒤꿈치 걷기 (Heel Walk):</strong><br>
+                            발가락을 높이 들고 뒤꿈치로만 10걸음 전진.<br>
+                            실패 시 ➔ <strong>L4-L5 신경근병증, 전경골근 SMCD</strong> 또는 <strong>아킬레스건 TED</strong>.
+                        </div>
+                        <div class="p-3 rounded border border-slate-200" style="background:var(--surface);">
+                            <strong>• 발가락 걷기 (Toe Walk):</strong><br>
+                            뒤꿈치를 높이 들고 앞발로만 10걸음 전진.<br>
+                            실패 시 ➔ <strong>S1 신경근 결함, 비복근/가자미근 복합체 SMCD</strong> 또는 <strong>발목 배측굴곡 JMD</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 비체중부하 외측 코어 제어 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 비체중부하 외측 슬링 모터제어 평가</div>
+                        <span class="breakout-badge">골반 안정화근 SMCD 격리</span>
+                    </div>
+                    <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                        단하지 기립 시 체간이 외측으로 기울거나 반대측 골반이 낙하하는 트렌델렌부르크(Trendelenburg) 양성 환자는, 누운 자세에서 골반 브릿지(Bridging)와 측와위 외전(Side-lying abduction)을 평가하여 단순 중둔근 근력 결핍인지, 체중부하 시 골반-요추-고관절을 묶어주는 <strong>외측 사슬(Lateral subsystem)의 신경근 협응 SMCD</strong>인지 최종 감별합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 11] 오버헤드 딥 스쿼트 하위검사 알고리즘 (ODS Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-ods" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-dumbbell"></i>오버헤드 딥 스쿼트 하위검사 알고리즘 (ODS Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                오버헤드 딥 스쿼트 실패 시, <strong>상지 분리(팔 내림) ➔ 발목 분리(뒤꿈치 거상) ➔ 코어 분리(기둥 어시스트) ➔ 비체중부하 앙와위 스쿼트 ➔ 반무릎 발목 배측굴곡</strong>의 5단계 박리 과정을 거쳐 원인 부위를 정확히 적출합니다.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Step 1: 팔 내린 스쿼트 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 1: 팔 내린 스쿼트 (Arms Down Squat Test)</div>
+                        <span class="breakout-badge">상지/흉추 신전 요구 배제</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">양팔을 내리고 가슴에 얹거나 몸 옆에 둔 채 맨몸 딥 스쿼트 수행.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 대퇴골 수평 이하 성공 (FN):</strong>
+                            팔을 내리니 완벽하게 깊은 스쿼트 완성 ➔ 하지와 골반 문제는 전혀 없으며, <strong>견관절 굴곡 JMD/TED(광배근 단축)</strong> 또는 <strong>흉추 신전 JMD</strong>가 하지를 보상적으로 잠그고 있었음 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 딥 스쿼트 불가 (DN / DP):</strong>
+                            하지 및 족부 자체의 기계적·신경근적 제한 확진 ➔ <strong>Step 2 (뒤꿈치 거상 스쿼트)</strong>로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 뒤꿈치 거상 스쿼트 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 2: 뒤꿈치 거상 스쿼트 (Heels-Elevated Squat Test)</div>
+                        <span class="breakout-badge">발목 배측굴곡 제한 격리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">양 발뒤꿈치 아래에 약 5cm(2인치) 높이의 보드나 원판을 받쳐 발목 배측굴곡 요구량을 감소시킨 상태에서 스쿼트 수행.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 뒤꿈치 거상 시 딥 스쿼트 통과:</strong>
+                            <strong>발목 배측굴곡 결핍 확진</strong>. 뒤꿈치를 받쳐 발목 움직임을 대체하자 즉시 통과되었으므로, 스쿼트 실패의 1차 원인은 고관절이 아닌 발목임. <strong>Step 5 (반무릎 족배굴곡 검사)</strong>로 이동하여 JMD와 TED 감별.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 여전히 실패:</strong>
+                            발목 외에 골반, 고관절, 코어의 결함 존재 ➔ <strong>Step 3 (어시스트 스쿼트)</strong>로 진행.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: 어시스트 스쿼트 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 3: 지지/어시스트 스쿼트 (Assisted / Holding Squat Test)</div>
+                        <span class="breakout-badge">시상면 체간 안정성 SMCD 분리</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">단단한 기둥이나 지지봉을 양손으로 가볍게 잡고 체중부하 시 균형 유지를 보조받으며 스쿼트 수행.</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 지지 시 완벽한 딥 스쿼트 성공:</strong>
+                            <strong>체중부하 시상면 코어 안정성/모터제어 결함 (SMCD)</strong> 확진. 모든 관절 가동성은 정상이며, 스스로의 체중을 지탱하고 전후 균형을 잡는 신경근 제어만 훈련하면 해결됨.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 지지해도 대퇴 수평 미달:</strong>
+                            고관절 또는 무릎 자체의 구조적 관절 가동성 장애 ➔ <strong>Step 4 (앙와위 딥 스쿼트)</strong>로 이동.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: 앙와위 딥 스쿼트 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 4: 앙와위 딥 스쿼트 검사 (Supine Deep Squat Test)</div>
+                        <span class="breakout-badge">무중력 비체중부하 관절 가동성 확인</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">바로누운 자세에서 양 무릎을 굽혀 발을 엉덩이 너비로 벌리고 양 무릎을 가슴 외측으로 깊게 당김 (무릎 굴곡 120° 이상, 고관절 굴곡 100° 이상).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 완전 굴곡 달성:</strong>
+                            고관절과 슬관절의 수동 가동성은 완전 정상 ➔ <strong>고관절 굴곡근/골반 모터제어 SMCD</strong> 확진.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 굴곡 미달 또는 서혜부 집힘 통증:</strong>
+                            <strong>고관절 전후방 관절낭 JMD(대퇴비구충돌 FAI 의심)</strong> 또는 <strong>단관절 둔근 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: 반무릎 족관절 배측굴곡 검사 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title">Step 5: 반무릎 족관절 배측굴곡 검사 (Half-Kneeling Ankle DF WBLT)</div>
+                        <span class="breakout-badge">거퇴관절 JMD vs 가자미근 TED 정밀 감별</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">반무릎 자세에서 앞발 엄지발가락을 벽에서 10cm(4인치) 띄워 놓고, 뒤꿈치를 바닥에 붙인 채 무릎을 앞으로 밀어 벽에 터치 (체중부하 경골 경사각 35~40° 이상 평가).</p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 뒤꿈치 밀착 + 무릎 벽 터치 (FN):</strong>
+                            체중부하 족관절 가동성 정상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 뒤꿈치 들림 또는 무릎 미달 (DN / DP):</strong>
+                            앞쪽 발목 집힘 감각 ➔ <strong>거퇴(Talocrural) 관절낭 전방 JMD</strong>.<br>
+                            종아리 뒤쪽 팽팽한 당김 ➔ <strong>가자미근/아킬레스건 TED</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 12] 롤링 패턴 하위검사 알고리즘 (Rolling Breakout) -->
+        <!-- ========================================================================= -->
+        <section id="bo-rolling" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-sync"></i>롤링 패턴 하위검사 알고리즘 (Rolling Breakout)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                롤링(구르기)은 인간 발달 4~6개월 차에 획득되는 원초적 회전 패턴으로, <strong>사지와 체간의 해리(Dissociation) 능력과 대각선 나선형 코어(Spiral sling)의 피드포워드 신경근 제어</strong>를 평가하는 SFMA의 궁극적인 모터 컨트롤 검사입니다.
+            </p>
+
+            <!-- 발달학적 배경 및 4대 절대 규칙 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="clinical-feature">
+                    <h4 class="font-bold text-sm mb-2 text-slate-800 dark:text-slate-200">
+                        <i class="fas fa-baby mr-1"></i>신경발달학적 의의
+                    </h4>
+                    <p class="text-xs leading-relaxed" style="color:var(--ink-2);word-break:keep-all;">
+                        [사실] 얀다(Janda)와 콜라(Kolar, DNS)의 이론에 따르면, 롤링은 척추를 안정화시키는 심부 내재근(복횡근, 뭇갈래근, 골반저근)이 사지의 움직임보다 먼저 선행 활성화(Feedforward)되어야만 완벽하게 수행될 수 있습니다. 롤링의 결함은 기립 및 스포츠 동작에서의 보상작용과 만성 통증의 근본 원인입니다.
+                    </p>
+                </div>
+                <div class="clinical-feature">
+                    <h4 class="font-bold text-sm mb-2 text-slate-800 dark:text-slate-200">
+                        <i class="fas fa-exclamation-circle mr-1"></i>롤링 평가의 4대 절대 규칙
+                    </h4>
+                    <ul class="text-xs space-y-1" style="color:var(--ink-2);">
+                        <li><strong>1. 비사용 분절 완전 이완:</strong> 구르는 팔다리 외의 분절은 시체처럼 축 늘어져 있어야 함 (밀기 금지).</li>
+                        <li><strong>2. 반동(Momentum) 불허:</strong> 몸을 튕기거나 흔들어서 탄력으로 넘어가면 불합격.</li>
+                        <li><strong>3. 척추 과신전(Arching) 불허:</strong> 허리를 꺾어 뒤로 젖히며 구르는 보상작용 금지.</li>
+                        <li><strong>4. 시선과 두부의 선행:</strong> 시선과 머리가 먼저 회전 방향을 쳐다보며 동작을 유도해야 함.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8가지 기본 롤링 패턴 -->
+            <h3 class="subsection-title"><i class="fas fa-cubes"></i>8가지 기본 롤링 평가 프로토콜</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- 상지 리드: 앙와위 -> 복와위 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title text-sm">1. 상지 리드: 누운자세 ➔ 엎드린자세 (Supine to Prone, UE Lead)</div>
+                        <span class="breakout-badge">우측 / 좌측</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">
+                        바로누워 양팔을 머리 위로 뻗은 후, 하지는 완전히 이완한 채 한쪽 팔과 시선, 머리를 대각선 반대편으로 뻗어 상체 회전력만으로 뒤집음.
+                    </p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 부드럽게 통과:</strong>
+                            상부 체간-경추 회전 사슬 및 전방 사선 슬링(Anterior oblique sling) 정상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 다리로 밀거나 반동:</strong>
+                            <strong>상부 체간 회전 SMCD</strong> 확진. 경추 굴곡-회전 타이밍 결함.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하지 리드: 앙와위 -> 복와위 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title text-sm">2. 하지 리드: 누운자세 ➔ 엎드린자세 (Supine to Prone, LE Lead)</div>
+                        <span class="breakout-badge">우측 / 좌측</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">
+                        상지는 완전히 이완한 채, 한쪽 다리를 들어 고관절을 90° 굴곡·내전시켜 반대측으로 넘기며 골반 회전력만으로 뒤집음.
+                    </p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 부드럽게 통과:</strong>
+                            하부 골반-고관절 굴곡 회전 사슬 및 복사근-내전근 사슬 정상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 팔로 바닥을 밀거나 멈춤:</strong>
+                            <strong>골반-요추 회전 분리 SMCD</strong> 확진. 장요근/복횡근 동원 실패.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상지 리드: 복와위 -> 앙와위 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title text-sm">3. 상지 리드: 엎드린자세 ➔ 누운자세 (Prone to Supine, UE Lead)</div>
+                        <span class="breakout-badge">우측 / 좌측</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">
+                        엎드린 자세에서 하지는 축 늘어뜨리고, 한쪽 팔을 머리 위 뒤쪽 대각선으로 넘기며 시선과 견갑대의 신전-회전력으로 뒤집어 누움.
+                    </p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 통과:</strong>
+                            후방 사선 슬링(Posterior oblique sling) 및 흉추 신전 회전 정상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 허리 과신전(C-curve 역전):</strong>
+                            <strong>광배근-대둔근 후방 사슬 SMCD</strong> 또는 흉추 신전 결핍.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하지 리드: 복와위 -> 앙와위 -->
+                <div class="breakout-step-card">
+                    <div class="breakout-step-header">
+                        <div class="breakout-step-title text-sm">4. 하지 리드: 엎드린자세 ➔ 누운자세 (Prone to Supine, LE Lead)</div>
+                        <span class="breakout-badge">우측 / 좌측</span>
+                    </div>
+                    <p class="text-xs mb-2" style="color:var(--ink-2);">
+                        상지를 이완한 채, 한쪽 다리를 뒤로 신전하여 반대측 바닥 쪽으로 넘기며 골반 후방 회전력만으로 뒤집어 누움.
+                    </p>
+                    <div class="flow-decision">
+                        <div class="flow-branch">
+                            <strong class="text-green-600"><i class="fas fa-check"></i> 통과:</strong>
+                            대둔근-반대측 광배근 연결성 및 골반 후방 회전 정상.
+                        </div>
+                        <div class="flow-branch">
+                            <strong class="text-red-600"><i class="fas fa-times"></i> 발 튕기기, 요추 힌지 발생:</strong>
+                            <strong>대둔근 단독 신전 결핍 및 둔부-체간 SMCD</strong> 확진.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 임상적 처방 가이드 -->
+            <div class="mt-4 p-3.5 rounded-lg border border-slate-200 text-xs" style="background:var(--surface);color:var(--ink-2);">
+                <strong><i class="fas fa-magic mr-1"></i>롤링 기능제한 시 4x4 교정운동 처방:</strong><br>
+                롤링이 불가능한 사분면(Quadrant)은 <strong>4x4 매트릭스의 포지션 1 (누운 자세), 로드 1 (보조 하 롤링: Assisted Rolling with band/roller)</strong>을 적용하여 뇌에 올바른 회전성 모터 프로그램을 재입력합니다.
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 13] 4x4 치료 매트릭스 및 교정운동 가이드라인 -->
+        <!-- ========================================================================= -->
+        <section id="treatment" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-th-large"></i>SFMA 치료 가이드라인 및 4x4 매트릭스 (Treatment Guidelines)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                SFMA의 치료 철학은 <strong>Reset(재설정) ➔ Reinforce(강화/보존) ➔ Reload(재적재)</strong>의 엄격한 3단계 프로세스를 따릅니다. 관절 가동성(JMD)이나 조직 신장성(TED)을 먼저 수동으로 해결한 후, 4x4 매트릭스를 통해 신경계에 올바른 움직임 프로그램을 다시 학습시킵니다.
+            </p>
+
+            <!-- 3단계 치료 프로세스 카드 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Stage 1</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">Reset (재설정)</div>
+                    <p class="text-xs mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [가동성 해결] 관절 가동술(Mobilization), 관절 조작(Manipulation), 근막 이완술(IASTM/MFR), 드라이 니들링, 능동적 신경가동술을 통해 하드웨어의 기계적 가동성 장애(TED/JMD)를 즉각 해소합니다.
+                    </p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Stage 2</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">Reinforce (보존)</div>
+                    <p class="text-xs mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [신경근 지지] 키네시오 테이핑, 능동적 정적 스트레칭, 일상 자세 수정 및 폼롤러 자가 근막 이완(SMR)을 적용하여 재설정된 가동범위가 다시 구축되지 않도록 생화학적·기계적 상태를 유지합니다.
+                    </p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-xs font-bold uppercase" style="color:var(--c-primary);">Stage 3</div>
+                    <div class="text-2xl font-bold mt-1" style="color:var(--ink);">Reload (재적재)</div>
+                    <p class="text-xs mt-2" style="color:var(--ink-2);word-break:keep-all;">
+                        [운동 제어 재교육] 4x4 매트릭스의 발달학적 자세 진도(누운자세 ➔ 네발기기 ➔ 무릎서기 ➔ 기립)와 저항 진도(보조 ➔ 능동 ➔ 부하 ➔ 동적)에 따라 신경계에 최적의 모터 제어를 프로그래밍합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4x4 매트릭스 인터랙티브 설명 및 테이블 -->
+            <h3 class="subsection-title"><i class="fas fa-table"></i>4x4 교정운동 매트릭스 (Interactive Matrix)</h3>
+            <p class="text-xs text-slate-500 mb-3" style="word-break:keep-all;">
+                아래 4x4 매트릭스의 각 셀을 클릭하면, 해당 포지션과 부하 단계에 최적화된 구체적인 교정운동 프로토콜과 임상 목적이 하단 디테일 박스에 표시됩니다.
+            </p>
+
+            <div class="matrix-4x4-grid">
+                <!-- Header Row -->
+                <div class="matrix-header">자세 \ 부하</div>
+                <div class="matrix-header">1. 보조 (Assisted)<br><span class="text-xs font-normal">도구/치료사 보조</span></div>
+                <div class="matrix-header">2. 능동 (Active)<br><span class="text-xs font-normal">자체 체중 제어</span></div>
+                <div class="matrix-header">3. 부하 (Loaded)<br><span class="text-xs font-normal">외력 저항 추가</span></div>
+                <div class="matrix-header">4. 동적 (Dynamic)<br><span class="text-xs font-normal">외란/속도 반응</span></div>
+
+                <!-- Position 1 -->
+                <div class="matrix-header">1. 누운 자세<br><span class="text-xs font-normal">Supine/Prone</span></div>
+                <div class="matrix-cell" data-pos="1" data-load="1"><strong>1 × 1</strong><br><span class="text-xs text-slate-500">패시브 롤링, 호흡 리셋</span></div>
+                <div class="matrix-cell" data-pos="1" data-load="2"><strong>1 × 2</strong><br><span class="text-xs text-slate-500">데드버그, 능동 롤링</span></div>
+                <div class="matrix-cell" data-pos="1" data-load="3"><strong>1 × 3</strong><br><span class="text-xs text-slate-500">밴드 저항 레그 로우어</span></div>
+                <div class="matrix-cell" data-pos="1" data-load="4"><strong>1 × 4</strong><br><span class="text-xs text-slate-500">빠른 복와위 회전 전환</span></div>
+
+                <!-- Position 2 -->
+                <div class="matrix-header">2. 네발기기<br><span class="text-xs font-normal">Quadruped</span></div>
+                <div class="matrix-cell" data-pos="2" data-load="1"><strong>2 × 1</strong><br><span class="text-xs text-slate-500">밴드 보조 락백</span></div>
+                <div class="matrix-cell" data-pos="2" data-load="2"><strong>2 × 2</strong><br><span class="text-xs text-slate-500">버드독, 흉추 회전</span></div>
+                <div class="matrix-cell" data-pos="2" data-load="3"><strong>2 × 3</strong><br><span class="text-xs text-slate-500">버드독 케틀벨 로우</span></div>
+                <div class="matrix-cell" data-pos="2" data-load="4"><strong>2 × 4</strong><br><span class="text-xs text-slate-500">베어 크롤 기어가기</span></div>
+
+                <!-- Position 3 -->
+                <div class="matrix-header">3. 무릎서기<br><span class="text-xs font-normal">Kneeling/Half</span></div>
+                <div class="matrix-cell" data-pos="3" data-load="1"><strong>3 × 1</strong><br><span class="text-xs text-slate-500">지지봉 하프닐링 밸런스</span></div>
+                <div class="matrix-cell" data-pos="3" data-load="2"><strong>3 × 2</strong><br><span class="text-xs text-slate-500">자유 하프닐링 체간 회전</span></div>
+                <div class="matrix-cell" data-pos="3" data-load="3"><strong>3 × 3</strong><br><span class="text-xs text-slate-500">케이블 촙 & 리프트</span></div>
+                <div class="matrix-cell" data-pos="3" data-load="4"><strong>3 × 4</strong><br><span class="text-xs text-slate-500">런지 반사 전환 훈련</span></div>
+
+                <!-- Position 4 -->
+                <div class="matrix-header">4. 선 자세<br><span class="text-xs font-normal">Standing</span></div>
+                <div class="matrix-cell" data-pos="4" data-load="1"><strong>4 × 1</strong><br><span class="text-xs text-slate-500">TRX 서스펜션 스쿼트</span></div>
+                <div class="matrix-cell" data-pos="4" data-load="2"><strong>4 × 2</strong><br><span class="text-xs text-slate-500">맨몸 스쿼트, 싱글 데드리프트</span></div>
+                <div class="matrix-cell" data-pos="4" data-load="3"><strong>4 × 3</strong><br><span class="text-xs text-slate-500">케틀벨 스윙, 파머스 캐리</span></div>
+                <div class="matrix-cell" data-pos="4" data-load="4"><strong>4 × 4</strong><br><span class="text-xs text-slate-500">플라이오메트릭 점프/착지</span></div>
+            </div>
+
+            <!-- 매트릭스 상세 인터랙티브 박스 -->
+            <div id="matrixDetailBox" class="mt-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700" style="background:var(--surface);display:none;">
+                <h4 id="matrixDetailTitle" class="font-bold text-sm mb-1 text-blue-600 dark:text-blue-400"></h4>
+                <p id="matrixDetailText" class="text-xs leading-relaxed text-slate-700 dark:text-slate-300"></p>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 14] SFMA 핵심 감별 비교표 & 임상 치트시트 -->
+        <!-- ========================================================================= -->
+        <section id="comp-table" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-list"></i>SFMA 핵심 감별 비교표 & 임상 치트시트</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                임상 현장에서 즉시 활용할 수 있는 핵심 기능제한 감별 요약표와 7대 상위검사 정상 통과 기준 치트시트입니다.
+            </p>
+
+            <!-- TED vs JMD vs SMCD 종합 비교표 -->
+            <h3 class="subsection-title"><i class="fas fa-balance-scale"></i>1. 기능제한 삼원소 (TED vs JMD vs SMCD) 정밀 비교</h3>
+            <div class="overflow-x-auto mb-6">
+                <table class="score-matrix">
+                    <thead>
+                        <tr>
+                            <th>구분 항목</th>
+                            <th>TED (조직 신장성 기능제한)</th>
+                            <th>JMD (관절 가동성 기능제한)</th>
+                            <th>SMCD (안정성/모터 조절)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs">
+                        <tr>
+                            <td class="font-bold">병태생리적 원인</td>
+                            <td>다관절 근육/근막 단축, 신경 유착, 반흔</td>
+                            <td>관절낭 유착, 골극, 아탈구, 관절순 파열</td>
+                            <td>신경근 타이밍 지연, 고유감각 결손, 비대칭</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">능동 AROM</td>
+                            <td>끝범위 제한</td>
+                            <td>끝범위 제한</td>
+                            <td>제한 또는 비정상 떨림/보상작용</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">수동 PROM</td>
+                            <td>끝범위 제한 (인접 관절 위치에 따라 변함)</td>
+                            <td>끝범위 제한 (위치 변경해도 항상 일정)</td>
+                            <td><strong>완전 정상 (Normal PROM)</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">비체중부하 (Unloaded)</td>
+                            <td>여전히 제한됨</td>
+                            <td>여전히 제한됨</td>
+                            <td><strong>정상 가동범위 발현</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">1차 치료 중재</td>
+                            <td>IASTM, MFR, 폼롤러, 능동적 신경가동술</td>
+                            <td>관절 가동술(Mobilization), 관절 조작</td>
+                            <td>4x4 매트릭스 신경근 재교육 (Reset 금기)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 7대 상위검사 정상 기준 치트시트 -->
+            <h3 class="subsection-title"><i class="fas fa-check-double"></i>2. 7대 상위검사 정상 통과 기준 및 랜드마크 치트시트</h3>
+            <div class="overflow-x-auto">
+                <table class="score-matrix">
+                    <thead>
+                        <tr>
+                            <th>상위 검사 항목</th>
+                            <th>정상 통과 기준 (Passing Standards)</th>
+                            <th>핵심 보상작용 (Dysfunction Criteria)</th>
+                            <th>1차 하위검사 (Breakout Target)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs">
+                        <tr>
+                            <td class="font-bold">경추 굴곡</td>
+                            <td>턱이 흉골 상병 노치에 완전 접촉</td>
+                            <td>입 벌림(턱벌림 보상), 흉추 과굴곡</td>
+                            <td>누운자세 능동/수동 굴곡, OA 검사</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">경추 신전</td>
+                            <td>얼굴 평면이 천장과 10° 이내 수평</td>
+                            <td>체간 후방 기울임, 입 벌림, 흉곽 들림</td>
+                            <td>누운자세 경추 신전, C1-C2 회전</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">경추 좌/우 회전</td>
+                            <td>턱 끝이 쇄골 중간선(80°) 통과</td>
+                            <td>어깨 으쓱임, 측방 굴곡, 체간 회전</td>
+                            <td>누운자세 수동 회전, C1-C2 회전</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">상지 패턴 1 (MRE)</td>
+                            <td>손끝이 반대측 견갑골 하각(T7) 접촉</td>
+                            <td>체간 굴곡/회전, 견갑골 전방 틸팅</td>
+                            <td>엎드린자세 90/90 내회전 & 신전</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">상지 패턴 2 (LRE)</td>
+                            <td>손끝이 반대측 견갑극(T3) 접촉</td>
+                            <td>흉추 과신전, 요추 전만, 두부 전방</td>
+                            <td>엎드린자세 90/90 외회전 & 굴곡 170°</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">다분절 굴곡 (MSF)</td>
+                            <td>발끝 터치 + 천골각도 70° + 체중 후방이동</td>
+                            <td>무릎 굴곡, 체중 후방이동 부재, 평평한 요추</td>
+                            <td>롱시팅 굴곡, ASLR, 양측 무릎가슴당기기</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">다분절 신전 (MSE)</td>
+                            <td>ASIS 발끝 통과 + 견갑골 뒤꿈치 통과</td>
+                            <td>무릎 굴곡, 요추 힌지(L-spine hinge) 과신전</td>
+                            <td>복와위 상체밀기(코브라), 변형 토마스</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">다분절 회전 (MSR)</td>
+                            <td>골반 50° + 어깨 50° = 전신 100° 회전</td>
+                            <td>발바닥 들림, 무릎 굴곡, 체간 측방 기울임</td>
+                            <td>앉은자세 체간회전, 요추잠금 회전, 고관절 IR/ER</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">한발 서기 (SLS)</td>
+                            <td>눈 뜨고 10초 + 눈 감고 10초 무동요 유지</td>
+                            <td>지지발 들림/점프, 트렌델렌부르크 골반 낙하</td>
+                            <td>눈감고 SLS, 발목 내반/외반, 발가락 걷기</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">오버헤드 딥스쿼트</td>
+                            <td>대퇴 수평 이하 + 상완 수직 + 뒤꿈치 밀착</td>
+                            <td>뒤꿈치 들림, 상지 전방 낙하, 무릎 내번</td>
+                            <td>팔내린 스쿼트, 힐 엘리베이션, WBLT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    
+        <!-- ========================================================================= -->
+        <!-- [Section 15] 학술 참고문헌 -->
+        <!-- ========================================================================= -->
+        <section id="references" class="infographic-section">
+            <h2 class="section-title"><i class="fas fa-book"></i>학술 참고문헌 (Scientific References)</h2>
+            <p class="mb-4 text-sm" style="color:var(--ink-2);word-break:keep-all;">
+                SFMA 평가 및 4x4 치료 체계의 신경근 생역학적 기반을 제공하는 국제 학술 논문 및 주요 저작물 목록입니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" style="color:var(--ink-2);">
+                <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                    <div class="font-bold text-slate-800 dark:text-slate-200 mb-1">1. SFMA 원전 및 신뢰도 연구</div>
+                    <ul class="space-y-1.5 list-disc list-inside">
+                        <li>Cook G, Burton L, Hoogenboom BJ, Voight M. (2014). <em>Functional movement systems: screening, assessment, corrective strategies</em>. International Journal of Sports Physical Therapy, 9(3), 399-408.</li>
+                        <li>Glaws KR, Keene JS, Overmoyer GV, et al. (2014). <em>Intrarater and interrater reliability of the Selective Functional Movement Assessment</em>. Journal of Athletic Training, 49(2), 227-234.</li>
+                        <li>Kiesel K, Plisky PJ, Voight ML. (2007). <em>Can serious injury in professional football be predicted by a pre-season athletic movement screen?</em> North American Journal of Sports Physical Therapy, 2(3), 147-158.</li>
+                    </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                    <div class="font-bold text-slate-800 dark:text-slate-200 mb-1">2. 통증 및 모터 조절 왜곡 (Altered Motor Control)</div>
+                    <ul class="space-y-1.5 list-disc list-inside">
+                        <li>Hodges PW, Tucker K. (2011). <em>Moving differently in pain: a new theory to explain the adaptation to pain</em>. Pain, 152(3), S90-S98.</li>
+                        <li>Hodges PW, Moseley GL. (2003). <em>Pain and motor control of the lumbopelvic region: new ideas and clinical implications</em>. Manual Therapy, 8(2), 66-78.</li>
+                        <li>Cholewicki J, Silfies SP, Shah RA, et al. (2005). <em>Delayed trunk muscle reflex responses increase the risk of low back injuries</em>. Spine, 30(23), 2614-2620.</li>
+                    </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                    <div class="font-bold text-slate-800 dark:text-slate-200 mb-1">3. 지역적 상호의존성 (Regional Interdependence)</div>
+                    <ul class="space-y-1.5 list-disc list-inside">
+                        <li>Wainner RS, Whitman JM, Cleland JA, et al. (2007). <em>Regional interdependence: a musculoskeletal examination model whose time has come</em>. JOSPT, 37(11), 658-660.</li>
+                        <li>Sueki DG, Cleland JA, Wainner RS. (2013). <em>A regional interdependence model of musculoskeletal dysfunction: research, mechanisms, and clinical implications</em>. JMMT, 21(2), 90-102.</li>
+                        <li>Bullock-Saxton JE. (1994). <em>Local sensation changes and altered hip muscle function following severe ankle sprain</em>. Physical Therapy, 74(1), 17-28.</li>
+                    </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg border border-slate-200" style="background:var(--surface);">
+                    <div class="font-bold text-slate-800 dark:text-slate-200 mb-1">4. 신경발달학적 운동제어 (DNS & Stability)</div>
+                    <ul class="space-y-1.5 list-disc list-inside">
+                        <li>Frank C, Kobesova A, Kolar P. (2013). <em>Dynamic neuromuscular stabilization & sports rehabilitation</em>. International Journal of Sports Physical Therapy, 8(1), 62-73.</li>
+                        <li>Janda V. (1996). <em>Evaluation of muscular imbalance</em>. In: Liebenson C, ed. Rehabilitation of the Spine. Williams & Wilkins, 97-112.</li>
+                        <li>Panjabi MM. (1992). <em>The stabilizing system of the spine. Part I. Function, dysfunction, adaptation, and enhancement</em>. Journal of Spinal Disorders, 5(4), 383-389.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <footer class="mt-12 py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500">
+            <p class="mb-2">SFMA™ (Selective Functional Movement Assessment) Complete Clinical Protocol Guide</p>
+            <p>© Functional Movement Systems. All Rights Reserved. Clinical Education Reference.</p>
+        </footer>
+    </div>
+
+    <script>
+    // 1. 테마 토글
+    (function() {
+      var btn = document.getElementById("themeToggle");
+      var sun = document.getElementById("sunIcon");
+      var moon = document.getElementById("moonIcon");
+      if (!btn) return;
+
+      var saved = localStorage.getItem("sfma_theme") || "light";
+      document.documentElement.setAttribute("data-theme", saved);
+      updateIcons(saved);
+
+      btn.addEventListener("click", function() {
+        var current = document.documentElement.getAttribute("data-theme") || "light";
+        var next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("sfma_theme", next);
+        updateIcons(next);
+      });
+
+      function updateIcons(t) {
+        if (t === "dark") {
+          if (sun) sun.style.display = "block";
+          if (moon) moon.style.display = "none";
+        } else {
+          if (sun) sun.style.display = "none";
+          if (moon) moon.style.display = "block";
+        }
+      }
+    })();
+
+    // 2. 프로그레스 바 & 스크롤 탑
+    (function() {
+      var pBar = document.getElementById("progressBar");
+      var sBtn = document.getElementById("scrollTopBtn");
+      window.addEventListener("scroll", function() {
+        var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (window.scrollY / h) * 100;
+        if (pBar) pBar.style.width = scrolled + "%";
+        if (sBtn) {
+          if (window.scrollY > 300) {
+            sBtn.classList.add("visible");
+          } else {
+            sBtn.classList.remove("visible");
+          }
+        }
+      });
+    })();
+
+    // 3. 네비게이션 활성화 연동
+    (function() {
+      var navLinks = document.querySelectorAll(".nav-container a");
+      var sections = document.querySelectorAll("section[id]");
+      window.addEventListener("scroll", function() {
+        var scrollPos = window.scrollY + 120;
+        sections.forEach(function(sec) {
+          var top = sec.offsetTop;
+          var height = sec.offsetHeight;
+          var id = sec.getAttribute("id");
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(function(link) {
+              if (link.getAttribute("href") === "#" + id) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+          }
+        });
+      });
+    })();
+
+    // 4. SFMA 15개 패턴 인터랙티브 실시간 채점 엔진
+    (function() {
+      var DATA = {
+        patterns: [
+          { id: "cf", name: "1. 경추 굴곡 (Cervical Flexion)", breakout: "bo-cervical" },
+          { id: "ce", name: "2. 경추 신전 (Cervical Extension)", breakout: "bo-cervical" },
+          { id: "cr_r", name: "3. 경추 우회전 (Cervical Right Rotation)", breakout: "bo-cervical" },
+          { id: "cr_l", name: "4. 경추 좌회전 (Cervical Left Rotation)", breakout: "bo-cervical" },
+          { id: "ue1_r", name: "5. 상지 패턴 1 우측 (UE MRE Right - 하방)", breakout: "bo-ue" },
+          { id: "ue1_l", name: "6. 상지 패턴 1 좌측 (UE MRE Left - 하방)", breakout: "bo-ue" },
+          { id: "ue2_r", name: "7. 상지 패턴 2 우측 (UE LRE Right - 상방)", breakout: "bo-ue" },
+          { id: "ue2_l", name: "8. 상지 패턴 2 좌측 (UE LRE Left - 상방)", breakout: "bo-ue" },
+          { id: "msf", name: "9. 복수-분절 굴곡 (Multi-Segmental Flexion)", breakout: "bo-msf" },
+          { id: "mse", name: "10. 복수-분절 신전 (Multi-Segmental Extension)", breakout: "bo-mse" },
+          { id: "msr_r", name: "11. 복수-분절 우회전 (MSR Right)", breakout: "bo-msr" },
+          { id: "msr_l", name: "12. 복수-분절 좌회전 (MSR Left)", breakout: "bo-msr" },
+          { id: "sls_r", name: "13. 한발 서기 우측 (Single Leg Stance Right)", breakout: "bo-sls" },
+          { id: "sls_l", name: "14. 한발 서기 좌측 (Single Leg Stance Left)", breakout: "bo-sls" },
+          { id: "ods", name: "15. 오버헤드 딥 스쿼트 (Overhead Deep Squat)", breakout: "bo-ods" }
+        ],
+        codes: [
+          { key: "fn", label: "FN", name: "기능적 무통" },
+          { key: "dn", label: "DN", name: "기능제한 무통" },
+          { key: "fp", label: "FP", name: "기능적 유통" },
+          { key: "dp", label: "DP", name: "기능제한 유통" }
+        ]
+      };
+
+      var scores = {};
+      var tbody = document.getElementById("scoreMatrixBody");
+      if (!tbody) return;
+
+      DATA.patterns.forEach(function(pat) {
+        var tr = document.createElement("tr");
+        var tdName = document.createElement("td");
+        tdName.className = "pattern-name";
+        tdName.innerHTML = "<strong>" + pat.name + "</strong>";
+        tr.appendChild(tdName);
+
+        DATA.codes.forEach(function(c) {
+          var td = document.createElement("td");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "btn-score";
+          btn.textContent = c.label;
+          btn.title = pat.name + " ➔ " + c.name;
+          var code = c.key;
+
+          btn.addEventListener("click", function() {
+            var siblings = td.parentElement.querySelectorAll(".btn-score");
+            siblings.forEach(function(b) {
+              b.className = "btn-score";
+            });
+            scores[pat.id] = code;
+            btn.classList.add("selected-" + code);
+            updateDiagnosis();
+          });
+          td.appendChild(btn);
+          tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+      });
+
+      function updateDiagnosis() {
+        var summaryEl = document.getElementById("reportSummary");
+        var actionsEl = document.getElementById("priorityActions");
+        if (!summaryEl || !actionsEl) return;
+
+        var dnList = [], fpList = [], dpList = [], fnList = [], unselected = 0;
+        DATA.patterns.forEach(function(pat) {
+          var s = scores[pat.id];
+          if (!s) unselected++;
+          else if (s === "dn") dnList.push(pat);
+          else if (s === "fp") fpList.push(pat);
+          else if (s === "dp") dpList.push(pat);
+          else if (s === "fn") fnList.push(pat);
+        });
+
+        var html = "<strong>채점 현황:</strong> 총 15개 지표 중 " + (15 - unselected) + "개 완료 (FN: " + fnList.length + ", DN: " + dnList.length + ", FP: " + fpList.length + ", DP: " + dpList.length + ")<br>";
+        
+        actionsEl.innerHTML = "";
+
+        if (dnList.length > 0) {
+          html += "<span class='text-blue-600 dark:text-blue-400 font-bold'>[제1순위 교정 타깃]</span> 통증 없는 기능제한(DN)이 <strong>" + dnList.length + "개</strong> 발견되었습니다. 가장 먼저 하위검사를 수행하고 4x4 교정운동을 적용하십시오.<br>";
+          dnList.forEach(function(p) {
+            var item = document.createElement("div");
+            item.className = "p-2.5 rounded-lg flex items-center justify-between";
+            item.style.background = "var(--surface)";
+            item.style.border = "1px solid var(--c-primary-border)";
+            item.innerHTML = "<div><span class='font-bold text-blue-600 dark:text-blue-400 mr-2'>[DN 최우선]</span>" + p.name + "</div>" +
+                             "<a href='#" + p.breakout + "' class='px-3 py-1 rounded text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition'>하위검사 바로가기 ➔</a>";
+            actionsEl.appendChild(item);
+          });
+        }
+
+        if (fpList.length > 0) {
+          html += "<span class='text-amber-600 dark:text-amber-400 font-bold mt-2 inline-block'>[제2순위 추적]</span> 기능적 유통(FP) 패턴 <strong>" + fpList.length + "개</strong>는 치료 경과의 호전 여부를 평가하는 모니터링 재평가 지표로 활용합니다.<br>";
+        }
+
+        if (dpList.length > 0) {
+          html += "<span class='text-red-600 dark:text-red-400 font-bold mt-2 inline-block'>[제3순위 주의]</span> 기능제한 유통(DP) 패턴 <strong>" + dpList.length + "개</strong>는 급성 염증 악화를 방지하기 위해 마지막에 다루며, 도수치료 및 의료 장비 중재를 우선 고려하십시오.";
+        }
+
+        if (unselected === 15) {
+          html = "검사 항목의 점수를 선택하면 실시간 분석 결과가 여기에 표시됩니다.";
+        } else if (dnList.length === 0 && fpList.length === 0 && dpList.length === 0 && unselected === 0) {
+          html += "<span class='text-green-600 dark:text-green-400 font-bold'>[완전 정상]</span> 모든 상위검사 패턴이 FN(기능적 무통)으로 합격하였습니다. FMS 스크리닝 또는 스포츠 퍼포먼스(Y-Balance) 평가로 진행하십시오.";
+        }
+
+        summaryEl.innerHTML = html;
+      }
+
+      var resetBtn = document.getElementById("btnResetScoring");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", function() {
+          DATA.patterns.forEach(function(pat) { scores[pat.id] = null; });
+          var allBtns = tbody.querySelectorAll(".btn-score");
+          allBtns.forEach(function(b) { b.className = "btn-score"; });
+          updateDiagnosis();
+        });
+      }
+    })();
+
+    // 5. 4x4 매트릭스 인터랙티브 디테일 박스
+    (function() {
+      var cells = document.querySelectorAll(".matrix-cell");
+      var dBox = document.getElementById("matrixDetailBox");
+      var dTitle = document.getElementById("matrixDetailTitle");
+      var dText = document.getElementById("matrixDetailText");
+
+      var matrixData = {
+        "1-1": { title: "포지션 1 × 로드 1 (Supine/Prone, Assisted)", desc: "바닥에 완전히 누운 상태에서 도구(폼롤러, 밴드)나 치료사의 보조를 받아 수행. 횡격막 호흡 유도 및 패시브 롤링을 통해 뇌의 회전성 코어 반사를 초기화(Reset)합니다." },
+        "1-2": { title: "포지션 1 × 로드 2 (Supine/Prone, Active)", desc: "중력 부하가 최소화된 누운 자세에서 외부 보조 없이 자신의 힘으로 사지 제어. 데드버그(Deadbug), 프론 버드독 변형, 능동 롤링 패턴을 완성합니다." },
+        "1-3": { title: "포지션 1 × 로드 3 (Supine/Prone, Loaded)", desc: "누운 자세에서 밴드 또는 덤벨 저항을 추가하여 척추 중립을 유지한 채 코어 토크 및 사지 신장성 부하를 견디는 능력을 향상시킵니다." },
+        "1-4": { title: "포지션 1 × 로드 4 (Supine/Prone, Dynamic)", desc: "앙와위에서 복와위로의 빠른 방향 전환 롤링, 메디신볼 가슴 패스 등 누운 자세에서의 가속 및 감속 제어를 훈련합니다." },
+        "2-1": { title: "포지션 2 × 로드 1 (Quadruped, Assisted)", desc: "네발기기 자세에서 무릎 아래 패드를 대거나 탄성 밴드로 복부를 받쳐 척추 중립 유지를 돕는 락백(Rock-back) 운동을 시행합니다." },
+        "2-2": { title: "포지션 2 × 로드 2 (Quadruped, Active)", desc: "자유 네발기기 자세에서 반대측 팔다리를 교차 신전하는 버드독(Bird-Dog) 및 요추잠금 흉추 회전 운동을 통해 체간-고관절 해리를 촉진합니다." },
+        "2-3": { title: "포지션 2 × 로드 3 (Quadruped, Loaded)", desc: "네발기기 자세에서 밴드 저항을 걸거나 케틀벨을 당기는 버드독 로우(Bird-Dog Row)를 통해 회전 저항 코어 안정성을 강화합니다." },
+        "2-4": { title: "포지션 2 × 로드 4 (Quadruped, Dynamic)", desc: "무릎을 바닥에서 2cm 살짝 띄운 베어 크롤(Bear Crawl) 전진/후진 기어다니기를 통해 다방향 동적 안정성을 완성합니다." },
+        "3-1": { title: "포지션 3 × 로드 1 (Kneeling, Assisted)", desc: "벽이나 지지봉을 잡고 반무릎자세(Half-kneeling)를 유지하며 골반 전후방 안정성과 장요근 신장 감각을 안전하게 학습합니다." },
+        "3-2": { title: "포지션 3 × 로드 2 (Kneeling, Active)", desc: "외부 지지 없이 반무릎 자세에서 양팔을 머리 위로 올리거나 체간 회전을 수행하여 골반-척추 해리(Dissociation)를 능동 제어합니다." },
+        "3-3": { title: "포지션 3 × 로드 3 (Kneeling, Loaded)", desc: "반무릎 자세에서 케이블 또는 밴드를 이용한 촙 앤 리프트(Chop & Lift), 팔로프 프레스(Pallof Press)를 시행하여 3차원 회전 저항을 적재합니다." },
+        "3-4": { title: "포지션 3 × 로드 4 (Kneeling, Dynamic)", desc: "반무릎 자세에서 즉시 일어서는 동적 런지 전환 및 불안정한 에어렉스 패드 위에서의 회전 충격 흡수 훈련을 진행합니다." },
+        "4-1": { title: "포지션 4 × 로드 1 (Standing, Assisted)", desc: "선 자세에서 TRX 서스펜션 또는 막대를 잡고 스쿼트나 힌지를 수행하여 체중부하 상태의 적절한 관절 궤적을 뇌에 프로그래밍합니다." },
+        "4-2": { title: "포지션 4 × 로드 2 (Standing, Active)", desc: "체중부하 기립 자세에서 보조 없이 완전한 가동범위의 맨몸 딥 스쿼트, 싱글 레그 데드리프트(SLDL)를 완벽한 정렬로 수행합니다." },
+        "4-3": { title: "포지션 4 × 로드 3 (Standing, Loaded)", desc: "케틀벨 스윙, 고중량 힌지, 비대칭 수트케이스 캐리(Suitcase Carry)를 통해 전신에 걸친 실전 고강도 안정화 부하를 적재합니다." },
+        "4-4": { title: "포지션 4 × 로드 4 (Standing, Dynamic)", desc: "박스 점프, 한발 착지, 스포츠 특이적 다방향 감속 및 플라이오메트릭(Plyometric) 운동으로 완전한 일상 및 스포츠 복귀를 달성합니다." }
+      };
+
+      cells.forEach(function(cell) {
+        cell.addEventListener("click", function() {
+          cells.forEach(function(c) { c.classList.remove("active"); });
+          cell.classList.add("active");
+          var key = cell.dataset.pos + "-" + cell.dataset.load;
+          var info = matrixData[key];
+          if (info && dBox && dTitle && dText) {
+            dTitle.textContent = info.title;
+            dText.textContent = info.desc;
+            dBox.style.display = "block";
+          }
+        });
+      });
+    })();
+
+    // 6. 실시간 검색 필터
+    (function() {
+      var sInput = document.getElementById("searchInput");
+      if (!sInput) return;
+      sInput.addEventListener("input", function() {
+        var q = this.value.toLowerCase().trim();
+        var sections = document.querySelectorAll(".infographic-section");
+        sections.forEach(function(sec) {
+          if (!q) {
+            sec.style.display = "block";
+            return;
+          }
+          var text = sec.textContent.toLowerCase();
+          if (text.indexOf(q) !== -1) {
+            sec.style.display = "block";
+          } else {
+            sec.style.display = "none";
+          }
+        });
+      });
+    })();
+    </script>
+    
+</body>
+</html>
