@@ -20,6 +20,12 @@
         html {
             scroll-behavior: smooth;
         }
+        @media (hover: none) and (pointer: coarse) {
+            html {
+                scroll-behavior: auto; /* 모바일 터치 제스처 시 관성 스크롤 저항/지연 제거 */
+                -webkit-overflow-scrolling: touch;
+            }
+        }
         body {
             font-family: 'Noto Sans KR', sans-serif;
             background-color: #f8fafc; /* slate-50 */
@@ -3215,39 +3221,40 @@
       }
     })();
 
-    // 2. 프로그레스 바 & 스크롤 탑
+    // 2. 프로그레스 바, 스크롤 탑 & 스마트 스티키 네비게이션 (고성능 RAF 최적화)
     (function() {
       var pBar = document.getElementById("progressBar");
       var sBtn = document.getElementById("scrollTopBtn");
-      window.addEventListener("scroll", function() {
-        var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (window.scrollY / h) * 100;
-        if (pBar) pBar.style.width = scrolled + "%";
+      var nav = document.getElementById("stickyNav");
+      var navContainer = nav ? nav.querySelector(".nav-container") : null;
+      var navLinks = document.querySelectorAll(".nav-container a");
+      var sections = document.querySelectorAll("section[id]");
+      var lastScrollY = window.scrollY;
+      var threshold = 8; // 미세 스크롤 무시 임계값
+      var ticking = false;
+
+      function updateOnScroll() {
+        var currentScrollY = window.scrollY;
+
+        // 2-1. 프로그레스 바
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0 && pBar) {
+          var scrolled = (currentScrollY / docHeight) * 100;
+          pBar.style.width = scrolled + "%";
+        }
+
+        // 2-2. 스크롤 탑 버튼 토글
         if (sBtn) {
-          if (window.scrollY > 300) {
+          if (currentScrollY > 300) {
             sBtn.classList.add("visible");
           } else {
             sBtn.classList.remove("visible");
           }
         }
-      });
-    })();
 
-    // 3. 스마트 스티키 네비게이션 (스크롤 다운 시 숨김, 스크롤 업 시 노출) & 섹션 연동
-    (function() {
-      var nav = document.getElementById("stickyNav");
-      var navLinks = document.querySelectorAll(".nav-container a");
-      var sections = document.querySelectorAll("section[id]");
-      var lastScrollY = window.scrollY;
-      var threshold = 8; // 미세 스크롤 무시 임계값
-
-      window.addEventListener("scroll", function() {
-        var currentScrollY = window.scrollY;
-
-        // 3-1. 스마트 스티키 네비게이션 동작 (Show on scroll up, Hide on scroll down)
+        // 2-3. 스마트 스티키 네비게이션 동작 (Show on scroll up, Hide on scroll down)
         if (nav) {
           if (currentScrollY <= 120) {
-            // 최상단 근처에서는 항상 노출
             nav.classList.remove("nav-hidden");
             nav.classList.add("nav-visible");
           } else if (Math.abs(currentScrollY - lastScrollY) > threshold) {
@@ -3264,7 +3271,7 @@
         }
         lastScrollY = currentScrollY;
 
-        // 3-2. 현재 보고 있는 섹션 하이라이트 및 모바일 가로 탭 자동 스크롤
+        // 2-4. 현재 보고 있는 섹션 하이라이트 및 모바일 가로 탭 바 내부 가로 정렬
         var scrollPos = currentScrollY + 140;
         sections.forEach(function(sec) {
           var top = sec.offsetTop;
@@ -3275,9 +3282,11 @@
               if (link.getAttribute("href") === "#" + id) {
                 if (!link.classList.contains("active")) {
                   link.classList.add("active");
-                  // 모바일 가로 탭 바에서 현재 활성 탭을 화면 중앙으로 자동 정렬
-                  if (window.innerWidth <= 768 && link.scrollIntoView) {
-                    link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                  // [중요 수정] link.scrollIntoView는 화면 밖의 링크를 보이기 위해 윈도우 수직 스크롤을 강제 역행시켜
+                  // 모바일 스크롤에 심한 저항감을 유발하므로 절대 사용하지 않고, 오직 탭 바 컨테이너 내부만 좌우 스크롤함
+                  if (window.innerWidth <= 768 && navContainer) {
+                    var targetScroll = link.offsetLeft - (navContainer.clientWidth / 2) + (link.offsetWidth / 2);
+                    navContainer.scrollTo({ left: targetScroll, behavior: "smooth" });
                   }
                 }
               } else {
@@ -3286,6 +3295,15 @@
             });
           }
         });
+
+        ticking = false;
+      }
+
+      window.addEventListener("scroll", function() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateOnScroll);
+          ticking = true;
+        }
       }, { passive: true });
     })();
 
